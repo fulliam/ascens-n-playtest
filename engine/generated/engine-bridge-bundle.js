@@ -1015,6 +1015,28 @@ export class JsWorld {
         return ret;
     }
     /**
+    * Same as `write_instances`, but only for entities inside the given world
+    * rectangle. Everything off-screen costs one comparison and nothing else:
+    * no instance, no upload, no pixels. Returns a view over WASM memory —
+    * upload it before touching the world again.
+    * @param {number} pos_id
+    * @param {number} half_size
+    * @param {number} u0
+    * @param {number} v0
+    * @param {number} u1
+    * @param {number} v1
+    * @param {number} alpha
+    * @param {number} min_x
+    * @param {number} min_y
+    * @param {number} max_x
+    * @param {number} max_y
+    * @returns {Float32Array}
+    */
+    write_instances_in_view(pos_id, half_size, u0, v0, u1, v1, alpha, min_x, min_y, max_x, max_y) {
+        const ret = wasm.jsworld_write_instances_in_view(this.__wbg_ptr, pos_id, half_size, u0, v0, u1, v1, alpha, min_x, min_y, max_x, max_y);
+        return takeObject(ret);
+    }
+    /**
     * Create a new ECS world
     */
     constructor() {
@@ -1383,6 +1405,11 @@ function writeInstances(halfSize, u0, v0, u1, v1, alpha) {
         return new Float32Array(0);
     return world.write_instances(posComponentId, halfSize, u0, v0, u1, v1, alpha);
 }
+function writeInstancesInView(halfSize, u0, v0, u1, v1, alpha, minX, minY, maxX, maxY) {
+    if (!world)
+        return new Float32Array(0);
+    return world.write_instances_in_view(posComponentId, halfSize, u0, v0, u1, v1, alpha, minX, minY, maxX, maxY);
+}
 function instanceFloatsPerEntity() {
     return 9;
 }
@@ -1600,6 +1627,7 @@ async function boot() {
             tickPhysics,
             readAllPositions,
             writeInstances,
+            writeInstancesInView,
             instanceFloatsPerEntity,
             initSpatialGrid,
             rebuildSpatialIndex,
