@@ -471,6 +471,29 @@ export class JsWorld {
         return ret >>> 0;
     }
     /**
+    * Fill a GPU instance buffer for every entity carrying `pos_id`, and hand
+    * it back as a view over WASM memory — no copy, no per-entity JS.
+    *
+    * Layout matches the renderer's instance format, 9 floats per entity:
+    * x, y, half_size, u0, v0, u1, v1, rot, alpha.
+    *
+    * The returned view borrows WASM linear memory and is invalidated by any
+    * later allocation that grows it. Upload it to the GPU before calling
+    * anything else on the world.
+    * @param {number} pos_id
+    * @param {number} half_size
+    * @param {number} u0
+    * @param {number} v0
+    * @param {number} u1
+    * @param {number} v1
+    * @param {number} alpha
+    * @returns {Float32Array}
+    */
+    write_instances(pos_id, half_size, u0, v0, u1, v1, alpha) {
+        const ret = wasm.jsworld_write_instances(this.__wbg_ptr, pos_id, half_size, u0, v0, u1, v1, alpha);
+        return takeObject(ret);
+    }
+    /**
     * Look up a component ID by its registered name.
     * Returns `u32::MAX` if not found.
     *
@@ -1355,6 +1378,14 @@ function readAllPositions() {
 function entityCount() {
     return world ? world.entity_count() : 0;
 }
+function writeInstances(halfSize, u0, v0, u1, v1, alpha) {
+    if (!world)
+        return new Float32Array(0);
+    return world.write_instances(posComponentId, halfSize, u0, v0, u1, v1, alpha);
+}
+function instanceFloatsPerEntity() {
+    return 9;
+}
 function initSpatialGrid(worldW, worldH) {
     if (!world)
         return;
@@ -1568,6 +1599,8 @@ async function boot() {
             spawnTestEntity,
             tickPhysics,
             readAllPositions,
+            writeInstances,
+            instanceFloatsPerEntity,
             initSpatialGrid,
             rebuildSpatialIndex,
             queryNear,
