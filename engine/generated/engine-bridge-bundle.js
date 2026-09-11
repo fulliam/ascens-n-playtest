@@ -59,23 +59,7 @@ function getInt32Memory0() {
     return cachedInt32Memory0;
 }
 
-let cachedUint32Memory0 = null;
-
-function getUint32Memory0() {
-    if (cachedUint32Memory0 === null || cachedUint32Memory0.byteLength === 0) {
-        cachedUint32Memory0 = new Uint32Array(wasm.memory.buffer);
-    }
-    return cachedUint32Memory0;
-}
-
 let WASM_VECTOR_LEN = 0;
-
-function passArray32ToWasm0(arg, malloc) {
-    const ptr = malloc(arg.length * 4, 4) >>> 0;
-    getUint32Memory0().set(arg, ptr / 4);
-    WASM_VECTOR_LEN = arg.length;
-    return ptr;
-}
 
 const cachedTextEncoder = (typeof TextEncoder !== 'undefined' ? new TextEncoder('utf-8') : { encode: () => { throw Error('TextEncoder not available') } } );
 
@@ -131,6 +115,38 @@ function passStringToWasm0(arg, malloc, realloc) {
     return ptr;
 }
 
+let cachedUint32Memory0 = null;
+
+function getUint32Memory0() {
+    if (cachedUint32Memory0 === null || cachedUint32Memory0.byteLength === 0) {
+        cachedUint32Memory0 = new Uint32Array(wasm.memory.buffer);
+    }
+    return cachedUint32Memory0;
+}
+
+function passArray32ToWasm0(arg, malloc) {
+    const ptr = malloc(arg.length * 4, 4) >>> 0;
+    getUint32Memory0().set(arg, ptr / 4);
+    WASM_VECTOR_LEN = arg.length;
+    return ptr;
+}
+
+let cachedFloat32Memory0 = null;
+
+function getFloat32Memory0() {
+    if (cachedFloat32Memory0 === null || cachedFloat32Memory0.byteLength === 0) {
+        cachedFloat32Memory0 = new Float32Array(wasm.memory.buffer);
+    }
+    return cachedFloat32Memory0;
+}
+
+function passArrayF32ToWasm0(arg, malloc) {
+    const ptr = malloc(arg.length * 4, 4) >>> 0;
+    getFloat32Memory0().set(arg, ptr / 4);
+    WASM_VECTOR_LEN = arg.length;
+    return ptr;
+}
+
 function passArray8ToWasm0(arg, malloc) {
     const ptr = malloc(arg.length * 1, 1) >>> 0;
     getUint8Memory0().set(arg, ptr / 1);
@@ -177,6 +193,69 @@ export class JsWorld {
         wasm.__wbg_jsworld_free(ptr);
     }
     /**
+    * The alive flags, as a view. JS spawns and kills through `pool_alloc`
+    * and `pool_free`, but reading this directly is how a render or debug
+    * pass checks liveness without a call per slot.
+    * @param {number} pool
+    * @returns {Uint8Array}
+    */
+    pool_alive(pool) {
+        const ret = wasm.jsworld_pool_alive(this.__wbg_ptr, pool);
+        return takeObject(ret);
+    }
+    /**
+    * @param {number} pool
+    * @returns {number}
+    */
+    pool_alloc(pool) {
+        const ret = wasm.jsworld_pool_alloc(this.__wbg_ptr, pool);
+        return ret >>> 0;
+    }
+    /**
+    * @param {number} pool
+    * @param {number} x
+    * @param {number} y
+    * @param {number} vx
+    * @param {number} vy
+    * @param {number} speed_col
+    * @param {number} target_x
+    * @param {number} target_y
+    */
+    pool_chase(pool, x, y, vx, vy, speed_col, target_x, target_y) {
+        wasm.jsworld_pool_chase(this.__wbg_ptr, pool, x, y, vx, vy, speed_col, target_x, target_y);
+    }
+    /**
+    * @param {number} pool
+    */
+    pool_clear(pool) {
+        wasm.jsworld_pool_clear(this.__wbg_ptr, pool);
+    }
+    /**
+    * @param {number} pool
+    * @returns {number}
+    */
+    pool_count(pool) {
+        const ret = wasm.jsworld_pool_count(this.__wbg_ptr, pool);
+        return ret >>> 0;
+    }
+    /**
+    * Like `pool_chase`, but with an angular offset of
+    * `sin(t + slot_index * 0.7) * spread` radians applied to the direction.
+    * @param {number} pool
+    * @param {number} x
+    * @param {number} y
+    * @param {number} vx
+    * @param {number} vy
+    * @param {number} speed_col
+    * @param {number} target_x
+    * @param {number} target_y
+    * @param {number} t
+    * @param {number} spread
+    */
+    pool_swarm(pool, x, y, vx, vy, speed_col, target_x, target_y, t, spread) {
+        wasm.jsworld_pool_swarm(this.__wbg_ptr, pool, x, y, vx, vy, speed_col, target_x, target_y, t, spread);
+    }
+    /**
     * Entities within `radius` of `(x, y)` in the `component_id` grid, as
     * interleaved `[id0, generation0, id1, generation1, ...]` — same
     * return shape as `query_entities`. Empty array if no grid has been
@@ -218,6 +297,26 @@ export class JsWorld {
     event_count(event_id) {
         const ret = wasm.jsworld_event_count(this.__wbg_ptr, event_id);
         return ret >>> 0;
+    }
+    /**
+    * Create a pool and return its id. Capacity is fixed: the columns are one
+    * allocation each, and growing them would invalidate every view JS holds.
+    * @param {string} name
+    * @param {number} capacity
+    * @returns {number}
+    */
+    pool_create(name, capacity) {
+        const ptr0 = passStringToWasm0(name, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.jsworld_pool_create(this.__wbg_ptr, ptr0, len0, capacity);
+        return ret >>> 0;
+    }
+    /**
+    * @param {number} pool
+    * @param {number} slot
+    */
+    pool_unpark(pool, slot) {
+        wasm.jsworld_pool_unpark(this.__wbg_ptr, pool, slot);
     }
     /**
     * Counts entities matching ALL given components without allocating an
@@ -305,6 +404,48 @@ export class JsWorld {
         return ret !== 0;
     }
     /**
+    * @returns {number}
+    */
+    intern_count() {
+        const ret = wasm.jsworld_intern_count(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
+    * @param {number} pool
+    * @param {string} name
+    * @returns {number}
+    */
+    pool_add_f32(pool, name) {
+        const ptr0 = passStringToWasm0(name, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.jsworld_pool_add_f32(this.__wbg_ptr, pool, ptr0, len0);
+        return ret >>> 0;
+    }
+    /**
+    * @param {number} pool
+    * @param {string} name
+    * @returns {number}
+    */
+    pool_add_u32(pool, name) {
+        const ptr0 = passStringToWasm0(name, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.jsworld_pool_add_u32(this.__wbg_ptr, pool, ptr0, len0);
+        return ret >>> 0;
+    }
+    /**
+    * Swap a whole pool between world and screen coordinates for one frame.
+    * @param {number} pool
+    * @param {Uint32Array} cols
+    * @param {Float32Array} fp
+    */
+    pool_project(pool, cols, fp) {
+        const ptr0 = passArray32ToWasm0(cols, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passArrayF32ToWasm0(fp, wasm.__wbindgen_malloc);
+        const len1 = WASM_VECTOR_LEN;
+        wasm.jsworld_pool_project(this.__wbg_ptr, pool, ptr0, len0, ptr1, len1);
+    }
+    /**
     * Register a 1×f32 component (e.g. Health, Speed)
     * @param {string} name
     * @returns {number}
@@ -367,6 +508,14 @@ export class JsWorld {
         return ret !== 0;
     }
     /**
+    * @param {number} pool
+    * @returns {number}
+    */
+    pool_capacity(pool) {
+        const ret = wasm.jsworld_pool_capacity(this.__wbg_ptr, pool);
+        return ret >>> 0;
+    }
+    /**
     * Register a 1×bool component (e.g. Active, Visible)
     * @param {string} name
     * @returns {number}
@@ -386,6 +535,60 @@ export class JsWorld {
     rng_next_bool(chance) {
         const ret = wasm.jsworld_rng_next_bool(this.__wbg_ptr, chance);
         return ret !== 0;
+    }
+    /**
+    * @param {number} id
+    * @returns {string}
+    */
+    intern_resolve(id) {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.jsworld_intern_resolve(retptr, this.__wbg_ptr, id);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * Give a pool a uniform grid. Rebuilt whole each frame by counting sort,
+    * which at a million slots is two linear passes and no allocation.
+    * @param {number} pool
+    * @param {number} min_x
+    * @param {number} min_y
+    * @param {number} width
+    * @param {number} height
+    * @param {number} cell
+    */
+    pool_init_grid(pool, min_x, min_y, width, height, cell) {
+        wasm.jsworld_pool_init_grid(this.__wbg_ptr, pool, min_x, min_y, width, height, cell);
+    }
+    /**
+    * @param {number} pool
+    * @param {number} x
+    * @param {number} y
+    * @param {number} vx
+    * @param {number} vy
+    * @param {number} dt
+    */
+    pool_integrate(pool, x, y, vx, vy, dt) {
+        wasm.jsworld_pool_integrate(this.__wbg_ptr, pool, x, y, vx, vy, dt);
+    }
+    /**
+    * Undo `pool_project`.
+    * @param {number} pool
+    * @param {Uint32Array} cols
+    */
+    pool_unproject(pool, cols) {
+        const ptr0 = passArray32ToWasm0(cols, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.jsworld_pool_unproject(this.__wbg_ptr, pool, ptr0, len0);
     }
     /**
     * Entity ids matching ALL given components, as interleaved
@@ -447,6 +650,102 @@ export class JsWorld {
     archetype_count() {
         const ret = wasm.jsworld_archetype_count(this.__wbg_ptr);
         return ret >>> 0;
+    }
+    /**
+    * @param {number} pool
+    * @param {number} x
+    * @param {number} y
+    */
+    pool_build_grid(pool, x, y) {
+        wasm.jsworld_pool_build_grid(this.__wbg_ptr, pool, x, y);
+    }
+    /**
+    * A view straight onto the column's memory. Valid until WASM memory grows
+    * — that is, until something allocates. Re-take the view after any call
+    * that can allocate (pool creation, column creation, instance resize).
+    * @param {number} pool
+    * @param {number} col
+    * @returns {Float32Array}
+    */
+    pool_column_f32(pool, col) {
+        const ret = wasm.jsworld_pool_column_f32(this.__wbg_ptr, pool, col);
+        return takeObject(ret);
+    }
+    /**
+    * @param {number} pool
+    * @param {number} col
+    * @returns {Uint32Array}
+    */
+    pool_column_u32(pool, col) {
+        const ret = wasm.jsworld_pool_column_u32(this.__wbg_ptr, pool, col);
+        return takeObject(ret);
+    }
+    /**
+    * @param {number} pool
+    * @param {number} col
+    * @returns {number}
+    */
+    pool_count_flag(pool, col) {
+        const ret = wasm.jsworld_pool_count_flag(this.__wbg_ptr, pool, col);
+        return ret >>> 0;
+    }
+    /**
+    * Point every live slot's velocity straight at `(target_x, target_y)`
+    * at `speed_col` magnitude.
+    * @param {number} pool
+    * @returns {Uint32Array}
+    */
+    pool_enemy_rest(pool) {
+        const ret = wasm.jsworld_pool_enemy_rest(this.__wbg_ptr, pool);
+        return takeObject(ret);
+    }
+    /**
+    * One frame of the chase and swarm brains for a whole pool. `cols`
+    * carries the column ids the kernel reads and writes, `fp` the frame's
+    * scalars and `up` the interned style and brain ids plus a jitter seed.
+    * Returns the slots that are in range to hit the player this frame.
+    * @param {number} pool
+    * @param {Uint32Array} cols
+    * @param {Float32Array} fp
+    * @param {Uint32Array} up
+    * @returns {Uint32Array}
+    */
+    pool_enemy_step(pool, cols, fp, up) {
+        const ptr0 = passArray32ToWasm0(cols, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passArrayF32ToWasm0(fp, wasm.__wbindgen_malloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ptr2 = passArray32ToWasm0(up, wasm.__wbindgen_malloc);
+        const len2 = WASM_VECTOR_LEN;
+        const ret = wasm.jsworld_pool_enemy_step(this.__wbg_ptr, pool, ptr0, len0, ptr1, len1, ptr2, len2);
+        return takeObject(ret);
+    }
+    /**
+    * Generation of a slot. A handle is the pair (slot, generation); code
+    * that defers work across frames must carry both and check them.
+    * @param {number} pool
+    * @param {number} slot
+    * @returns {number}
+    */
+    pool_generation(pool, slot) {
+        const ret = wasm.jsworld_pool_generation(this.__wbg_ptr, pool, slot);
+        return ret >>> 0;
+    }
+    /**
+    * Live slots within `radius` of the point, as a view over the scratch
+    * buffer. Squared distance is already checked, so every returned slot is
+    * genuinely inside the circle.
+    * @param {number} pool
+    * @param {number} x
+    * @param {number} y
+    * @param {number} px
+    * @param {number} py
+    * @param {number} radius
+    * @returns {Uint32Array}
+    */
+    pool_query_near(pool, x, y, px, py, radius) {
+        const ret = wasm.jsworld_pool_query_near(this.__wbg_ptr, pool, x, y, px, py, radius);
+        return takeObject(ret);
     }
     /**
     * Register a component with an arbitrary, mixed-type field list.
@@ -549,6 +848,44 @@ export class JsWorld {
     get_resource_u32(resource_id, byte_offset) {
         const ret = wasm.jsworld_get_resource_u32(this.__wbg_ptr, resource_id, byte_offset);
         return ret >>> 0;
+    }
+    /**
+    * @param {number} pool
+    * @param {Uint32Array} cols
+    * @param {Float32Array} fp
+    * @returns {Uint32Array}
+    */
+    pool_despawn_far(pool, cols, fp) {
+        const ptr0 = passArray32ToWasm0(cols, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passArrayF32ToWasm0(fp, wasm.__wbindgen_malloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ret = wasm.jsworld_pool_despawn_far(this.__wbg_ptr, pool, ptr0, len0, ptr1, len1);
+        return takeObject(ret);
+    }
+    /**
+    * A view of the whole generation column, so a hot loop can check many
+    * handles without a call each.
+    * @param {number} pool
+    * @returns {Uint32Array}
+    */
+    pool_generations(pool) {
+        const ret = wasm.jsworld_pool_generations(this.__wbg_ptr, pool);
+        return takeObject(ret);
+    }
+    /**
+    * @param {number} pool
+    * @param {Uint32Array} cols
+    * @param {Float32Array} fp
+    * @returns {Uint32Array}
+    */
+    pool_impact_step(pool, cols, fp) {
+        const ptr0 = passArray32ToWasm0(cols, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passArrayF32ToWasm0(fp, wasm.__wbindgen_malloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ret = wasm.jsworld_pool_impact_step(this.__wbg_ptr, pool, ptr0, len0, ptr1, len1);
+        return takeObject(ret);
     }
     /**
     * Count of entities within `radius` of `(x, y)` in the `component_id`
@@ -729,6 +1066,41 @@ export class JsWorld {
         wasm.jsworld_init_spatial_grid(this.__wbg_ptr, component_id, world_w, world_h);
     }
     /**
+    * @param {number} pool
+    * @param {string} name
+    * @returns {number}
+    */
+    pool_column_index(pool, name) {
+        const ptr0 = passStringToWasm0(name, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.jsworld_pool_column_index(this.__wbg_ptr, pool, ptr0, len0);
+        return ret >>> 0;
+    }
+    /**
+    * @param {number} pool
+    * @param {Uint32Array} cols
+    * @param {Float32Array} fp
+    * @returns {Uint32Array}
+    */
+    pool_contact_near(pool, cols, fp) {
+        const ptr0 = passArray32ToWasm0(cols, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passArrayF32ToWasm0(fp, wasm.__wbindgen_malloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ret = wasm.jsworld_pool_contact_near(this.__wbg_ptr, pool, ptr0, len0, ptr1, len1);
+        return takeObject(ret);
+    }
+    /**
+    * @param {number} pool
+    * @param {number} slot
+    * @param {number} generation
+    * @returns {boolean}
+    */
+    pool_handle_valid(pool, slot, generation) {
+        const ret = wasm.jsworld_pool_handle_valid(this.__wbg_ptr, pool, slot, generation);
+        return ret !== 0;
+    }
+    /**
     * Register a resource with an arbitrary field list (same `spec` syntax
     * as `register_schema`). e.g. `register_resource("Time", "elapsed:f32,delta:f32")`.
     * @param {string} name
@@ -783,6 +1155,22 @@ export class JsWorld {
     add_component_bool(entity_id, generation, component_id, value) {
         const ret = wasm.jsworld_add_component_bool(this.__wbg_ptr, entity_id, generation, component_id, value);
         return ret !== 0;
+    }
+    /**
+    * Steer every live slot toward `(target_x, target_y)` when farther than
+    * `desired`, away when closer, at `speed_col` magnitude.
+    * @param {number} pool
+    * @param {number} x
+    * @param {number} y
+    * @param {number} vx
+    * @param {number} vy
+    * @param {number} speed_col
+    * @param {number} target_x
+    * @param {number} target_y
+    * @param {number} desired
+    */
+    pool_keep_distance(pool, x, y, vx, vy, speed_col, target_x, target_y, desired) {
+        wasm.jsworld_pool_keep_distance(this.__wbg_ptr, pool, x, y, vx, vy, speed_col, target_x, target_y, desired);
     }
     /**
     * Spawn an empty entity (no components). Returns the entity ID.
@@ -902,6 +1290,31 @@ export class JsWorld {
         }
     }
     /**
+    * Fill the pool's instance buffer and return a view over it. Pass
+    * `scale_col` = -1 to use `scale_const` for every entity. With `cull` set,
+    * anything outside the rectangle produces no instance at all.
+    * @param {number} pool
+    * @param {number} x
+    * @param {number} y
+    * @param {number} scale_col
+    * @param {number} scale_const
+    * @param {number} u0
+    * @param {number} v0
+    * @param {number} u1
+    * @param {number} v1
+    * @param {number} alpha
+    * @param {boolean} cull
+    * @param {number} min_x
+    * @param {number} min_y
+    * @param {number} max_x
+    * @param {number} max_y
+    * @returns {Float32Array}
+    */
+    pool_write_instances(pool, x, y, scale_col, scale_const, u0, v0, u1, v1, alpha, cull, min_x, min_y, max_x, max_y) {
+        const ret = wasm.jsworld_pool_write_instances(this.__wbg_ptr, pool, x, y, scale_col, scale_const, u0, v0, u1, v1, alpha, cull, min_x, min_y, max_x, max_y);
+        return takeObject(ret);
+    }
+    /**
     * "swarm" brain (bat/rat_swarm/etc.) — orbits a slowly-breathing radius
     * around the player, mirrors index.html's formula exactly. `swarm_phase`
     * is the caller-owned accumulator (JS's `e.swarmPhase`, advanced by
@@ -1015,6 +1428,31 @@ export class JsWorld {
         return ret;
     }
     /**
+    * Fill the pool's instance buffer with per-entity atlas rectangles and
+    * return a view over it. `rot_col`/`alpha_col` of `-1` fall back to no
+    * rotation / fully opaque, same convention as `scale_col` above.
+    * @param {number} pool
+    * @param {number} x
+    * @param {number} y
+    * @param {number} scale_col
+    * @param {number} u0_col
+    * @param {number} v0_col
+    * @param {number} u1_col
+    * @param {number} v1_col
+    * @param {number} rot_col
+    * @param {number} alpha_col
+    * @param {boolean} cull
+    * @param {number} min_x
+    * @param {number} min_y
+    * @param {number} max_x
+    * @param {number} max_y
+    * @returns {Float32Array}
+    */
+    pool_write_instances_uv(pool, x, y, scale_col, u0_col, v0_col, u1_col, v1_col, rot_col, alpha_col, cull, min_x, min_y, max_x, max_y) {
+        const ret = wasm.jsworld_pool_write_instances_uv(this.__wbg_ptr, pool, x, y, scale_col, u0_col, v0_col, u1_col, v1_col, rot_col, alpha_col, cull, min_x, min_y, max_x, max_y);
+        return takeObject(ret);
+    }
+    /**
     * Same as `write_instances`, but only for entities inside the given world
     * rectangle. Everything off-screen costs one comparison and nothing else:
     * no instance, no upload, no pixels. Returns a view over WASM memory —
@@ -1063,6 +1501,18 @@ export class JsWorld {
     get_y(entity_id, generation, component_id) {
         const ret = wasm.jsworld_get_y(this.__wbg_ptr, entity_id, generation, component_id);
         return ret;
+    }
+    /**
+    * Turn a content string into a stable number, and back. Interning is
+    * what lets `weaponId`, sprite names and colours live in a column.
+    * @param {string} name
+    * @returns {number}
+    */
+    intern(name) {
+        const ptr0 = passStringToWasm0(name, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.jsworld_intern(this.__wbg_ptr, ptr0, len0);
+        return ret >>> 0;
     }
     /**
     * @param {number} entity_id
@@ -1197,6 +1647,31 @@ export class JsWorld {
         wasm.jsworld_set_bool(this.__wbg_ptr, entity_id, generation, component_id, byte_offset, value);
     }
     /**
+    * @param {number} pool
+    * @param {number} slot
+    * @returns {boolean}
+    */
+    pool_free(pool, slot) {
+        const ret = wasm.jsworld_pool_free(this.__wbg_ptr, pool, slot);
+        return ret !== 0;
+    }
+    /**
+    * One past the highest slot ever used — the range every kernel sweeps.
+    * @param {number} pool
+    * @returns {number}
+    */
+    pool_high(pool) {
+        const ret = wasm.jsworld_pool_high(this.__wbg_ptr, pool);
+        return ret >>> 0;
+    }
+    /**
+    * @param {number} pool
+    * @param {number} slot
+    */
+    pool_park(pool, slot) {
+        wasm.jsworld_pool_park(this.__wbg_ptr, pool, slot);
+    }
+    /**
     * Run only the named stage's systems once.
     * @param {string} stage_name
     */
@@ -1264,6 +1739,10 @@ function __wbg_get_imports() {
     imports.wbg.__wbindgen_object_drop_ref = function(arg0) {
         takeObject(arg0);
     };
+    imports.wbg.__wbindgen_object_clone_ref = function(arg0) {
+        const ret = getObject(arg0);
+        return addHeapObject(ret);
+    };
     imports.wbg.__wbg_new_2afb9348997957e9 = function(arg0) {
         const ret = new Uint32Array(getObject(arg0));
         return addHeapObject(ret);
@@ -1274,6 +1753,14 @@ function __wbg_get_imports() {
     };
     imports.wbg.__wbg_buffer_12d079cc21e14bdb = function(arg0) {
         const ret = getObject(arg0).buffer;
+        return addHeapObject(ret);
+    };
+    imports.wbg.__wbg_newwithbyteoffsetandlength_aa4a17c33a06e5cb = function(arg0, arg1, arg2) {
+        const ret = new Uint8Array(getObject(arg0), arg1 >>> 0, arg2 >>> 0);
+        return addHeapObject(ret);
+    };
+    imports.wbg.__wbg_newwithlength_e9b4878cebadb3d3 = function(arg0) {
+        const ret = new Uint8Array(arg0 >>> 0);
         return addHeapObject(ret);
     };
     imports.wbg.__wbg_newwithbyteoffsetandlength_3125852e5a7fbcff = function(arg0, arg1, arg2) {
@@ -1306,6 +1793,9 @@ function __wbg_get_imports() {
         const ret = getObject(arg0).length;
         return ret;
     };
+    imports.wbg.__wbg_setindex_e8a148aab2078037 = function(arg0, arg1, arg2) {
+        getObject(arg0)[arg1 >>> 0] = arg2;
+    };
     imports.wbg.__wbindgen_memory = function() {
         const ret = wasm.memory;
         return addHeapObject(ret);
@@ -1324,6 +1814,7 @@ function __wbg_init_memory(imports, maybe_memory) {
 function __wbg_finalize_init(instance, module) {
     wasm = instance.exports;
     __wbg_init.__wbindgen_wasm_module = module;
+    cachedFloat32Memory0 = null;
     cachedInt32Memory0 = null;
     cachedUint32Memory0 = null;
     cachedUint8Memory0 = null;
@@ -1410,6 +1901,61 @@ function writeInstancesInView(halfSize, u0, v0, u1, v1, alpha, minX, minY, maxX,
         return new Float32Array(0);
     return world.write_instances_in_view(posComponentId, halfSize, u0, v0, u1, v1, alpha, minX, minY, maxX, maxY);
 }
+const poolCreate = (name, capacity) => world ? world.pool_create(name, capacity) : -1;
+const poolAddF32 = (pool, name) => world ? world.pool_add_f32(pool, name) : -1;
+const poolAddU32 = (pool, name) => world ? world.pool_add_u32(pool, name) : -1;
+const poolColumnIndex = (pool, name) => world ? world.pool_column_index(pool, name) : -1;
+const poolColumnF32 = (pool, col) => world ? world.pool_column_f32(pool, col) : new Float32Array(0);
+const poolColumnU32 = (pool, col) => world ? world.pool_column_u32(pool, col) : new Uint32Array(0);
+const poolAlive = (pool) => world ? world.pool_alive(pool) : new Uint8Array(0);
+const poolAlloc = (pool) => (world ? world.pool_alloc(pool) : -1);
+const poolFree = (pool, slot) => world ? world.pool_free(pool, slot) : false;
+const poolGeneration = (pool, slot) => world ? world.pool_generation(pool, slot) : 0;
+const poolHandleValid = (pool, slot, generation) => world ? world.pool_handle_valid(pool, slot, generation) : false;
+const poolGenerations = (pool) => world ? world.pool_generations(pool) : new Uint32Array(0);
+const poolInitGrid = (pool, minX, minY, width, height, cell) => { if (world)
+    world.pool_init_grid(pool, minX, minY, width, height, cell); };
+const poolBuildGrid = (pool, x, y) => {
+    if (world)
+        world.pool_build_grid(pool, x, y);
+};
+const poolQueryNear = (pool, x, y, px, py, radius) => world ? world.pool_query_near(pool, x, y, px, py, radius) : new Uint32Array(0);
+const poolEnemyStep = (pool, cols, fp, up) => world ? world.pool_enemy_step(pool, cols, fp, up) : new Uint32Array(0);
+const poolEnemyRest = (pool) => world ? world.pool_enemy_rest(pool) : new Uint32Array(0);
+const poolDespawnFar = (pool, cols, fp) => world ? world.pool_despawn_far(pool, cols, fp) : new Uint32Array(0);
+const poolCountFlag = (pool, col) => world ? world.pool_count_flag(pool, col) : -1;
+const poolContactNear = (pool, cols, fp) => world ? world.pool_contact_near(pool, cols, fp) : new Uint32Array(0);
+const poolImpactStep = (pool, cols, fp) => world ? world.pool_impact_step(pool, cols, fp) : new Uint32Array(0);
+const poolProject = (pool, cols, fp) => { if (world)
+    world.pool_project(pool, cols, fp); };
+const poolUnproject = (pool, cols) => { if (world)
+    world.pool_unproject(pool, cols); };
+const intern = (name) => (world ? world.intern(name) : 0);
+const internResolve = (id) => (world ? world.intern_resolve(id) : '');
+const internCount = () => (world ? world.intern_count() : 0);
+const poolClear = (pool) => { if (world)
+    world.pool_clear(pool); };
+const poolPark = (pool, slot) => { if (world)
+    world.pool_park(pool, slot); };
+const poolUnpark = (pool, slot) => { if (world)
+    world.pool_unpark(pool, slot); };
+const poolHigh = (pool) => (world ? world.pool_high(pool) : 0);
+const poolCount = (pool) => (world ? world.pool_count(pool) : 0);
+const poolCapacity = (pool) => (world ? world.pool_capacity(pool) : 0);
+const poolIntegrate = (pool, x, y, vx, vy, dt) => { if (world)
+    world.pool_integrate(pool, x, y, vx, vy, dt); };
+const poolWriteInstances = (pool, x, y, scaleCol, scaleConst, u0, v0, u1, v1, alpha, cull, minX, minY, maxX, maxY) => world
+    ? world.pool_write_instances(pool, x, y, scaleCol, scaleConst, u0, v0, u1, v1, alpha, cull, minX, minY, maxX, maxY)
+    : new Float32Array(0);
+const poolWriteInstancesUv = (pool, x, y, scaleCol, u0Col, v0Col, u1Col, v1Col, rotCol, alphaCol, cull, minX, minY, maxX, maxY) => world
+    ? world.pool_write_instances_uv(pool, x, y, scaleCol, u0Col, v0Col, u1Col, v1Col, rotCol, alphaCol, cull, minX, minY, maxX, maxY)
+    : new Float32Array(0);
+const poolChase = (pool, x, y, vx, vy, speedCol, targetX, targetY) => { if (world)
+    world.pool_chase(pool, x, y, vx, vy, speedCol, targetX, targetY); };
+const poolKeepDistance = (pool, x, y, vx, vy, speedCol, targetX, targetY, desired) => { if (world)
+    world.pool_keep_distance(pool, x, y, vx, vy, speedCol, targetX, targetY, desired); };
+const poolSwarm = (pool, x, y, vx, vy, speedCol, targetX, targetY, t, spread) => { if (world)
+    world.pool_swarm(pool, x, y, vx, vy, speedCol, targetX, targetY, t, spread); };
 function instanceFloatsPerEntity() {
     return 9;
 }
@@ -1629,6 +2175,44 @@ async function boot() {
             writeInstances,
             writeInstancesInView,
             instanceFloatsPerEntity,
+            poolCreate,
+            poolAddF32,
+            poolAddU32,
+            poolColumnIndex,
+            poolColumnF32,
+            poolColumnU32,
+            poolAlive,
+            poolAlloc,
+            poolFree,
+            poolClear,
+            poolPark,
+            poolUnpark,
+            poolGeneration,
+            poolHandleValid,
+            poolGenerations,
+            poolInitGrid,
+            poolBuildGrid,
+            poolQueryNear,
+            poolEnemyStep,
+            poolEnemyRest,
+            poolDespawnFar,
+            poolCountFlag,
+            poolContactNear,
+            poolImpactStep,
+            poolProject,
+            poolUnproject,
+            intern,
+            internResolve,
+            internCount,
+            poolHigh,
+            poolCount,
+            poolCapacity,
+            poolIntegrate,
+            poolWriteInstances,
+            poolWriteInstancesUv,
+            poolChase,
+            poolKeepDistance,
+            poolSwarm,
             initSpatialGrid,
             rebuildSpatialIndex,
             queryNear,

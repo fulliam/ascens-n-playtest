@@ -129,7 +129,9 @@
   .resource-row{display:flex; gap:10px; font-family:'JetBrains Mono',monospace; font-size:12px; flex-wrap:wrap; max-width:340px;}
   .res-chip{display:flex; align-items:center; gap:6px; background:var(--panel); border:1px solid var(--line); padding:5px 9px; border-radius:2px;}
   .val-pulse{animation:valPulse 0.3s ease-out; display:inline-block;}
+  .val-pulse-alt{animation:valPulseAlt 0.3s ease-out; display:inline-block;}
   @keyframes valPulse{0%{transform:scale(1.4); color:var(--xp);} 100%{transform:scale(1); color:inherit;}}
+  @keyframes valPulseAlt{0%{transform:scale(1.4); color:var(--xp);} 100%{transform:scale(1); color:inherit;}}
   .dot{width:8px; height:8px; border-radius:50%;}
   .res-icon{font-size:1.1em; line-height:1;}
   .timer{position:absolute; left:50%; transform:translateX(-50%); top:calc(16px + var(--safe-top));
