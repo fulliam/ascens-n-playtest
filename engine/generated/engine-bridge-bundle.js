@@ -875,6 +875,14 @@ export class JsWorld {
     }
     /**
     * @param {number} pool
+    * @param {number} min_x
+    * @param {number} min_y
+    */
+    pool_grid_origin(pool, min_x, min_y) {
+        wasm.jsworld_pool_grid_origin(this.__wbg_ptr, pool, min_x, min_y);
+    }
+    /**
+    * @param {number} pool
     * @param {Uint32Array} cols
     * @param {Float32Array} fp
     * @returns {Uint32Array}
@@ -1924,6 +1932,8 @@ const poolEnemyStep = (pool, cols, fp, up) => world ? world.pool_enemy_step(pool
 const poolEnemyRest = (pool) => world ? world.pool_enemy_rest(pool) : new Uint32Array(0);
 const poolDespawnFar = (pool, cols, fp) => world ? world.pool_despawn_far(pool, cols, fp) : new Uint32Array(0);
 const poolCountFlag = (pool, col) => world ? world.pool_count_flag(pool, col) : -1;
+const poolGridOrigin = (pool, minX, minY) => { if (world)
+    world.pool_grid_origin(pool, minX, minY); };
 const poolContactNear = (pool, cols, fp) => world ? world.pool_contact_near(pool, cols, fp) : new Uint32Array(0);
 const poolImpactStep = (pool, cols, fp) => world ? world.pool_impact_step(pool, cols, fp) : new Uint32Array(0);
 const poolProject = (pool, cols, fp) => { if (world)
@@ -2197,6 +2207,7 @@ async function boot() {
             poolEnemyRest,
             poolDespawnFar,
             poolCountFlag,
+            poolGridOrigin,
             poolContactNear,
             poolImpactStep,
             poolProject,
