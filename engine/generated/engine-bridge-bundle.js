@@ -864,6 +864,15 @@ export class JsWorld {
         return takeObject(ret);
     }
     /**
+    * Slots whose shoot cooldown elapsed during the last `pool_enemy_step`.
+    * @param {number} pool
+    * @returns {Uint32Array}
+    */
+    pool_enemy_shoot(pool) {
+        const ret = wasm.jsworld_pool_enemy_shoot(this.__wbg_ptr, pool);
+        return takeObject(ret);
+    }
+    /**
     * A view of the whole generation column, so a hot loop can check many
     * handles without a call each.
     * @param {number} pool
@@ -1930,6 +1939,7 @@ const poolBuildGrid = (pool, x, y) => {
 const poolQueryNear = (pool, x, y, px, py, radius) => world ? world.pool_query_near(pool, x, y, px, py, radius) : new Uint32Array(0);
 const poolEnemyStep = (pool, cols, fp, up) => world ? world.pool_enemy_step(pool, cols, fp, up) : new Uint32Array(0);
 const poolEnemyRest = (pool) => world ? world.pool_enemy_rest(pool) : new Uint32Array(0);
+const poolEnemyShoot = (pool) => world ? world.pool_enemy_shoot(pool) : new Uint32Array(0);
 const poolDespawnFar = (pool, cols, fp) => world ? world.pool_despawn_far(pool, cols, fp) : new Uint32Array(0);
 const poolCountFlag = (pool, col) => world ? world.pool_count_flag(pool, col) : -1;
 const poolGridOrigin = (pool, minX, minY) => { if (world)
@@ -2205,6 +2215,7 @@ async function boot() {
             poolQueryNear,
             poolEnemyStep,
             poolEnemyRest,
+            poolEnemyShoot,
             poolDespawnFar,
             poolCountFlag,
             poolGridOrigin,
