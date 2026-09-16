@@ -111,7 +111,8 @@
   #debugOverlay{position:fixed; bottom:calc(8px + var(--xp-bar-h) + var(--safe-bottom)); right:calc(8px + var(--safe-right)); z-index:9999;
     pointer-events:none; font-family:'JetBrains Mono',monospace; font-size:9px; line-height:1.4;
     color:var(--debug); background:color-mix(in srgb, var(--void) 40%, transparent); border:1px solid color-mix(in srgb, var(--debug) 20%, transparent); border-radius:6px;
-    padding:4px 7px; white-space:pre; text-shadow:none;}
+    padding:4px 7px; white-space:pre; text-shadow:none; font-variant-numeric:tabular-nums;
+    min-width:74ch; text-align:left;}
   .hud-top{position:absolute; top:0; left:0; right:0; z-index:8; display:flex; justify-content:space-between; align-items:flex-start;
     padding:calc(16px + var(--safe-top)) calc(20px + var(--safe-right)) 16px calc(20px + var(--safe-left));}
   .hud-bar-w{width:250px;}
@@ -1281,11 +1282,11 @@
   </div>
   <div class="boot-tag" id="bootTag"></div>
 </div>
-<script src="./loading.min.js?v=0.265.1"></script>
+<script src="./loading.min.js?v=0.266.3"></script>
 
-<script type="module" src="./engine/generated/engine-bridge-bundle.js?v=0.265.1"></script>
+<script type="module" src="./engine/generated/engine-bridge-bundle.js?v=0.266.3"></script>
 
-<script src="./game.min.js?v=0.265.1" defer></script>
+<script src="./game.min.js?v=0.266.3" defer></script>
 
 </body>
 </html>
