@@ -411,23 +411,64 @@
   .cell-wipe-cell{position:absolute; opacity:0; transform:scale(0.15); border-radius:1px;}
   .cell-wipe.cover .cell-wipe-cell{opacity:1; transform:scale(1); transition:transform .26s cubic-bezier(.34,1.56,.64,1), opacity .26s ease-out;}
   .cell-wipe.uncover .cell-wipe-cell{opacity:0; transform:scale(0.15); transition:transform .22s cubic-bezier(.55,0,.85,.35), opacity .22s ease-in;}
-  .shop-card{ padding:10px 9px; width:100%; display:flex; flex-direction:column; gap:8px; }
-  .shop-card.locked{ background:var(--void); border-top-color:var(--line) !important; box-shadow:none !important; cursor:not-allowed; }
-  .shop-card.locked .icon{ opacity:0.7; }
-  .shop-card.locked .name, .shop-card.locked .desc{ color:var(--dim); }
-  .shop-card:hover:not(:disabled){ transform:none !important; }
-  .shop-card-top{ display:flex; align-items:center; gap:10px; }
-  .shop-card .icon{ font-size:28px; width:42px; height:42px; flex-shrink:0; display:flex; align-items:center; justify-content:center;
-    background:var(--panel2); border:1px solid var(--line); border-radius:7px; margin-bottom:0; }
-  .shop-card-text{ min-width:0; flex:1; }
-  .shop-card .name{ font-family:'Rajdhani',sans-serif; font-weight:700; font-size:13px; margin-bottom:2px; line-height:1.1; }
-  .shop-card .desc{ font-size:10px; line-height:1.3; color:var(--dim); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-  .shop-card-bottom{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
-  .shop-card .price{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--gold); margin-top:0; font-weight:700; }
-  .shop-card .buy-btn{ width:fit-content; border:1px solid var(--gold); color:var(--gold); background:transparent; padding:5px 8px; border-radius:2px; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; margin-top:0; text-transform:uppercase; flex-shrink:0; }
-  .shop-card .buy-btn:hover:not(:disabled){ background:color-mix(in srgb, var(--gold) 15%, transparent); }
-  .shop-card .buy-btn:disabled{ opacity:0.3; cursor:not-allowed; border-color:var(--dim); color:var(--dim); }
-  #screen-shop .cards-wrap, #screen-event .cards-wrap { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; width:min(680px,94vw); max-height:62vh; overflow-y:auto; padding:4px 6px; }
+  .shop-lantern{position:absolute; inset:0; pointer-events:none; z-index:1;
+    background:radial-gradient(60% 45% at 50% 8%, color-mix(in srgb, var(--gold) 16%, transparent), transparent 70%);
+    animation:shopLantern 5.5s ease-in-out infinite;}
+  @keyframes shopLantern{0%,100%{opacity:.75;}50%{opacity:1;}}
+  .shop-counter{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:10px;}
+  .shop-chip{display:flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.4px;
+    color:var(--dim); padding:5px 12px; border:1px solid var(--line); border-radius:999px; background:var(--panel2);}
+  .shop-chip b{font-weight:700; font-size:12px;}
+  .shop-line{font-family:'Rajdhani',sans-serif; font-size:13px; letter-spacing:1px; color:var(--dim); margin-top:10px; text-align:center; max-width:min(560px,90vw);}
+  .shop-shelf{display:grid; grid-template-columns:repeat(auto-fill, minmax(296px,1fr)); gap:9px; width:min(880px,94vw);
+    max-height:58vh; overflow-y:auto; padding:6px; z-index:2;}
+  .shop-lot{position:relative; display:flex; align-items:center; gap:11px; padding:10px 12px; border-radius:12px; overflow:hidden;
+    background:linear-gradient(115deg, color-mix(in srgb, var(--panel2) 88%, transparent), var(--panel) 70%);
+    border:1px solid var(--line); border-left:3px solid var(--dim);
+    transition:transform .14s ease-out, box-shadow .14s ease-out, border-color .14s ease-out;
+    animation:shopLotIn .3s cubic-bezier(.34,1.3,.64,1) both;}
+  @keyframes shopLotIn{from{opacity:0; transform:translateY(8px) scale(.985);}to{opacity:1; transform:none;}}
+  .shop-lot::after{content:''; position:absolute; inset:0; pointer-events:none; opacity:0;
+    background:linear-gradient(105deg, transparent 35%, color-mix(in srgb, var(--text) 12%, transparent) 50%, transparent 65%);
+    transition:opacity .16s;}
+  .shop-lot:not(.sold):not(.locked):hover{transform:translateY(-2px);}
+  .shop-lot:not(.sold):not(.locked):hover::after{opacity:1;}
+  .shop-lot .lot-icon{font-size:26px; width:46px; height:46px; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    background:var(--panel2); border:1px solid var(--line); border-radius:50%;}
+  .shop-lot .lot-text{min-width:0; flex:1;}
+  .shop-lot .lot-name{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:14px; line-height:1.15; letter-spacing:.4px;}
+  .shop-lot .lot-desc{font-size:10px; line-height:1.35; color:var(--dim); margin-top:2px;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+  .shop-lot .lot-stock{font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.4px; color:var(--dim); margin-top:4px; text-transform:uppercase;}
+  .shop-lot .lot-buy{flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:3px; padding:7px 11px; cursor:pointer;
+    font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--gold); background:transparent;
+    border:1px solid var(--gold); border-radius:3px 10px 3px 10px; transition:background .14s, transform .1s;}
+  .shop-lot .lot-buy span{font-size:8px; letter-spacing:1.4px; opacity:.75; font-weight:400;}
+  .shop-lot .lot-buy:hover:not(:disabled){background:color-mix(in srgb, var(--gold) 16%, transparent);}
+  .shop-lot .lot-buy:active:not(:disabled){transform:scale(.96);}
+  .shop-lot .lot-buy:disabled{cursor:not-allowed; opacity:.35; border-color:var(--dim); color:var(--dim);}
+  .shop-lot.crystal .lot-buy{color:var(--crystal); border-color:var(--crystal);}
+  .shop-lot.crystal .lot-buy:hover:not(:disabled){background:color-mix(in srgb, var(--crystal) 16%, transparent);}
+  .shop-lot.rarity-uncommon{border-left-color:var(--xp); box-shadow:0 0 14px color-mix(in srgb, var(--xp) 12%, transparent);}
+  .shop-lot.rarity-uncommon .lot-name{color:var(--xp);}
+  .shop-lot.rarity-rare{border-left-color:var(--crystal); box-shadow:0 0 16px color-mix(in srgb, var(--crystal) 16%, transparent);}
+  .shop-lot.rarity-rare .lot-name{color:var(--crystal);}
+  .shop-lot.rarity-legendary{border-left-color:var(--gold); box-shadow:0 0 20px color-mix(in srgb, var(--gold) 20%, transparent);}
+  .shop-lot.rarity-legendary .lot-name{color:var(--gold);}
+  .shop-lot.rarity-legendary .lot-icon{border-color:color-mix(in srgb, var(--gold) 60%, var(--line));}
+  .shop-lot.sold{opacity:.55;}
+  .shop-lot.sold .lot-icon{filter:grayscale(1);}
+  .shop-lot.locked{background:var(--void); border-left-color:var(--line); cursor:not-allowed;}
+  .shop-lot.locked .lot-name, .shop-lot.locked .lot-desc{color:var(--dim);}
+  .shop-lot .lot-stamp{position:absolute; right:-26px; top:12px; transform:rotate(14deg); z-index:2;
+    font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:2px; padding:3px 30px;
+    border-top:1px solid var(--dim); border-bottom:1px solid var(--dim); color:var(--dim); background:color-mix(in srgb, var(--void) 70%, transparent);}
+  .shop-empty{grid-column:1/-1; text-align:center; font-family:'Rajdhani',sans-serif; color:var(--dim); font-size:14px; padding:26px 0;}
+  @media (max-width:640px){
+    .shop-shelf{grid-template-columns:1fr; max-height:none;}
+    .shop-lot .lot-buy{min-height:44px;}
+  }
+  #screen-event .cards-wrap { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; width:min(680px,94vw); max-height:62vh; overflow-y:auto; padding:4px 6px; }
   .stats-grid{display:grid; grid-template-columns:1fr; align-content:start; gap:9px 40px; width:440px; height:480px; max-height:70vh; max-height:70dvh; margin:22px 0; z-index:2; overflow-y:auto; padding:0 20px;}
   .stat-row{display:flex; justify-content:space-between; gap:10px; font-family:'JetBrains Mono',monospace; font-size:13px; border-bottom:1px solid var(--line); padding-bottom:6px;}
   .stat-row .k{white-space:nowrap;}
@@ -764,7 +805,7 @@
     .stats-grid, .ach-wrap{grid-template-columns:1fr;} .hud-top{padding:calc(54px + var(--safe-top)) calc(12px + var(--safe-right)) 10px calc(12px + var(--safe-left));}
     .hud-bar-w{width:170px;} .resource-row{gap:6px; font-size:10.5px; max-width:180px;}
     .timer{font-size:18px; top:calc(10px + var(--safe-top));}
-    #screen-shop .cards-wrap, #screen-event .cards-wrap{grid-template-columns:repeat(2, 1fr);}
+    #screen-event .cards-wrap{grid-template-columns:repeat(2, 1fr);}
     .pause-hint{width:44px; height:44px; padding:0;}
     .hud-action-panel{gap:6px;}
     .lvl-chip{width:44px; height:44px; margin-right:6px;}
@@ -798,7 +839,7 @@
     .settings-wrap{height:auto; max-height:none; overflow:visible; padding-right:0;}
     .stats-grid{height:auto; max-height:none; overflow:visible;}
     .ach-wrap{max-height:none; overflow:visible;}
-    .cards-wrap, #screen-shop .cards-wrap, #screen-event .cards-wrap{max-height:none; overflow:visible;}
+    .cards-wrap, #screen-event .cards-wrap{max-height:none; overflow:visible;}
     .mm-legend, .mm-hint{display:none;}
   }
   @media (max-width:560px){
@@ -929,7 +970,6 @@
         <div class="pause-hint" id="fullscreenBtnHud" style="pointer-events:auto;" title="Fullscreen"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></div>
         <div class="pause-hint" id="pauseBtn" style="pointer-events:auto;" title="Pause"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></div>
         <div class="pause-hint" id="statsBtnHud" style="pointer-events:auto;" title="Character Stats"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M5 19V13M12 19V8M19 19V4"/></svg></div>
-        <div class="pause-hint" id="shopBtnHud" style="pointer-events:auto;" title="In-Game Shop"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg></div>
         <div class="pause-hint hidden" id="fusionBtnHud" style="pointer-events:auto;" title="Weapon Fusion Ready"><svg class="ui-icon" viewBox="0 0 24 24"><circle cx="9" cy="12" r="6.5"/><circle cx="15" cy="12" r="6.5"/></svg></div>
       </div>
     </div>
@@ -1001,11 +1041,17 @@
 
   <div class="screen hidden" id="screen-shop">
     <div class="veil"></div>
-    <div class="title-wrap" style="margin-bottom:22px;"><div class="kicker">spend your gold</div><div class="title" style="font-size:36px;">RUNE SHOP</div>
-      <div class="subtitle" style="margin-top:8px;">Gold: <span id="shopGoldDisplay" style="color:var(--gold); font-weight:700;">0</span> · Crystals: <span id="shopCrystalDisplay" style="color:var(--crystal); font-weight:700;">0</span> · HP: <span id="shopHpDisplay" style="color:var(--hp); font-weight:700;">0/0</span></div>
+    <div class="shop-lantern"></div>
+    <div class="title-wrap" style="margin-bottom:12px;"><div class="kicker" id="shopKicker">the merchant sets up</div><div class="title" style="font-size:36px;">RUNE SHOP</div>
+      <div class="shop-counter">
+        <div class="shop-chip">GOLD <b id="shopGoldDisplay" style="color:var(--gold)">0</b></div>
+        <div class="shop-chip">CRYSTALS <b id="shopCrystalDisplay" style="color:var(--crystal)">0</b></div>
+        <div class="shop-chip">HP <b id="shopHpDisplay" style="color:var(--hp)">0/0</b></div>
+      </div>
+      <div class="shop-line" id="shopGreeting"></div>
     </div>
-    <div class="cards-wrap" id="shopWrap"></div>
-    <div class="back-link" id="shopBack" style="margin-top:20px;">← RESUME RUN</div>
+    <div class="shop-shelf" id="shopWrap"></div>
+    <div class="back-link" id="shopBack" style="margin-top:16px;">← RESUME RUN</div>
   </div>
 
   <div class="screen hidden" id="screen-fusion">
@@ -1069,7 +1115,6 @@
     <div class="title-wrap"><div class="title" style="font-size:42px;">PAUSED</div></div>
     <div class="menu-col">
       <button class="btn primary" id="btnResume">Resume</button>
-      <button class="btn" id="btnPauseShop">Open Shop</button>
       <button class="btn" id="btnPauseSettings">Settings</button>
       <button class="btn" id="btnQuitRun">Quit Run</button>
     </div>
@@ -1234,11 +1279,11 @@
   </div>
   <div class="boot-tag" id="bootTag"></div>
 </div>
-<script src="./loading.min.js?v=0.261.0"></script>
+<script src="./loading.min.js?v=0.262.0"></script>
 
-<script type="module" src="./engine/generated/engine-bridge-bundle.js?v=0.261.0"></script>
+<script type="module" src="./engine/generated/engine-bridge-bundle.js?v=0.262.0"></script>
 
-<script src="./game.min.js?v=0.261.0" defer></script>
+<script src="./game.min.js?v=0.262.0" defer></script>
 
 </body>
 </html>
