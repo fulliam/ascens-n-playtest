@@ -1438,10 +1438,12 @@ export class JsWorld {
     * @param {boolean} turret_mode_active
     * @param {number} momentum_mult_soft_start
     * @param {number} momentum_mult_k
+    * @param {number} berserk_mult_soft_start
+    * @param {number} berserk_mult_k
     * @returns {number}
     */
-    damage_multiplier_chain(base_dmg, is_elite_or_boss, elite_dmg_mult, enemy_slowed, dmg_to_slowed_mult, enemy_hp_fraction, execute_bonus, berserk_scaling, player_hp_fraction, momentum_per_kill, momentum_stacks, turret_mode_active, momentum_mult_soft_start, momentum_mult_k) {
-        const ret = wasm.jsworld_damage_multiplier_chain(this.__wbg_ptr, base_dmg, is_elite_or_boss, elite_dmg_mult, enemy_slowed, dmg_to_slowed_mult, enemy_hp_fraction, execute_bonus, berserk_scaling, player_hp_fraction, momentum_per_kill, momentum_stacks, turret_mode_active, momentum_mult_soft_start, momentum_mult_k);
+    damage_multiplier_chain(base_dmg, is_elite_or_boss, elite_dmg_mult, enemy_slowed, dmg_to_slowed_mult, enemy_hp_fraction, execute_bonus, berserk_scaling, player_hp_fraction, momentum_per_kill, momentum_stacks, turret_mode_active, momentum_mult_soft_start, momentum_mult_k, berserk_mult_soft_start, berserk_mult_k) {
+        const ret = wasm.jsworld_damage_multiplier_chain(this.__wbg_ptr, base_dmg, is_elite_or_boss, elite_dmg_mult, enemy_slowed, dmg_to_slowed_mult, enemy_hp_fraction, execute_bonus, berserk_scaling, player_hp_fraction, momentum_per_kill, momentum_stacks, turret_mode_active, momentum_mult_soft_start, momentum_mult_k, berserk_mult_soft_start, berserk_mult_k);
         return ret;
     }
     /**
@@ -2102,10 +2104,10 @@ function rngNextBool(chance) {
         return Math.random() < chance;
     return world.rng_next_bool(chance);
 }
-function damageMultiplierChain(baseDmg, isEliteOrBoss, eliteDmgMult, enemySlowed, dmgToSlowedMult, enemyHpFraction, executeBonus, berserkScaling, playerHpFraction, momentumPerKill, momentumStacks, turretModeActive, momentumMultSoftStart, momentumMultK) {
+function damageMultiplierChain(baseDmg, isEliteOrBoss, eliteDmgMult, enemySlowed, dmgToSlowedMult, enemyHpFraction, executeBonus, berserkScaling, playerHpFraction, momentumPerKill, momentumStacks, turretModeActive, momentumMultSoftStart, momentumMultK, berserkMultSoftStart, berserkMultK) {
     if (!world)
         return baseDmg; // caller already gates on isReady() before calling this
-    return world.damage_multiplier_chain(baseDmg, isEliteOrBoss, eliteDmgMult, enemySlowed, dmgToSlowedMult, enemyHpFraction, executeBonus, berserkScaling, playerHpFraction, momentumPerKill, momentumStacks, turretModeActive, momentumMultSoftStart, momentumMultK);
+    return world.damage_multiplier_chain(baseDmg, isEliteOrBoss, eliteDmgMult, enemySlowed, dmgToSlowedMult, enemyHpFraction, executeBonus, berserkScaling, playerHpFraction, momentumPerKill, momentumStacks, turretModeActive, momentumMultSoftStart, momentumMultK, berserkMultSoftStart, berserkMultK);
 }
 function queryEnemyEchoNear(x, y, radius) {
     if (!world || !enemyEchoInited || !enemyEchoIdToSlot)
