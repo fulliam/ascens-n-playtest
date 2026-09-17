@@ -111,8 +111,7 @@
   #debugOverlay{position:fixed; bottom:calc(8px + var(--xp-bar-h) + var(--safe-bottom)); right:calc(8px + var(--safe-right)); z-index:9999;
     pointer-events:none; font-family:'JetBrains Mono',monospace; font-size:9px; line-height:1.4;
     color:var(--debug); background:color-mix(in srgb, var(--void) 40%, transparent); border:1px solid color-mix(in srgb, var(--debug) 20%, transparent); border-radius:6px;
-    padding:4px 7px; white-space:pre; text-shadow:none; font-variant-numeric:tabular-nums;
-    min-width:74ch; text-align:left;}
+    padding:4px 7px; white-space:pre; text-shadow:none;}
   .hud-top{position:absolute; top:0; left:0; right:0; z-index:8; display:flex; justify-content:space-between; align-items:flex-start;
     padding:calc(16px + var(--safe-top)) calc(20px + var(--safe-right)) 16px calc(20px + var(--safe-left));}
   .hud-bar-w{width:250px;}
@@ -260,25 +259,6 @@
     font-size:12.5px; border-bottom:1px solid var(--line); padding:5px 2px;}
   .death-stats-col .stat-row .k{color:var(--dim); text-transform:uppercase; letter-spacing:1px; font-size:10.5px;}
   .death-stats-col .stat-row span:last-child{color:var(--text); font-weight:700;}
-  .killer-tag{position:absolute; left:8px; top:6px; display:flex; align-items:center; gap:6px;
-    font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1px;
-    background:rgba(8,8,14,0.72); border-radius:6px; padding:3px 8px; pointer-events:none;}
-  .killer-tag:empty{display:none;}
-  .killer-mark{font-size:13px; line-height:1;}
-  .killer-name{color:var(--text); font-weight:700;}
-  .killer-verb{color:var(--dim); text-transform:uppercase;}
-  .build-line-wrap{display:flex; flex-direction:column; gap:8px; align-items:center; width:100%; margin:6px 0 10px;}
-  .build-line{display:flex; flex-direction:column; align-items:center; gap:3px;
-    font-family:'JetBrains Mono',monospace; animation:reportRise .45s ease both;}
-  .build-kicker{color:var(--dim); text-transform:uppercase; letter-spacing:2px; font-size:10px;}
-  .build-phrase{color:var(--accent); font-weight:700; letter-spacing:1px; font-size:15px; text-align:center;}
-  .build-gap{color:var(--dim); font-size:10.5px; letter-spacing:1px; text-transform:uppercase;}
-  .death-advice{display:flex; flex-direction:column; align-items:center; gap:3px; padding:7px 14px;
-    border:1px solid var(--line); border-top:2px solid var(--hp); border-radius:8px; background:var(--panel);
-    font-family:'JetBrains Mono',monospace; animation:reportRise .45s ease .18s both;}
-  .advice-what{color:var(--hp); font-weight:700; font-size:11.5px; letter-spacing:1px;}
-  .advice-how{color:var(--text); font-size:11px; letter-spacing:.5px;}
-  @keyframes reportRise{from{opacity:0; transform:translateY(7px);} to{opacity:1; transform:none;}}
   .upgrade-cards{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; max-width:min(90vw, 860px); margin-bottom:10px;}
   .up-card{display:flex; align-items:center; gap:9px; padding:7px 11px 7px 8px; border:1px solid var(--line);
     border-top:2px solid var(--line); border-radius:8px; background:var(--panel);
@@ -343,9 +323,32 @@
   .card.rarity-legendary .rarity-label{border-color:var(--gold); color:var(--gold); background:color-mix(in srgb, var(--gold) 18%, var(--panel));}
   .card.rarity-mythic .rarity-label{border-color:var(--artifact); color:var(--artifact); background:color-mix(in srgb, var(--artifact) 18%, var(--panel)); animation:mythicLabel 2.4s ease-in-out infinite;}
   @keyframes mythicLabel{0%,100%{border-color:var(--artifact); color:var(--artifact);} 33%{border-color:var(--accent); color:var(--accent);} 66%{border-color:var(--crystal); color:var(--crystal);}}
-  .wsel{width:min(94vw,880px); margin:0 auto; padding:12px 4px 20px; display:flex; flex-direction:column; gap:16px;
+  .wsel{width:min(94vw,880px); margin:0 auto; padding:12px 4px 20px; display:flex; flex-direction:column; gap:14px;
     position:relative; z-index:2;}
-  .wsel-grid{display:grid; grid-template-columns:repeat(auto-fill,54px); gap:8px; justify-content:center;}
+  .wsel-typenav{display:flex; flex-wrap:wrap; gap:6px; justify-content:center;}
+  .wsel-typepill{font-family:'JetBrains Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.6px;
+    color:var(--dim); background:var(--panel); border:1px solid var(--line); border-radius:999px;
+    padding:6px 12px 6px 10px; cursor:pointer; display:flex; align-items:center; gap:6px;
+    transition:color .14s, border-color .14s, background .14s, transform .14s;}
+  .wsel-typepill:hover{color:var(--text); border-color:var(--dim); transform:translateY(-1px);}
+  .wsel-typepill.active{color:var(--void); background:var(--accent); border-color:var(--accent);
+    box-shadow:0 0 18px -6px var(--accent);}
+  .wsel-typepill-count{font-variant-numeric:tabular-nums; opacity:.7;}
+  .wsel-scroll-wrap{position:relative;}
+  .wsel-scroll{max-height:min(54vh,480px); overflow-y:auto; overflow-x:hidden; scroll-behavior:smooth;
+    scrollbar-width:none; padding:4px 2px 8px; display:flex; flex-direction:column; gap:18px;}
+  .wsel-scroll::-webkit-scrollbar{display:none;}
+  .wsel-fade-top, .wsel-fade-bottom{position:absolute; left:0; right:0; height:28px; pointer-events:none;
+    z-index:3; opacity:0; transition:opacity .18s;}
+  .wsel-fade-top{top:0; background:linear-gradient(180deg, var(--void), transparent);}
+  .wsel-fade-bottom{bottom:0; background:linear-gradient(0deg, var(--void), transparent);}
+  .wsel-scroll-wrap.can-scroll-up .wsel-fade-top, .wsel-scroll-wrap.can-scroll-down .wsel-fade-bottom{opacity:1;}
+  .wsel-section-head{position:sticky; top:-4px; z-index:2; background:var(--void); padding:6px 4px 8px;
+    display:flex; align-items:baseline; gap:8px; font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--dim); border-bottom:1px solid var(--line);}
+  .wsel-section-head .wsel-section-icon{font-size:13px; letter-spacing:0; text-transform:none;}
+  .wsel-section-head .wsel-section-count{margin-left:auto; opacity:.6; font-size:10px;}
+  .wsel-grid{display:grid; grid-template-columns:repeat(auto-fill,54px); gap:8px; justify-content:center; padding-top:4px;}
   .wsel-tile{position:relative; width:54px; height:54px; flex:none; padding:0; cursor:pointer;
     background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; isolation:isolate;
     display:flex; align-items:center; justify-content:center;
@@ -376,23 +379,44 @@
   .wsel-tile.wsel-tile-selected{border-color:var(--tile-color);
     box-shadow:0 0 0 2px var(--tile-color), 0 0 40px -4px var(--tile-color); transform:translateY(-3px);}
   .wsel.locked .wsel-tile:not(.wsel-tile-selected){opacity:.22; transition:opacity .3s;}
-  .wsel-tip{position:fixed; z-index:40; width:min(300px,88vw); pointer-events:none;
+  .wsel-tip{position:fixed; z-index:40; width:min(320px,90vw); pointer-events:none;
     background:var(--panel); border:1px solid var(--line); border-top:2px solid var(--tip-color,var(--accent));
-    border-radius:9px; padding:12px 14px 13px; display:flex; flex-direction:column; gap:7px;
+    border-radius:11px; padding:14px 15px 14px; display:flex; flex-direction:column; gap:9px;
     opacity:0; transform:translateY(4px); transition:opacity .12s ease-out, transform .12s ease-out;
-    box-shadow:0 14px 40px -12px #000;}
+    box-shadow:0 18px 48px -14px #000;}
   .wsel-tip.is-on{opacity:1; transform:translateY(0);}
-  .wsel-tip .wt-head{display:flex; align-items:baseline; gap:8px;}
-  .wsel-tip .wt-icon{font-size:19px; line-height:1;}
-  .wsel-tip .wt-name{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:16px; color:var(--text);}
-  .wsel-tip .wt-type{margin-left:auto; font-family:'JetBrains Mono',ui-monospace,monospace;
-    font-size:9.5px; letter-spacing:1.5px; color:var(--tip-color,var(--accent));}
+  .wsel-tip .wt-head{display:flex; align-items:center; gap:10px;}
+  .wsel-tip .wt-icon-badge{flex:none; width:40px; height:40px; border-radius:10px; display:flex;
+    align-items:center; justify-content:center; background:radial-gradient(circle at 32% 28%, var(--tip-wash,transparent), var(--panel2) 78%);
+    border:1px solid var(--tip-color,var(--accent)); box-shadow:0 0 16px -6px var(--tip-color,var(--accent));}
+  .wsel-tip .wt-icon{font-size:21px; line-height:1;}
+  .wsel-tip .wt-head-text{flex:1; min-width:0; display:flex; flex-direction:column; gap:3px;}
+  .wsel-tip .wt-name{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:17px; color:var(--text); line-height:1.1;}
+  .wsel-tip .wt-meta-row{display:flex; align-items:center; gap:6px;}
+  .wsel-tip .wt-type{font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:9.5px; letter-spacing:1.5px; color:var(--tip-color,var(--accent)); text-transform:uppercase;}
+  .wsel-tip .wt-rarity{font-family:'JetBrains Mono',ui-monospace,monospace; font-size:8px; letter-spacing:1.2px;
+    text-transform:uppercase; padding:1px 6px; border-radius:8px; border:1px solid var(--line); color:var(--dim);}
+  .wsel-tip .wt-rarity-uncommon{border-color:var(--xp); color:var(--xp);}
+  .wsel-tip .wt-rarity-rare{border-color:var(--crystal); color:var(--crystal);}
+  .wsel-tip .wt-rarity-legendary{border-color:var(--gold); color:var(--gold);}
+  .wsel-tip .wt-rarity-mythic{border-color:var(--artifact); color:var(--artifact);}
+  .wsel-tip .wt-evo-of{font-family:'JetBrains Mono',ui-monospace,monospace; font-size:10px; letter-spacing:.5px;
+    color:var(--dim); display:flex; align-items:center; gap:5px;}
+  .wsel-tip .wt-evo-of b{color:var(--tip-color,var(--accent)); font-weight:600;}
   .wsel-tip .wt-tags{display:flex; flex-wrap:wrap; gap:5px;}
   .wsel-tip .wt-tag{font-family:'JetBrains Mono',ui-monospace,monospace; font-size:9px; letter-spacing:.8px;
     color:var(--dim); border:1px solid var(--line); border-radius:9px; padding:1px 6px;}
-  .wsel-tip .wt-blurb{font-size:12px; color:var(--text); line-height:1.45;}
-  .wsel-tip .wt-stats{font-family:'JetBrains Mono',ui-monospace,monospace; font-size:10px;
-    color:var(--dim); line-height:1.5;}
+  .wsel-tip .wt-blurb{font-size:12.5px; color:var(--text); line-height:1.48;
+    background:var(--panel2); border-left:2px solid var(--tip-color,var(--accent)); border-radius:0 6px 6px 0;
+    padding:6px 9px;}
+  .wsel-tip .wt-statgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(62px,1fr)); gap:5px;}
+  .wsel-tip .wt-stat{background:var(--panel2); border:1px solid var(--line); border-radius:6px;
+    padding:4px 6px; display:flex; flex-direction:column; gap:1px;}
+  .wsel-tip .wt-stat-label{font-family:'JetBrains Mono',ui-monospace,monospace; font-size:8px;
+    letter-spacing:1px; color:var(--dim); text-transform:uppercase;}
+  .wsel-tip .wt-stat-val{font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12.5px;
+    color:var(--text); font-weight:600; font-variant-numeric:tabular-nums;}
   .wsel-tip .wt-gate{display:flex; align-items:baseline; gap:7px; padding-top:8px;
     border-top:1px dotted var(--line);
     font-family:'JetBrains Mono',ui-monospace,monospace; font-size:10px; letter-spacing:.4px; color:var(--warning);}
@@ -412,64 +436,23 @@
   .cell-wipe-cell{position:absolute; opacity:0; transform:scale(0.15); border-radius:1px;}
   .cell-wipe.cover .cell-wipe-cell{opacity:1; transform:scale(1); transition:transform .26s cubic-bezier(.34,1.56,.64,1), opacity .26s ease-out;}
   .cell-wipe.uncover .cell-wipe-cell{opacity:0; transform:scale(0.15); transition:transform .22s cubic-bezier(.55,0,.85,.35), opacity .22s ease-in;}
-  .shop-lantern{position:absolute; inset:0; pointer-events:none; z-index:1;
-    background:radial-gradient(60% 45% at 50% 8%, color-mix(in srgb, var(--gold) 16%, transparent), transparent 70%);
-    animation:shopLantern 5.5s ease-in-out infinite;}
-  @keyframes shopLantern{0%,100%{opacity:.75;}50%{opacity:1;}}
-  .shop-counter{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:10px;}
-  .shop-chip{display:flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.4px;
-    color:var(--dim); padding:5px 12px; border:1px solid var(--line); border-radius:999px; background:var(--panel2);}
-  .shop-chip b{font-weight:700; font-size:12px;}
-  .shop-line{font-family:'Rajdhani',sans-serif; font-size:13px; letter-spacing:1px; color:var(--dim); margin-top:10px; text-align:center; max-width:min(560px,90vw);}
-  .shop-shelf{display:grid; grid-template-columns:repeat(auto-fill, minmax(296px,1fr)); gap:9px; width:min(880px,94vw);
-    max-height:58vh; overflow-y:auto; padding:6px; z-index:2;}
-  .shop-lot{position:relative; display:flex; align-items:center; gap:11px; padding:10px 12px; border-radius:12px; overflow:hidden;
-    background:linear-gradient(115deg, color-mix(in srgb, var(--panel2) 88%, transparent), var(--panel) 70%);
-    border:1px solid var(--line); border-left:3px solid var(--dim);
-    transition:transform .14s ease-out, box-shadow .14s ease-out, border-color .14s ease-out;
-    animation:shopLotIn .3s cubic-bezier(.34,1.3,.64,1) both;}
-  @keyframes shopLotIn{from{opacity:0; transform:translateY(8px) scale(.985);}to{opacity:1; transform:none;}}
-  .shop-lot::after{content:''; position:absolute; inset:0; pointer-events:none; opacity:0;
-    background:linear-gradient(105deg, transparent 35%, color-mix(in srgb, var(--text) 12%, transparent) 50%, transparent 65%);
-    transition:opacity .16s;}
-  .shop-lot:not(.sold):not(.locked):hover{transform:translateY(-2px);}
-  .shop-lot:not(.sold):not(.locked):hover::after{opacity:1;}
-  .shop-lot .lot-icon{font-size:26px; width:46px; height:46px; flex-shrink:0; display:flex; align-items:center; justify-content:center;
-    background:var(--panel2); border:1px solid var(--line); border-radius:50%;}
-  .shop-lot .lot-text{min-width:0; flex:1;}
-  .shop-lot .lot-name{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:14px; line-height:1.15; letter-spacing:.4px;}
-  .shop-lot .lot-desc{font-size:10px; line-height:1.35; color:var(--dim); margin-top:2px;
-    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
-  .shop-lot .lot-stock{font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.4px; color:var(--dim); margin-top:4px; text-transform:uppercase;}
-  .shop-lot .lot-buy{flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:3px; padding:7px 11px; cursor:pointer;
-    font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--gold); background:transparent;
-    border:1px solid var(--gold); border-radius:3px 10px 3px 10px; transition:background .14s, transform .1s;}
-  .shop-lot .lot-buy span{font-size:8px; letter-spacing:1.4px; opacity:.75; font-weight:400;}
-  .shop-lot .lot-buy:hover:not(:disabled){background:color-mix(in srgb, var(--gold) 16%, transparent);}
-  .shop-lot .lot-buy:active:not(:disabled){transform:scale(.96);}
-  .shop-lot .lot-buy:disabled{cursor:not-allowed; opacity:.35; border-color:var(--dim); color:var(--dim);}
-  .shop-lot.crystal .lot-buy{color:var(--crystal); border-color:var(--crystal);}
-  .shop-lot.crystal .lot-buy:hover:not(:disabled){background:color-mix(in srgb, var(--crystal) 16%, transparent);}
-  .shop-lot.rarity-uncommon{border-left-color:var(--xp); box-shadow:0 0 14px color-mix(in srgb, var(--xp) 12%, transparent);}
-  .shop-lot.rarity-uncommon .lot-name{color:var(--xp);}
-  .shop-lot.rarity-rare{border-left-color:var(--crystal); box-shadow:0 0 16px color-mix(in srgb, var(--crystal) 16%, transparent);}
-  .shop-lot.rarity-rare .lot-name{color:var(--crystal);}
-  .shop-lot.rarity-legendary{border-left-color:var(--gold); box-shadow:0 0 20px color-mix(in srgb, var(--gold) 20%, transparent);}
-  .shop-lot.rarity-legendary .lot-name{color:var(--gold);}
-  .shop-lot.rarity-legendary .lot-icon{border-color:color-mix(in srgb, var(--gold) 60%, var(--line));}
-  .shop-lot.sold{opacity:.55;}
-  .shop-lot.sold .lot-icon{filter:grayscale(1);}
-  .shop-lot.locked{background:var(--void); border-left-color:var(--line); cursor:not-allowed;}
-  .shop-lot.locked .lot-name, .shop-lot.locked .lot-desc{color:var(--dim);}
-  .shop-lot .lot-stamp{position:absolute; right:-26px; top:12px; transform:rotate(14deg); z-index:2;
-    font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:2px; padding:3px 30px;
-    border-top:1px solid var(--dim); border-bottom:1px solid var(--dim); color:var(--dim); background:color-mix(in srgb, var(--void) 70%, transparent);}
-  .shop-empty{grid-column:1/-1; text-align:center; font-family:'Rajdhani',sans-serif; color:var(--dim); font-size:14px; padding:26px 0;}
-  @media (max-width:640px){
-    .shop-shelf{grid-template-columns:1fr; max-height:none;}
-    .shop-lot .lot-buy{min-height:44px;}
-  }
-  #screen-event .cards-wrap { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; width:min(680px,94vw); max-height:62vh; overflow-y:auto; padding:4px 6px; }
+  .shop-card{ padding:10px 9px; width:100%; display:flex; flex-direction:column; gap:8px; }
+  .shop-card.locked{ background:var(--void); border-top-color:var(--line) !important; box-shadow:none !important; cursor:not-allowed; }
+  .shop-card.locked .icon{ opacity:0.7; }
+  .shop-card.locked .name, .shop-card.locked .desc{ color:var(--dim); }
+  .shop-card:hover:not(:disabled){ transform:none !important; }
+  .shop-card-top{ display:flex; align-items:center; gap:10px; }
+  .shop-card .icon{ font-size:28px; width:42px; height:42px; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    background:var(--panel2); border:1px solid var(--line); border-radius:7px; margin-bottom:0; }
+  .shop-card-text{ min-width:0; flex:1; }
+  .shop-card .name{ font-family:'Rajdhani',sans-serif; font-weight:700; font-size:13px; margin-bottom:2px; line-height:1.1; }
+  .shop-card .desc{ font-size:10px; line-height:1.3; color:var(--dim); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .shop-card-bottom{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .shop-card .price{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--gold); margin-top:0; font-weight:700; }
+  .shop-card .buy-btn{ width:fit-content; border:1px solid var(--gold); color:var(--gold); background:transparent; padding:5px 8px; border-radius:2px; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; margin-top:0; text-transform:uppercase; flex-shrink:0; }
+  .shop-card .buy-btn:hover:not(:disabled){ background:color-mix(in srgb, var(--gold) 15%, transparent); }
+  .shop-card .buy-btn:disabled{ opacity:0.3; cursor:not-allowed; border-color:var(--dim); color:var(--dim); }
+  #screen-shop .cards-wrap, #screen-event .cards-wrap { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; width:min(680px,94vw); max-height:62vh; overflow-y:auto; padding:4px 6px; }
   .stats-grid{display:grid; grid-template-columns:1fr; align-content:start; gap:9px 40px; width:440px; height:480px; max-height:70vh; max-height:70dvh; margin:22px 0; z-index:2; overflow-y:auto; padding:0 20px;}
   .stat-row{display:flex; justify-content:space-between; gap:10px; font-family:'JetBrains Mono',monospace; font-size:13px; border-bottom:1px solid var(--line); padding-bottom:6px;}
   .stat-row .k{white-space:nowrap;}
@@ -738,8 +721,6 @@
   @keyframes bwFade{0%{opacity:0;} 8%{opacity:1;} 85%{opacity:1;} 100%{opacity:0;}}
   @keyframes bwPulse{0%,100%{opacity:0.5;} 50%{opacity:1;}}
   .elite-toast{border-color:var(--warning) !important;} .elite-toast .t-kicker{color:var(--warning) !important;}
-  .danger-toast{border-color:var(--hp) !important;} .danger-toast .t-kicker{color:var(--hp) !important;}
-  .trial-toast{border-color:var(--crystal) !important;} .trial-toast .t-kicker{color:var(--crystal) !important;}
   .event-toast .t-name{max-width:280px; white-space:normal; line-height:1.3;}
   #screen-victory .title{background:linear-gradient(180deg,var(--text),var(--victoryGold) 140%); -webkit-background-clip:text; background-clip:text; color:transparent;}
   #screen-death .title{background:linear-gradient(180deg,var(--text),var(--hp) 140%); -webkit-background-clip:text; background-clip:text; color:transparent;}
@@ -808,7 +789,7 @@
     .stats-grid, .ach-wrap{grid-template-columns:1fr;} .hud-top{padding:calc(54px + var(--safe-top)) calc(12px + var(--safe-right)) 10px calc(12px + var(--safe-left));}
     .hud-bar-w{width:170px;} .resource-row{gap:6px; font-size:10.5px; max-width:180px;}
     .timer{font-size:18px; top:calc(10px + var(--safe-top));}
-    #screen-event .cards-wrap{grid-template-columns:repeat(2, 1fr);}
+    #screen-shop .cards-wrap, #screen-event .cards-wrap{grid-template-columns:repeat(2, 1fr);}
     .pause-hint{width:44px; height:44px; padding:0;}
     .hud-action-panel{gap:6px;}
     .lvl-chip{width:44px; height:44px; margin-right:6px;}
@@ -842,7 +823,7 @@
     .settings-wrap{height:auto; max-height:none; overflow:visible; padding-right:0;}
     .stats-grid{height:auto; max-height:none; overflow:visible;}
     .ach-wrap{max-height:none; overflow:visible;}
-    .cards-wrap, #screen-event .cards-wrap{max-height:none; overflow:visible;}
+    .cards-wrap, #screen-shop .cards-wrap, #screen-event .cards-wrap{max-height:none; overflow:visible;}
     .mm-legend, .mm-hint{display:none;}
   }
   @media (max-width:560px){
@@ -973,6 +954,7 @@
         <div class="pause-hint" id="fullscreenBtnHud" style="pointer-events:auto;" title="Fullscreen"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></div>
         <div class="pause-hint" id="pauseBtn" style="pointer-events:auto;" title="Pause"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></div>
         <div class="pause-hint" id="statsBtnHud" style="pointer-events:auto;" title="Character Stats"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M5 19V13M12 19V8M19 19V4"/></svg></div>
+        <div class="pause-hint" id="shopBtnHud" style="pointer-events:auto;" title="In-Game Shop"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg></div>
         <div class="pause-hint hidden" id="fusionBtnHud" style="pointer-events:auto;" title="Weapon Fusion Ready"><svg class="ui-icon" viewBox="0 0 24 24"><circle cx="9" cy="12" r="6.5"/><circle cx="15" cy="12" r="6.5"/></svg></div>
       </div>
     </div>
@@ -1034,27 +1016,13 @@
   </div>
 
 
-  <div class="screen hidden" id="screen-evochoice">
-    <div class="veil"></div>
-    <div class="title-wrap" style="margin-bottom:22px;"><div class="kicker">weapon evolution</div><div class="title" style="font-size:36px;">IT EVOLVES</div>
-      <div class="subtitle" style="margin-top:8px;"><span id="evoChoiceBaseIcon"></span> <span id="evoChoiceBaseName"></span> takes its path — the others burn away.</div>
-    </div>
-    <div class="cards-wrap" id="evoChoiceWrap"></div>
-  </div>
-
   <div class="screen hidden" id="screen-shop">
     <div class="veil"></div>
-    <div class="shop-lantern"></div>
-    <div class="title-wrap" style="margin-bottom:12px;"><div class="kicker" id="shopKicker">the merchant sets up</div><div class="title" style="font-size:36px;">RUNE SHOP</div>
-      <div class="shop-counter">
-        <div class="shop-chip">GOLD <b id="shopGoldDisplay" style="color:var(--gold)">0</b></div>
-        <div class="shop-chip">CRYSTALS <b id="shopCrystalDisplay" style="color:var(--crystal)">0</b></div>
-        <div class="shop-chip">HP <b id="shopHpDisplay" style="color:var(--hp)">0/0</b></div>
-      </div>
-      <div class="shop-line" id="shopGreeting"></div>
+    <div class="title-wrap" style="margin-bottom:22px;"><div class="kicker">spend your gold</div><div class="title" style="font-size:36px;">RUNE SHOP</div>
+      <div class="subtitle" style="margin-top:8px;">Gold: <span id="shopGoldDisplay" style="color:var(--gold); font-weight:700;">0</span> · Crystals: <span id="shopCrystalDisplay" style="color:var(--crystal); font-weight:700;">0</span> · HP: <span id="shopHpDisplay" style="color:var(--hp); font-weight:700;">0/0</span></div>
     </div>
-    <div class="shop-shelf" id="shopWrap"></div>
-    <div class="back-link" id="shopBack" style="margin-top:16px;">← RESUME RUN</div>
+    <div class="cards-wrap" id="shopWrap"></div>
+    <div class="back-link" id="shopBack" style="margin-top:20px;">← RESUME RUN</div>
   </div>
 
   <div class="screen hidden" id="screen-fusion">
@@ -1118,6 +1086,7 @@
     <div class="title-wrap"><div class="title" style="font-size:42px;">PAUSED</div></div>
     <div class="menu-col">
       <button class="btn primary" id="btnResume">Resume</button>
+      <button class="btn" id="btnPauseShop">Open Shop</button>
       <button class="btn" id="btnPauseSettings">Settings</button>
       <button class="btn" id="btnQuitRun">Quit Run</button>
     </div>
@@ -1134,7 +1103,6 @@
         <div class="replay-slot"><canvas id="victoryReplayCanvas" width="320" height="180"></canvas><div class="replay-tag">last seconds</div></div>
         <div class="death-stats-col" id="victoryStats"></div>
       </div>
-      <div class="build-line-wrap" id="victoryBuildLine"></div>
       <div class="upgrade-cards" id="victoryUpgrades"></div>
       <div class="reward-gain" id="victoryRewardGain"></div>
       <div class="menu-col"><button class="btn primary" id="btnKeepPlaying">Keep Playing</button><button class="btn" id="btnVictoryMenu">Return to Base</button></div>
@@ -1149,10 +1117,9 @@
         <div class="title" id="deathTitle" style="font-size:40px;">YOU FELL</div>
       </div>
       <div class="death-row">
-        <div class="replay-slot" id="deathReplaySlot"><canvas id="deathReplayCanvas" width="320" height="180"></canvas><div class="replay-tag">last seconds</div><div class="killer-tag" id="deathKillerTag"></div></div>
+        <div class="replay-slot" id="deathReplaySlot"><canvas id="deathReplayCanvas" width="320" height="180"></canvas><div class="replay-tag">last seconds</div></div>
         <div class="death-stats-col" id="deathStats"></div>
       </div>
-      <div class="build-line-wrap" id="deathBuildLine"></div>
       <div class="upgrade-cards" id="deathUpgrades"></div>
       <div class="reward-gain" id="runRewardGain"></div>
       <div class="menu-col"><button class="btn primary" id="btnDeathContinue">Continue</button></div>
@@ -1236,8 +1203,6 @@
         <div class="setting-row"><div><div class="s-name">Second Keyboard Player</div><div class="s-desc">Splits the keyboard: WASD stays with player 1, the arrow keys plus Enter and right Shift become player 2. Also on F2. Extra gamepads join with L1+R1 during a run.</div></div><div class="toggle-switch" id="coopKeyboardSplit"><div class="knob"></div></div></div>
       </div>
       <div class="settings-pane hidden" id="pane-video">
-        <div class="setting-row"><div><div class="s-name">Camera View</div><div class="s-desc">Top-Down looks straight down at the floor. Tilted leans it back a little. Isometric turns it 45° and drops to the classic 2:1 angle. Only the view changes — distances, ranges and hitboxes are unaffected, so it is safe to switch in the middle of a run.</div></div>
-          <div class="seg-control" id="vidCamera"><button class="seg-btn" data-val="top_down">Top-Down</button><button class="seg-btn" data-val="oblique">Tilted</button><button class="seg-btn" data-val="isometric">Isometric</button></div></div>
         <div class="setting-row"><div><div class="s-name">Graphics Quality</div><div class="s-desc">Lower settings reduce glow and particle effects.</div></div>
           <div class="seg-control" id="vidQuality"><button class="seg-btn" data-val="low">Low</button><button class="seg-btn" data-val="medium">Medium</button><button class="seg-btn" data-val="high">High</button></div></div>
         <div class="setting-row"><div><div class="s-name">Enemy Density</div><div class="s-desc">Caps how many enemies can exist at once. Independent of graphics quality — lower this only if the game is slowing down, not for a harder/easier fight.</div></div>
@@ -1282,11 +1247,11 @@
   </div>
   <div class="boot-tag" id="bootTag"></div>
 </div>
-<script src="./loading.min.js?v=0.268.0"></script>
+<script src="./loading.min.js"></script>
 
-<script type="module" src="./engine/generated/engine-bridge-bundle.js?v=0.268.0"></script>
+<script type="module" src="./engine/generated/engine-bridge-bundle.js"></script>
 
-<script src="./game.min.js?v=0.268.0" defer></script>
+<script src="./game.min.js" defer></script>
 
 </body>
 </html>
