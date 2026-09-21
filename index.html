@@ -550,6 +550,68 @@
   .item-card.rarity-legendary .item-name{color:var(--gold);}
   .item-card.rarity-mythic .item-name{color:var(--artifact);}
   .item-card.locked{opacity:0.55;}
+  .slot-grid{display:grid; gap:9px; grid-template-columns:repeat(auto-fill,minmax(84px,1fr));
+    width:min(768px,94vw); max-height:58vh; overflow-y:auto; z-index:2; padding:2px 8px 2px 0; align-content:start;}
+  .slot-grid .inv-section-title{grid-column:1/-1;}
+  .slot-grid .inv-empty{grid-column:1/-1;}
+  .inv-slot{--rar:var(--dim); position:relative; aspect-ratio:1/1; border-radius:6px;
+    border:2px solid var(--rar); background-color:var(--panel2);
+    display:grid; place-items:center; cursor:grab; touch-action:none;
+    transition:transform .12s, border-color .15s, box-shadow .15s, background-color .15s;}
+  .inv-slot:hover{transform:translateY(-2px); background-color:var(--panel);}
+  .inv-slot.rarity-uncommon{--rar:var(--xp);}
+  .inv-slot.rarity-rare{--rar:var(--crystal);}
+  .inv-slot.rarity-legendary{--rar:var(--gold);}
+  .inv-slot.rarity-mythic{--rar:var(--artifact);}
+  @supports (color: color-mix(in srgb, red 50%, blue)){
+    .inv-slot{border-color:color-mix(in srgb, var(--rar) 55%, var(--line));
+      background-color:color-mix(in srgb, var(--rar) 12%, var(--panel));}
+    .inv-slot:hover{border-color:var(--rar);
+      background-color:color-mix(in srgb, var(--rar) 22%, var(--panel));
+      box-shadow:0 0 16px color-mix(in srgb, var(--rar) 28%, transparent);}
+    .slot-badge{border-color:color-mix(in srgb, var(--rar) 42%, var(--line));}
+    .inv-slot.empty{border-color:color-mix(in srgb, var(--line) 85%, transparent);}
+  }
+  .slot-icon{font-size:32px; line-height:1; pointer-events:none;}
+  .inv-slot.labelled{align-content:center; gap:3px;}
+  .inv-slot.labelled .slot-icon{font-size:21px;}
+  .slot-label{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:10px; line-height:1.05; letter-spacing:.2px;
+    text-align:center; color:var(--text); padding:0 3px; max-height:22px; overflow:hidden; pointer-events:none;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;}
+  .slot-badge{position:absolute; right:3px; bottom:2px; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700;
+    color:var(--text); background:var(--void); border:1px solid var(--line);
+    border-radius:5px; padding:0 4px; pointer-events:none;}
+  .slot-badge.maxed{color:var(--gold); border-color:var(--gold);}
+  .slot-tag{position:absolute; left:3px; top:2px; font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:.5px;
+    color:var(--rar); pointer-events:none; text-transform:uppercase;}
+  .slot-evo{position:absolute; left:4px; bottom:2px; font-size:11px;}
+  .inv-slot.affordable{border-color:var(--gold); box-shadow:0 0 14px rgba(255,179,71,0.3);}
+  .inv-slot.affordable:hover{cursor:pointer;}
+  .inv-slot.empty{--rar:var(--line); cursor:default; border-style:dashed; background-color:transparent;}
+  .inv-slot.empty:hover{transform:none; box-shadow:none; background-color:transparent;}
+  .inv-slot.locked{opacity:.5;}
+  .inv-slot.dragging{opacity:.4; cursor:grabbing;}
+  .inv-slot.drop-target{border-color:var(--accent); box-shadow:0 0 18px rgba(185,140,255,0.45);}
+  .slot-buy{grid-column:1/-1; display:flex; justify-content:center;}
+  #loopHalted{position:fixed; inset:0; z-index:99999; display:grid; place-items:center;
+    background:rgba(8,9,13,0.93); padding:24px;}
+  #loopHalted .halt-box{max-width:min(520px,92vw); border:1px solid var(--line); border-radius:8px;
+    background:var(--panel); padding:22px 24px; display:flex; flex-direction:column; gap:10px; text-align:left;}
+  #loopHalted .halt-kicker{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:2px;
+    text-transform:uppercase; color:var(--danger);}
+  #loopHalted .halt-title{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:24px; line-height:1.1;}
+  #loopHalted .halt-body{font-size:13px; line-height:1.5; color:var(--dim);}
+  #loopHalted .halt-err{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--warning);
+    background:var(--panel2); border:1px solid var(--line); border-radius:5px; padding:8px 10px;
+    max-height:96px; overflow:auto; word-break:break-word;}
+  #loopHalted .btn{margin-top:4px; align-self:flex-start;}
+  .death-cause{display:none; align-items:baseline; gap:8px; flex-wrap:wrap; justify-content:center;
+    margin:2px 0 10px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--dim);}
+  .death-cause.shown{display:flex;}
+  .death-cause .dc-who{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:19px; color:var(--hp); letter-spacing:.3px;}
+  .death-cause .dc-who.boss{color:var(--artifact);}
+  .death-cause .dc-who.elite{color:var(--gold);}
+  .death-cause .dc-blow{color:var(--text);}
   .inv-wallet{display:flex; gap:10px; z-index:2; margin-bottom:12px; font-family:'JetBrains Mono',monospace; font-size:12px;}
   .inv-wallet span{border:1px solid var(--line); border-radius:9px; padding:3px 11px; background:var(--panel2);}
   .inv-wallet .gold{color:var(--gold);}
@@ -685,6 +747,15 @@
   #gameTooltip .tt-tier{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent); margin-top:6px;}
   #gameTooltip .tt-req{font-size:10px; color:var(--warning); margin-top:6px; line-height:1.4;}
   #gameTooltip.tt-item{max-width:288px; padding:0; border-color:var(--line); background:var(--panel);}
+  #gameTooltip.tt-item{--rar:var(--dim);}
+  #gameTooltip.tt-item .tt-hero{position:relative; overflow:hidden; height:94px; display:grid; place-items:center;
+    border-bottom:1px solid var(--line); background:var(--panel2);}
+  #gameTooltip.tt-item .tt-rays{position:absolute; width:300%; height:300%; border-radius:50%;
+    background:repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--rar) 32%, transparent) 0deg 10deg, transparent 10deg 20deg);
+    animation:ttSpin 9s linear infinite; opacity:.7; pointer-events:none;}
+  #gameTooltip.tt-item .tt-hero-icon{position:relative; font-size:44px; line-height:1;
+    filter:drop-shadow(0 0 10px color-mix(in srgb, var(--rar) 55%, transparent));}
+  @keyframes ttSpin{to{transform:rotate(360deg);}}
   #gameTooltip.tt-item .tt-head{padding:11px 13px 9px; border-bottom:1px solid var(--line); background:var(--panel2);}
   #gameTooltip.tt-item .tt-title{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:17px; letter-spacing:0.5px; line-height:1.15;}
   #gameTooltip.tt-item .tt-kind{font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim); margin-top:3px;}
@@ -695,13 +766,13 @@
   #gameTooltip.tt-item .tt-stats .sv{color:var(--text); text-align:right;}
   #gameTooltip.tt-item .tt-text{font-size:11.5px; color:var(--dim); line-height:1.45;}
   #gameTooltip.tt-item .tt-foot{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent); border-top:1px solid var(--line); padding-top:7px;}
-  #gameTooltip.tt-item.rarity-uncommon{border-color:color-mix(in srgb, var(--xp) 55%, transparent);}
+  #gameTooltip.tt-item.rarity-uncommon{border-color:color-mix(in srgb, var(--xp) 55%, transparent); --rar:var(--xp);}
   #gameTooltip.tt-item.rarity-uncommon .tt-title{color:var(--xp);}
-  #gameTooltip.tt-item.rarity-rare{border-color:color-mix(in srgb, var(--crystal) 55%, transparent);}
+  #gameTooltip.tt-item.rarity-rare{border-color:color-mix(in srgb, var(--crystal) 55%, transparent); --rar:var(--crystal);}
   #gameTooltip.tt-item.rarity-rare .tt-title{color:var(--crystal);}
-  #gameTooltip.tt-item.rarity-legendary{border-color:color-mix(in srgb, var(--gold) 55%, transparent);}
+  #gameTooltip.tt-item.rarity-legendary{border-color:color-mix(in srgb, var(--gold) 55%, transparent); --rar:var(--gold);}
   #gameTooltip.tt-item.rarity-legendary .tt-title{color:var(--gold);}
-  #gameTooltip.tt-item.rarity-mythic{border-color:color-mix(in srgb, var(--artifact) 55%, transparent);}
+  #gameTooltip.tt-item.rarity-mythic{border-color:color-mix(in srgb, var(--artifact) 55%, transparent); --rar:var(--artifact);}
   #gameTooltip.tt-item.rarity-mythic .tt-title{color:var(--artifact);}
   .item-card[data-drag]{cursor:grab; touch-action:none;}
   .item-card.dragging{opacity:0.28; cursor:grabbing;}
@@ -1268,6 +1339,7 @@
         <div class="kicker" id="deathKicker">run ended</div>
         <div class="title" id="deathTitle" style="font-size:40px;">YOU FELL</div>
       </div>
+      <div class="death-cause" id="deathCause"></div>
       <div class="death-row">
         <div class="replay-slot" id="deathReplaySlot"><canvas id="deathReplayCanvas" width="320" height="180"></canvas><div class="replay-tag">last seconds</div></div>
         <div class="death-stats-col" id="deathStats"></div>
@@ -1367,6 +1439,8 @@
           <div class="seg-control" id="vidQuality"><button class="seg-btn" data-val="low">Low</button><button class="seg-btn" data-val="medium">Medium</button><button class="seg-btn" data-val="high">High</button></div></div>
         <div class="setting-row"><div><div class="s-name">Enemy Density</div><div class="s-desc">Caps how many enemies can exist at once. Independent of graphics quality — lower this only if the game is slowing down, not for a harder/easier fight.</div></div>
           <div class="seg-control" id="vidDensity"><button class="seg-btn" data-val="low">Low</button><button class="seg-btn" data-val="medium">Medium</button><button class="seg-btn" data-val="high">High</button></div></div>
+        <div class="setting-row"><div><div class="s-name">Camera Angle</div><div class="s-desc">How the world is tilted. Top-down is flat and reads fastest; isometric and oblique tilt the plane. Movement follows the screen at any angle.</div></div>
+          <div class="seg-control" id="vidCamera"><button class="seg-btn" data-val="top_down">Top-down</button><button class="seg-btn" data-val="oblique">Oblique</button><button class="seg-btn" data-val="isometric">Isometric</button></div></div>
         <div class="setting-row"><div><div class="s-name">Screen Shake</div><div class="s-desc">Camera shake on hits and impacts.</div></div><div class="toggle-switch" id="vidShake"><div class="knob"></div></div></div>
         <div class="setting-row"><div><div class="s-name">Damage Numbers</div><div class="s-desc">Show floating damage numbers on hits.</div></div><div class="toggle-switch" id="vidDamageNumbers"><div class="knob"></div></div></div>
         <div class="setting-row"><div><div class="s-name">Reduce Flashing</div><div class="s-desc">Softer, less synchronized hit-flash when many enemies are struck at once.</div></div><div class="toggle-switch" id="vidReduceFlashing"><div class="knob"></div></div></div>
