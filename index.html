@@ -550,8 +550,8 @@
   .item-card.rarity-legendary .item-name{color:var(--gold);}
   .item-card.rarity-mythic .item-name{color:var(--artifact);}
   .item-card.locked{opacity:0.55;}
-  .slot-grid{display:grid; gap:7px; grid-template-columns:repeat(auto-fill,minmax(56px,1fr));
-    width:min(560px,94vw); max-height:58vh; overflow-y:auto; z-index:2; padding:2px 8px 2px 0; align-content:start;}
+  .slot-grid{display:grid; gap:5px; grid-template-columns:repeat(auto-fill,minmax(44px,1fr));
+    width:100%; max-height:58vh; overflow-y:auto; z-index:2; padding:2px 8px 2px 0; align-content:start;}
   .slot-grid .inv-section-title{grid-column:1/-1;}
   .slot-grid .inv-empty{grid-column:1/-1;}
   .inv-slot{--rar:var(--dim); position:relative; aspect-ratio:1/1; border-radius:6px;
@@ -573,11 +573,11 @@
 
     .inv-slot.empty{border-color:color-mix(in srgb, var(--line) 85%, transparent);}
   }
-  .slot-icon{font-size:24px; line-height:1; pointer-events:none;}
+  .slot-icon{font-size:19px; line-height:1; pointer-events:none;}
 
-  .slot-badge{position:absolute; right:2px; bottom:1px; font-family:'JetBrains Mono',monospace; font-size:8.5px; font-weight:700;
+  .slot-badge{position:absolute; right:1px; bottom:0; font-family:'JetBrains Mono',monospace; font-size:7.5px; font-weight:700;
     color:var(--text); background:var(--void); border:1px solid var(--line);
-    border-radius:4px; padding:0 3px; pointer-events:none;}
+    border-radius:3px; padding:0 2px; pointer-events:none;}
   .slot-badge.maxed{color:var(--gold); border-color:var(--gold);}
   .slot-tag{position:absolute; left:2px; top:1px; font-family:'JetBrains Mono',monospace; font-size:7px; letter-spacing:.3px;
     color:var(--rar); pointer-events:none; text-transform:uppercase;}
@@ -616,6 +616,14 @@
     border:2px solid var(--accent); box-shadow:0 0 16px color-mix(in srgb, var(--accent) 55%, transparent);}
   .hud-inv-pop.on{animation:hudInvPop .5s ease-out;}
   @keyframes hudInvPop{0%{opacity:0; transform:scale(.7);}35%{opacity:1; transform:scale(1.12);}100%{opacity:0; transform:scale(1);}}
+  .inv-panel{width:min(1180px,96vw); height:min(620px,64vh); display:flex; z-index:2;
+    border:1px solid var(--line); border-radius:6px; background:color-mix(in srgb, var(--panel) 55%, transparent);
+    padding:10px; overflow:hidden;}
+  .inv-tabs{width:min(1180px,96vw);}
+  .inv-panel > *{flex:1; min-width:0; min-height:0; width:100%; height:100%;
+    max-height:none; margin:0; overflow-y:auto;}
+  .inv-panel > .stats-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); padding:0 8px 0 0;}
+  .inv-panel > .slot-grid, .inv-panel > .item-grid{width:100%; padding:0 8px 0 0;}
   .inv-wallet{display:flex; gap:10px; z-index:2; margin-bottom:12px; font-family:'JetBrains Mono',monospace; font-size:12px;}
   .inv-wallet span{border:1px solid var(--line); border-radius:9px; padding:3px 11px; background:var(--panel2);}
   .inv-wallet .gold{color:var(--gold);}
@@ -784,6 +792,9 @@
   .item-card.drop-after{box-shadow:3px 0 0 var(--accent);}
   .item-drag-ghost{position:fixed; z-index:70; pointer-events:none; opacity:0.92; width:258px;
     transform:translate(-50%,-50%) scale(0.96); box-shadow:0 18px 44px rgba(0,0,0,0.55);}
+  .item-drag-ghost.inv-slot{width:46px; height:46px; aspect-ratio:auto;
+    transform:translate(-50%,-50%) scale(1.08);
+    box-shadow:0 10px 26px rgba(0,0,0,0.6);}
   .shop-owned{font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--dim); border:1px solid var(--line);
     border-radius:8px; padding:0 6px; margin-left:6px; vertical-align:middle;}
   .buy-btn{font-family:'JetBrains Mono',monospace; font-size:12.5px; border:1px solid var(--teal); color:var(--teal); background:transparent; padding:7px 12px; border-radius:2px; cursor:pointer; white-space:nowrap;}
@@ -1259,11 +1270,13 @@
   <div class="screen hidden" id="screen-ingame-stats">
     <div class="veil"></div>
     <div class="title-wrap" style="margin-bottom:14px;"><div class="kicker" id="invKicker">current build</div><div class="title" style="font-size:36px;" id="invTitle">CHARACTER</div></div>
-    <div class="settings-tabs" style="width:min(760px,94vw);" id="charInfoTabs"></div>
+    <div class="settings-tabs inv-tabs" id="charInfoTabs"></div>
     <div class="inv-wallet hidden" id="invWallet"></div>
-    <div class="stats-grid" id="ingameStatsGrid"></div>
-    <div class="item-grid hidden" id="inventoryGrid"></div>
-    <div class="back-link" id="statsBack" style="margin-top:20px;">← RESUME RUN</div>
+    <div class="inv-panel">
+      <div class="stats-grid" id="ingameStatsGrid"></div>
+      <div class="item-grid hidden" id="inventoryGrid"></div>
+    </div>
+    <div class="back-link" id="statsBack" style="margin-top:16px;">← RESUME RUN</div>
   </div>
 
   <div class="screen hidden" id="screen-graph">
