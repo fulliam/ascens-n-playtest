@@ -7,7 +7,7 @@
    "title": "Враги",
    "unit": "strips",
    "boot": "enemies",
-   "bake": "tools/bake-enemy-sprites.mjs",
+   "bake": "tools/art/bake-enemy-sprites.mjs",
    "cell": 48,
    "sets": {
     "slime": {
@@ -537,7 +537,7 @@
    "title": "Подбираемое",
    "unit": "frames",
    "boot": "pickups",
-   "bake": "tools/bake-pickup-gems.mjs",
+   "bake": "tools/art/bake-pickup-gems.mjs",
    "sets": {
     "coin": {
      "parts": {
@@ -630,7 +630,7 @@
    "title": "Взрывы",
    "unit": "strips",
    "load": false,
-   "bake": "tools/bake-fx-sprites.mjs",
+   "bake": "tools/art/bake-fx-sprites.mjs",
    "cell": 128,
    "orphan": "загрузчик удалён, площадные взрывы теперь берутся из атласа форм",
    "sets": {

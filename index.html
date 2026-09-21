@@ -9,7 +9,9 @@
 <meta name="theme-color" content="#08090d">
 <title>PROJECT: ASCENSION</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Exo+2:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Exo+2:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Exo+2:wght@700&display=swap" rel="stylesheet"></noscript>
 <style>
   :root{
     --void:#08090d; --panel:#12141b; --panel2:#191c26; --line:#2a2e3a; --text:#dfe3ee; --dim:#7b8194;
@@ -457,6 +459,40 @@
   .stat-row{display:flex; justify-content:space-between; gap:10px; font-family:'JetBrains Mono',monospace; font-size:13px; border-bottom:1px solid var(--line); padding-bottom:6px;}
   .stat-row .k{white-space:nowrap;}
   .stat-row .k{color:var(--dim);}
+  .saves-wrap{width:880px; max-width:94vw; max-height:56vh; overflow-y:auto; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:4px 8px 4px 0; align-content:start;}
+  .slot-card{display:flex; flex-direction:column; gap:10px; background:var(--panel); border:1px solid var(--line); border-radius:5px; padding:13px 14px; transition:border-color .15s, box-shadow .15s;}
+  .slot-card:hover{border-color:color-mix(in srgb, var(--accent) 55%, transparent);}
+  .slot-card.active{border-color:color-mix(in srgb, var(--artifact) 60%, transparent); box-shadow:0 0 26px color-mix(in srgb, var(--artifact) 7%, transparent) inset;}
+  .slot-head{display:flex; align-items:center; gap:11px;}
+  .slot-sigil{width:38px; height:38px; flex-shrink:0; display:grid; place-items:center; border:1px solid var(--line); border-radius:4px;
+    background:var(--panel2); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:13px; color:var(--accent);}
+  .slot-card.active .slot-sigil{border-color:color-mix(in srgb, var(--artifact) 60%, transparent); color:var(--artifact);}
+  .slot-id{flex:1; min-width:0;}
+  .slot-name{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:18px; letter-spacing:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .slot-name-input{width:100%; background:var(--panel2); border:1px solid var(--accent); border-radius:3px; color:var(--text);
+    font-family:'Rajdhani',sans-serif; font-weight:700; font-size:18px; letter-spacing:1px; padding:1px 6px; outline:none;}
+  .slot-when{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.5px; color:var(--dim); margin-top:2px;}
+  .slot-badge{flex-shrink:0; font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:1.5px; padding:2px 8px; border-radius:8px;
+    background:var(--artifact); color:var(--onAccent);}
+  .slot-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:6px;}
+  .slot-stat{min-width:0; background:var(--panel2); border:1px solid var(--line); border-radius:4px; padding:6px 8px;}
+  .slot-stat .k{font-family:'JetBrains Mono',monospace; font-size:8.5px; letter-spacing:1px; color:var(--dim);}
+  .slot-stat .v{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:16px; line-height:1.15; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .slot-stat.artifacts .v{color:var(--artifact);}
+  .slot-run{display:flex; align-items:center; gap:7px; font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--dim);}
+  .slot-run .dot{width:6px; height:6px; border-radius:50%; background:var(--line); flex-shrink:0;}
+  .slot-run.live{color:var(--xp);}
+  .slot-run.live .dot{background:var(--xp); box-shadow:0 0 8px var(--xp);}
+  .slot-actions{display:flex; gap:6px; margin-top:auto;}
+  .slot-actions .btn{flex:1; padding:8px 6px; font-size:12px; letter-spacing:1px; text-align:center;}
+  .slot-actions .btn::before{content:none;}
+  .slot-actions .btn.armed{border-color:var(--danger); color:var(--danger);}
+  .slot-card.new-slot{appearance:none; align-items:center; justify-content:center; gap:6px; min-height:120px; border-style:dashed; cursor:pointer;
+    color:var(--dim); font-family:'Rajdhani',sans-serif; font-weight:700; font-size:15px; letter-spacing:2px; text-transform:uppercase;}
+  .slot-card.new-slot:hover{color:var(--accent);}
+  .slot-card.new-slot .plus{font-family:'JetBrains Mono',monospace; font-size:30px; line-height:1;}
+  .saves-actions{display:flex; gap:10px; z-index:2; margin-top:16px;}
+  .saves-status{z-index:2; margin-top:10px; min-height:14px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--dim);}
   .inv-row{display:flex; align-items:flex-start; gap:10px; padding:7px 0; border-bottom:1px solid var(--line);}
   .inv-row .inv-icon{font-size:17px; width:24px; flex-shrink:0; text-align:center; line-height:1.3;}
   .inv-row .inv-body{flex:1; min-width:0;}
@@ -471,6 +507,53 @@
   .inv-section-title{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:2px; color:var(--dim); text-transform:uppercase; margin-top:14px; padding-bottom:4px; border-bottom:1px solid var(--line);}
   .inv-section-title:first-child{margin-top:0;}
   .inv-empty{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--dim); text-align:center; padding:34px 0;}
+  .item-grid{display:grid; gap:10px; grid-template-columns:repeat(auto-fill,minmax(258px,1fr)); width:min(1080px,94vw); max-height:58vh; overflow-y:auto; z-index:2; padding:2px 8px 2px 0; align-content:start;}
+  .item-grid .inv-section-title{grid-column:1/-1;}
+  .item-grid .inv-empty{grid-column:1/-1;}
+  .item-card{display:flex; flex-direction:column; gap:9px; background:var(--panel); border:1px solid var(--line); border-radius:5px; padding:12px 13px; transition:border-color .15s;}
+  .item-card:hover{border-color:color-mix(in srgb, var(--accent) 50%, transparent);}
+  .item-top{display:flex; align-items:flex-start; gap:10px;}
+  .item-icon{width:36px; height:36px; flex-shrink:0; display:grid; place-items:center; font-size:20px; line-height:1;
+    border:1px solid var(--line); border-radius:4px; background:var(--panel2);}
+  .item-id{flex:1; min-width:0;}
+  .item-name{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:16px; letter-spacing:0.5px; line-height:1.15;
+    display:flex; align-items:center; gap:6px; flex-wrap:wrap;}
+  .item-sub{font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--dim); margin-top:2px;}
+  .item-lvl{flex-shrink:0; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent);
+    border:1px solid var(--line); border-radius:9px; padding:2px 8px; background:var(--panel2);}
+  .item-lvl.maxed{color:var(--gold); border-color:color-mix(in srgb, var(--gold) 45%, transparent);}
+  .item-stack{font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--onAccent);
+    background:var(--accent); border-radius:9px; padding:1px 7px;}
+  .item-stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(72px,1fr)); gap:5px;}
+  .item-stat{background:var(--panel2); border:1px solid var(--line); border-radius:4px; padding:5px 7px; min-width:0;}
+  .item-stat .k{font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1px; color:var(--dim); white-space:nowrap;}
+  .item-stat .v{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:15px; line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .item-stat .v .to{color:var(--xp);}
+  .item-stat .v .arrow{color:var(--dim); font-size:11px; padding:0 2px;}
+  .item-desc{font-size:12px; line-height:1.45; color:var(--dim);}
+  .item-desc b{color:var(--text); font-weight:600;}
+  .delta-list{display:flex; flex-direction:column; gap:3px;}
+  .delta-row{display:grid; grid-template-columns:1fr auto auto auto auto; align-items:baseline; gap:6px;
+    background:var(--panel2); border:1px solid var(--line); border-radius:4px; padding:5px 8px;}
+  .delta-row .dk{font-family:'JetBrains Mono',monospace; font-size:8.5px; letter-spacing:1px; color:var(--dim); white-space:nowrap;}
+  .delta-row .dfrom{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:15px; color:var(--dim);}
+  .delta-row .dar{color:var(--dim); font-size:11px;}
+  .delta-row .dto{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:16px; color:var(--xp);}
+  .delta-row .dgain{font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--xp); white-space:nowrap;}
+  .stat-inline{display:flex; flex-wrap:wrap; gap:4px 12px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--dim);}
+  .stat-inline b{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:13px; color:var(--text);}
+  .item-buy{margin-top:auto; padding-top:2px;}
+  .item-buy .btn{width:100%; padding:8px 10px; font-size:12px; letter-spacing:1px; text-align:center;}
+  .item-buy .btn::before{content:none;}
+  .item-card.rarity-uncommon .item-name{color:var(--xp);}
+  .item-card.rarity-rare .item-name{color:var(--crystal);}
+  .item-card.rarity-legendary .item-name{color:var(--gold);}
+  .item-card.rarity-mythic .item-name{color:var(--artifact);}
+  .item-card.locked{opacity:0.55;}
+  .inv-wallet{display:flex; gap:10px; z-index:2; margin-bottom:12px; font-family:'JetBrains Mono',monospace; font-size:12px;}
+  .inv-wallet span{border:1px solid var(--line); border-radius:9px; padding:3px 11px; background:var(--panel2);}
+  .inv-wallet .gold{color:var(--gold);}
+  .inv-wallet .artifact{color:var(--artifact);}
   @keyframes psvSynergyPulse{0%,100%{filter:brightness(1);}50%{filter:brightness(1.7);}}
   .reward-gain{font-family:'JetBrains Mono',monospace; color:var(--teal); font-size:15px; margin-bottom:16px; z-index:2;}
   #hud.hud-timer-hidden .timer{visibility:hidden;}
@@ -601,6 +684,33 @@
   #gameTooltip .tt-desc{font-size:11px; color:var(--dim); margin-top:4px; line-height:1.4;}
   #gameTooltip .tt-tier{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent); margin-top:6px;}
   #gameTooltip .tt-req{font-size:10px; color:var(--warning); margin-top:6px; line-height:1.4;}
+  #gameTooltip.tt-item{max-width:288px; padding:0; border-color:var(--line); background:var(--panel);}
+  #gameTooltip.tt-item .tt-head{padding:11px 13px 9px; border-bottom:1px solid var(--line); background:var(--panel2);}
+  #gameTooltip.tt-item .tt-title{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:17px; letter-spacing:0.5px; line-height:1.15;}
+  #gameTooltip.tt-item .tt-kind{font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim); margin-top:3px;}
+  #gameTooltip.tt-item .tt-body{padding:10px 13px 12px; display:flex; flex-direction:column; gap:8px;}
+  #gameTooltip.tt-item .tt-stats{display:grid; grid-template-columns:auto 1fr; gap:3px 14px;
+    font-family:'JetBrains Mono',monospace; font-size:11px; font-variant-numeric:tabular-nums;}
+  #gameTooltip.tt-item .tt-stats .sk{color:var(--dim); white-space:nowrap;}
+  #gameTooltip.tt-item .tt-stats .sv{color:var(--text); text-align:right;}
+  #gameTooltip.tt-item .tt-text{font-size:11.5px; color:var(--dim); line-height:1.45;}
+  #gameTooltip.tt-item .tt-foot{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent); border-top:1px solid var(--line); padding-top:7px;}
+  #gameTooltip.tt-item.rarity-uncommon{border-color:color-mix(in srgb, var(--xp) 55%, transparent);}
+  #gameTooltip.tt-item.rarity-uncommon .tt-title{color:var(--xp);}
+  #gameTooltip.tt-item.rarity-rare{border-color:color-mix(in srgb, var(--crystal) 55%, transparent);}
+  #gameTooltip.tt-item.rarity-rare .tt-title{color:var(--crystal);}
+  #gameTooltip.tt-item.rarity-legendary{border-color:color-mix(in srgb, var(--gold) 55%, transparent);}
+  #gameTooltip.tt-item.rarity-legendary .tt-title{color:var(--gold);}
+  #gameTooltip.tt-item.rarity-mythic{border-color:color-mix(in srgb, var(--artifact) 55%, transparent);}
+  #gameTooltip.tt-item.rarity-mythic .tt-title{color:var(--artifact);}
+  .item-card[data-drag]{cursor:grab; touch-action:none;}
+  .item-card.dragging{opacity:0.28; cursor:grabbing;}
+  .item-card.drop-before{box-shadow:-3px 0 0 var(--accent);}
+  .item-card.drop-after{box-shadow:3px 0 0 var(--accent);}
+  .item-drag-ghost{position:fixed; z-index:70; pointer-events:none; opacity:0.92; width:258px;
+    transform:translate(-50%,-50%) scale(0.96); box-shadow:0 18px 44px rgba(0,0,0,0.55);}
+  .shop-owned{font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--dim); border:1px solid var(--line);
+    border-radius:8px; padding:0 6px; margin-left:6px; vertical-align:middle;}
   .buy-btn{font-family:'JetBrains Mono',monospace; font-size:12.5px; border:1px solid var(--teal); color:var(--teal); background:transparent; padding:7px 12px; border-radius:2px; cursor:pointer; white-space:nowrap;}
   .buy-btn:hover:not(:disabled){background:color-mix(in srgb, var(--teal) 10%, transparent);}
   .buy-btn:disabled{opacity:0.3; cursor:not-allowed; border-color:var(--dim); color:var(--dim);}
@@ -649,6 +759,10 @@
   .ach-desc{font-size:11px; color:var(--dim); line-height:1.35;}
   .bestiary-card{align-items:flex-start; border-left-width:3px; border-left-style:solid;}
   .bestiary-stats{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--dim); margin:2px 0 4px; letter-spacing:0.5px;}
+  .stat-chips{display:flex; flex-wrap:wrap; gap:3px 9px; margin:3px 0 5px;
+    font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:0.6px; color:var(--dim);}
+  .stat-chips b{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:13px; color:var(--text); letter-spacing:0;}
+  .card .stat-chips{justify-content:center; margin:6px 0 2px;}
   .bestiary-tag{display:inline-block; font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1px; padding:1px 5px; border-radius:2px; margin-left:6px; vertical-align:middle;}
   .ach-reward-slot{flex-shrink:0;}
   .ach-reward-chip, .ach-collect-btn{height:28px; box-sizing:border-box; display:inline-flex; align-items:center; gap:5px;}
@@ -686,6 +800,37 @@
     animation:toastIn .35s cubic-bezier(.2,.9,.3,1) forwards, toastOut .4s ease-in 3.6s forwards;}
   #charPortrait{font-size:17px; line-height:1; margin-right:2px; filter:drop-shadow(0 0 4px color-mix(in srgb, var(--accent2) 40%, transparent)); transition:transform .15s ease;}
   .settings-wrap{width:640px; max-width:92vw; height:420px; max-height:70vh; max-height:70dvh; overflow-y:auto; z-index:2; padding-right:6px;}
+  .keyboard-wrap{display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap;}
+  .keyboard{display:flex; flex-direction:column; gap:4px; flex:1; min-width:0;}
+  .arrow-cluster{display:flex; flex-direction:column; gap:4px; width:142px;}
+  .key-row{display:flex; gap:4px;}
+  .keycap{flex:1 1 0; min-width:0; height:42px; border:1px solid var(--line); border-radius:4px; background:var(--panel2);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; overflow:hidden;}
+  .keycap.ghost{background:transparent; border-color:transparent;}
+  .keycap .kc-label{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--dim); white-space:nowrap;}
+  .keycap .kc-action{font-family:'JetBrains Mono',monospace; font-size:7.5px; letter-spacing:0; color:var(--accent);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;}
+  .keycap.bound{border-color:var(--accent); background:color-mix(in srgb, var(--accent) 14%, var(--panel2));}
+  .keycap.bound .kc-label{color:var(--text);}
+  .keycap.target{animation:bindBlink .7s steps(2,start) infinite; border-color:var(--gold);}
+  @keyframes bindBlink{0%,100%{opacity:1;} 50%{opacity:0.25;}}
+  .pad-diagram{width:100%; max-width:342px; height:auto; display:block;}
+  .pad-diagram .pad-body{fill:var(--panel2); stroke:var(--line); stroke-width:2;}
+  .pad-diagram .pad-stick{fill:var(--panel); stroke:var(--line); stroke-width:2;}
+  .pad-diagram .pad-btn{fill:var(--panel); stroke:var(--line); stroke-width:1.5;}
+  .pad-diagram .pad-btn.bound{fill:color-mix(in srgb, var(--accent) 35%, var(--panel)); stroke:var(--accent);}
+  .pad-diagram .pad-btn.target{stroke:var(--gold); animation:bindBlink .7s steps(2,start) infinite;}
+  .pad-diagram .pad-label{font-family:'JetBrains Mono',monospace; font-size:8px; fill:var(--dim);}
+  .bind-list{display:grid; grid-template-columns:repeat(auto-fill,minmax(228px,1fr)); gap:6px 12px;}
+  .bind-list .inv-section-title{grid-column:1/-1;}
+  .bind-row{display:flex; align-items:center; justify-content:space-between; gap:10px;
+    border:1px solid var(--line); border-radius:4px; padding:5px 8px; background:var(--panel2);}
+  .bind-row.capturing{border-color:var(--gold);}
+  .bind-name{font-family:'Rajdhani',sans-serif; font-weight:600; font-size:13px; display:flex; align-items:center; gap:6px;}
+  .bind-custom{font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1px; color:var(--accent);
+    border:1px solid var(--line); border-radius:7px; padding:0 5px;}
+  .bind-key{flex-shrink:0; padding:5px 9px; font-size:11px; letter-spacing:0.5px; text-align:center; min-width:96px;}
+  .bind-key::before{content:none;}
   .settings-tabs{display:flex; gap:8px; margin-bottom:14px; z-index:2; flex-wrap:wrap;}
   .settings-tab{flex:1; min-width:70px; text-align:center; font-family:'Rajdhani',sans-serif; font-weight:600; font-size:13px; letter-spacing:1px;
     text-transform:uppercase; padding:9px 6px; border:1px solid var(--line); background:var(--panel); color:var(--dim); cursor:pointer; border-radius:2px; transition:border-color .15s,color .15s;}
@@ -786,7 +931,7 @@
   @media (max-width:760px), (pointer:coarse){
     .title{font-size:38px; letter-spacing:3px;} .subtitle{font-size:11px;} .menu-col{width:min(300px,84vw);}
     .btn{padding:14px 16px; font-size:15px;} .settings-wrap, .stats-grid, .ach-wrap{width:94vw;}
-    .stats-grid, .ach-wrap{grid-template-columns:1fr;} .hud-top{padding:calc(54px + var(--safe-top)) calc(12px + var(--safe-right)) 10px calc(12px + var(--safe-left));}
+    .stats-grid, .ach-wrap, .saves-wrap{grid-template-columns:1fr;} .hud-top{padding:calc(54px + var(--safe-top)) calc(12px + var(--safe-right)) 10px calc(12px + var(--safe-left));}
     .hud-bar-w{width:170px;} .resource-row{gap:6px; font-size:10.5px; max-width:180px;}
     .timer{font-size:18px; top:calc(10px + var(--safe-top));}
     #screen-shop .cards-wrap, #screen-event .cards-wrap{grid-template-columns:repeat(2, 1fr);}
@@ -974,6 +1119,7 @@
     <div class="veil"></div>
     <div class="menu-resources">
       <div class="res-chip"><span class="dot" style="background:var(--artifact)"></span><span class="lbl">ARTIFACTS</span><span id="menuArtifacts">0</span></div>
+      <div class="res-chip"><span class="dot" style="background:var(--gold)"></span><span class="lbl">GOLD</span><span id="menuGold">0</span></div>
     </div>
     <div class="title-wrap">
       <div class="kicker">he11o wor1_D</div>
@@ -988,7 +1134,10 @@
       <button class="btn" id="btnTalents">Talents <span id="talentChip" class="ach-chip"></span></button>
       <button class="btn" id="btnMetaMap">Progression Map <span id="metaMapChip" class="ach-chip"></span></button>
       <button class="btn" id="btnArmory">Armory <span id="armoryChip" class="ach-chip"></span></button>
+      <button class="btn" id="btnInventory">Inventory</button>
+      <button class="btn" id="btnShopCatalogue">Shop <span id="shopChip" class="ach-chip"></span></button>
       <button class="btn" id="btnBestiary">Codex</button>
+      <button class="btn" id="btnSaves">Saves <span id="savesChip" class="ach-chip"></span></button>
       <button class="btn" id="btnSettings">Settings</button>
     </div>
     <div class="version-tag" id="versionTag"></div>
@@ -1018,8 +1167,8 @@
 
   <div class="screen hidden" id="screen-shop">
     <div class="veil"></div>
-    <div class="title-wrap" style="margin-bottom:22px;"><div class="kicker">spend your gold</div><div class="title" style="font-size:36px;">RUNE SHOP</div>
-      <div class="subtitle" style="margin-top:8px;">Gold: <span id="shopGoldDisplay" style="color:var(--gold); font-weight:700;">0</span> · Crystals: <span id="shopCrystalDisplay" style="color:var(--crystal); font-weight:700;">0</span> · HP: <span id="shopHpDisplay" style="color:var(--hp); font-weight:700;">0/0</span></div>
+    <div class="title-wrap" style="margin-bottom:22px;"><div class="kicker" id="shopKicker">spend your gold</div><div class="title" style="font-size:36px;">RUNE SHOP</div>
+      <div class="subtitle" style="margin-top:8px;" id="shopWallet"></div>
     </div>
     <div class="cards-wrap" id="shopWrap"></div>
     <div class="back-link" id="shopBack" style="margin-top:20px;">← RESUME RUN</div>
@@ -1034,9 +1183,11 @@
 
   <div class="screen hidden" id="screen-ingame-stats">
     <div class="veil"></div>
-    <div class="title-wrap" style="margin-bottom:14px;"><div class="kicker">current build</div><div class="title" style="font-size:36px;">CHARACTER</div></div>
-    <div class="settings-tabs" style="width:min(660px,94vw);" id="charInfoTabs"></div>
+    <div class="title-wrap" style="margin-bottom:14px;"><div class="kicker" id="invKicker">current build</div><div class="title" style="font-size:36px;" id="invTitle">CHARACTER</div></div>
+    <div class="settings-tabs" style="width:min(760px,94vw);" id="charInfoTabs"></div>
+    <div class="inv-wallet hidden" id="invWallet"></div>
     <div class="stats-grid" id="ingameStatsGrid"></div>
+    <div class="item-grid hidden" id="inventoryGrid"></div>
     <div class="back-link" id="statsBack" style="margin-top:20px;">← RESUME RUN</div>
   </div>
 
@@ -1105,6 +1256,7 @@
       </div>
       <div class="upgrade-cards" id="victoryUpgrades"></div>
       <div class="reward-gain" id="victoryRewardGain"></div>
+      <div class="reward-gain" id="victoryGoldBanked" style="color:var(--gold)"></div>
       <div class="menu-col"><button class="btn primary" id="btnKeepPlaying">Keep Playing</button><button class="btn" id="btnVictoryMenu">Return to Base</button></div>
     </div>
   </div>
@@ -1122,6 +1274,7 @@
       </div>
       <div class="upgrade-cards" id="deathUpgrades"></div>
       <div class="reward-gain" id="runRewardGain"></div>
+      <div class="reward-gain" id="runGoldBanked" style="color:var(--gold)"></div>
       <div class="menu-col"><button class="btn primary" id="btnDeathContinue">Continue</button></div>
     </div>
   </div>
@@ -1200,6 +1353,13 @@
         <div class="setting-row"><div><div class="s-name">Auto-Pause</div><div class="s-desc">Pause the run automatically when you switch away from this tab or window.</div></div><div class="toggle-switch" id="ctrlAutoPause"><div class="knob"></div></div></div>
         <div class="setting-row"><div><div class="s-name">Co-op Rewards</div><div class="s-desc">Shared splits every XP, gold and crystal orb evenly across the party, so each player levels and earns at the solo pace. Separate gives the whole orb to whoever picked it up.</div></div>
           <div class="seg-control" id="coopXp"><button class="seg-btn" data-val="shared">Shared</button><button class="seg-btn" data-val="separate">Separate</button></div></div>
+        <div class="setting-row" style="flex-direction:column; align-items:stretch; gap:10px;">
+          <div><div class="s-name">Key Bindings</div><div class="s-desc" id="bindHint">Bound keys glow on the board. Arrow keys stay with the second keyboard player.</div></div>
+          <div class="seg-control" id="bindDevice" style="align-self:flex-start;"><button class="seg-btn" data-val="keyboard">Keyboard</button><button class="seg-btn" data-val="gamepad">Gamepad</button></div>
+          <div id="bindBoard"></div>
+          <div id="bindList" class="bind-list"></div>
+          <button class="buy-btn" id="bindReset" style="align-self:flex-start; border-color:var(--warning); color:var(--warning);">RESET TO DEFAULTS</button>
+        </div>
         <div class="setting-row"><div><div class="s-name">Second Keyboard Player</div><div class="s-desc">Splits the keyboard: WASD stays with player 1, the arrow keys plus Enter and right Shift become player 2. Also on F2. Extra gamepads join with L1+R1 during a run.</div></div><div class="toggle-switch" id="coopKeyboardSplit"><div class="knob"></div></div></div>
       </div>
       <div class="settings-pane hidden" id="pane-video">
@@ -1224,6 +1384,18 @@
       </div>
     </div>
     <div class="back-link" id="settingsBack">← BACK</div>
+  </div>
+
+  <div class="screen hidden" id="screen-saves">
+    <div class="veil"></div>
+    <div class="title-wrap" style="margin-bottom:18px;"><div class="kicker">parallel timelines</div><div class="title" style="font-size:44px;">SAVES</div></div>
+    <div class="saves-wrap" id="saveSlotsWrap"></div>
+    <div class="saves-actions">
+      <button class="btn" id="btnImportSave">Import Save</button>
+      <input type="file" id="importSaveFile" accept="application/json" class="hidden" />
+    </div>
+    <div class="saves-status" id="savesStatus"></div>
+    <div class="back-link" id="savesBack">← BACK</div>
   </div>
 
 </div>
