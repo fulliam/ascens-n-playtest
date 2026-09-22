@@ -140,6 +140,14 @@
     font-family:'JetBrains Mono',monospace; font-size:24px; letter-spacing:2px; color:var(--text); text-align:center;}
   .timer .phase{display:block; font-size:10px; letter-spacing:3px; color:var(--accent); text-align:center; margin-top:2px; transition:color .3s, text-shadow .3s;}
   .timer .phase.phase-reveal{color:var(--gold); text-shadow:0 0 10px color-mix(in srgb, var(--gold) 70%, transparent); letter-spacing:4px;}
+  .dungeon-clock{position:absolute; left:50%; transform:translateX(-50%); top:calc(62px + var(--safe-top));
+    display:flex; flex-direction:column; align-items:center; gap:1px; font-family:'JetBrains Mono',monospace;
+    padding:4px 14px; border:1px solid var(--line); border-radius:3px; background:rgba(8,9,13,0.6);}
+  .dungeon-clock .dc-time{font-size:19px; letter-spacing:2px; color:var(--crystal);}
+  .dungeon-clock .dc-left{font-size:9px; letter-spacing:2px; color:var(--dim); text-transform:uppercase;}
+  .dungeon-clock.urgent{border-color:var(--danger);}
+  .dungeon-clock.urgent .dc-time{color:var(--danger); animation:dcPulse .8s steps(2,start) infinite;}
+  @keyframes dcPulse{0%,100%{opacity:1;} 50%{opacity:0.45;}}
   #eventTitle.phase-reveal{color:var(--event-color); text-shadow:0 0 14px color-mix(in srgb, var(--event-color) 60%, transparent); letter-spacing:2px;}
   .timer span{display:inline-block;}
   @keyframes hudGlitchRgb{0%,100%{text-shadow:none;} 25%{text-shadow:-2px 0 var(--accent2), 2px 0 var(--crystal);} 50%{text-shadow:2px 0 var(--accent2), -2px 0 var(--crystal);} 75%{text-shadow:-1px 0 var(--accent2), 1px 0 var(--crystal);}}
@@ -906,7 +914,8 @@
   .pad-diagram .pad-btn{fill:var(--panel); stroke:var(--line); stroke-width:1.5;}
   .pad-diagram .pad-btn.bound{fill:color-mix(in srgb, var(--accent) 35%, var(--panel)); stroke:var(--accent);}
   .pad-diagram .pad-btn.target{stroke:var(--gold); animation:bindBlink .7s steps(2,start) infinite;}
-  .pad-diagram .pad-label{font-family:'JetBrains Mono',monospace; font-size:8px; fill:var(--dim);}
+  .pad-diagram .pad-label{font-family:'JetBrains Mono',monospace; font-size:9px; fill:var(--dim); pointer-events:none;}
+  .pad-diagram .pad-btn.bound + .pad-label{fill:var(--text);}
   .bind-list{display:grid; grid-template-columns:repeat(auto-fill,minmax(228px,1fr)); gap:6px 12px;}
   .bind-list .inv-section-title{grid-column:1/-1;}
   .bind-row{display:flex; align-items:center; justify-content:space-between; gap:10px;
@@ -915,9 +924,54 @@
   .bind-name{font-family:'Rajdhani',sans-serif; font-weight:600; font-size:13px; display:flex; align-items:center; gap:6px;}
   .bind-custom{font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1px; color:var(--accent);
     border:1px solid var(--line); border-radius:7px; padding:0 5px;}
-  .bind-key{flex-shrink:0; padding:5px 9px; font-size:11px; letter-spacing:0.5px; text-align:center; min-width:96px;}
+  .bind-key{flex-shrink:0; padding:5px 9px; font-size:11px; letter-spacing:0.5px; text-align:center;
+    width:146px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .bind-key.unbound{color:var(--dim); border-color:var(--line);}
   .bind-key::before{content:none;}
   .settings-tabs{display:flex; gap:8px; margin-bottom:14px; z-index:2; flex-wrap:wrap;}
+  #screen-settings{justify-content:flex-start; --set-pad:clamp(26px,4vw,84px);
+    padding:calc(22px + var(--safe-top)) calc(var(--set-pad) + var(--safe-right)) calc(18px + var(--safe-bottom)) calc(var(--set-pad) + var(--safe-left));}
+  #screen-settings .title-wrap{margin-bottom:12px;}
+  #screen-settings .settings-tabs{width:100%; justify-content:center; margin-bottom:12px;}
+  #screen-settings .settings-tab{flex:0 0 auto; min-width:148px; padding:9px 26px;}
+  #screen-settings .settings-wrap{width:100%; max-width:none; height:auto; max-height:none; flex:1 1 auto; min-height:0;}
+  #screen-settings .settings-pane{display:flex; flex-direction:column; gap:18px;
+    width:100%; max-width:1180px; margin:0 auto;}
+  #screen-settings .setting-row{padding:13px 18px;}
+  #screen-settings .setting-row .s-desc{max-width:84ch;}
+  .settings-group{display:flex; flex-direction:column; gap:9px;}
+  .sg-title{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--accent); padding-bottom:5px; border-bottom:1px solid var(--line);}
+  .sg-rows{display:flex; flex-direction:column; gap:8px;}
+  .sg-body{display:flex; flex-direction:column; gap:10px; background:var(--panel); border:1px solid var(--line);
+    border-radius:4px; padding:12px 16px;}
+  .sg-body .s-desc{color:var(--dim); font-size:11px;}
+  .bind-layout{display:grid; grid-template-columns:minmax(250px,330px) minmax(0,1fr); gap:22px; align-items:start;}
+  .bind-list-col, .bind-device-col{display:flex; flex-direction:column; gap:10px; min-width:0;}
+  .bind-device-col{align-items:center;}
+  .bind-device-col .seg-control{align-self:center;}
+  .bind-layout .bind-list{grid-template-columns:1fr; gap:6px;}
+  #bindBoard{width:100%; min-height:322px; display:flex; align-items:center; justify-content:center;}
+  #bindBoard .keyboard-wrap{width:100%;}
+  .bind-device-col .pad-diagram{max-width:min(424px,100%);}
+  .bind-device-col .s-desc{text-align:center; max-width:52ch; min-height:28px;}
+  #screen-settings .back-link{margin-top:12px;}
+  @media (max-width:760px), (pointer:coarse){
+    #screen-settings{padding:calc(10px + var(--safe-top)) calc(10px + var(--safe-right)) calc(10px + var(--safe-bottom)) calc(10px + var(--safe-left));}
+    #screen-settings .settings-wrap{flex:0 0 auto; min-height:auto;}
+    #screen-settings{--set-pad:10px;}
+    #screen-settings .setting-row .s-desc{max-width:330px;}
+    .bind-layout{grid-template-columns:1fr; gap:14px;}
+    #bindBoard{min-height:0;}
+    .bind-device-col .s-desc{min-height:0;}
+  }
+  @media (max-width:1180px){
+    #bindBoard .keyboard{min-width:100%;}
+    #bindBoard .arrow-cluster{margin:0 auto;}
+  }
+  @media (max-width:620px){
+    #bindBoard{display:none;}
+  }
   .settings-tab{flex:1; min-width:70px; text-align:center; font-family:'Rajdhani',sans-serif; font-weight:600; font-size:13px; letter-spacing:1px;
     text-transform:uppercase; padding:9px 6px; border:1px solid var(--line); background:var(--panel); color:var(--dim); cursor:pointer; border-radius:2px; transition:border-color .15s,color .15s;}
   .settings-tab:hover{color:var(--text);}
@@ -1181,6 +1235,10 @@
         <div class="passive-row hidden" id="passiveRow"></div>
       </div>
       <div class="timer"><span id="timerVal">00:00</span><span class="phase" id="phaseVal">DISCOVERY</span></div>
+      <div class="dungeon-clock hidden" id="dungeonClock">
+        <span class="dc-time" id="dungeonClockTime">00:00</span>
+        <span class="dc-left" id="dungeonClockLeft">0 left</span>
+      </div>
       <div class="hud-action-panel">
         <div class="pause-hint" id="fullscreenBtnHud" style="pointer-events:auto;" title="Fullscreen"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></div>
         <div class="pause-hint" id="pauseBtn" style="pointer-events:auto;" title="Pause"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></div>
@@ -1429,50 +1487,82 @@
   <div class="screen hidden" id="screen-settings">
     <div class="veil"></div>
     <div class="title-wrap" style="margin-bottom:16px;"><div class="kicker">preferences</div><div class="title" style="font-size:38px;">SETTINGS</div></div>
-    <div class="settings-tabs" style="width:min(640px,92vw);">
+    <div class="settings-tabs">
       <div class="settings-tab active" data-tab="controls">Controls</div>
       <div class="settings-tab" data-tab="video">Video</div>
       <div class="settings-tab" data-tab="audio">Sound</div>
-      <div class="settings-tab" data-tab="data">Data</div>
     </div>
     <div class="settings-wrap">
       <div class="settings-pane" id="pane-controls">
-        <div class="setting-row"><div><div class="s-name">Movement Input</div><div class="s-desc">Auto uses a floating touch joystick on phones/tablets and keyboard (WASD / arrows) elsewhere.</div></div>
-          <div class="seg-control" id="ctrlMode"><button class="seg-btn" data-val="auto">Auto</button><button class="seg-btn" data-val="joystick">Joystick</button><button class="seg-btn" data-val="keyboard">Keyboard</button></div></div>
-        <div class="setting-row"><div><div class="s-name">Vibration</div><div class="s-desc">Short haptic pulse on hits, level-ups and death.</div></div><div class="toggle-switch" id="ctrlHaptics"><div class="knob"></div></div></div>
-        <div class="setting-row"><div><div class="s-name">Auto-Pause</div><div class="s-desc">Pause the run automatically when you switch away from this tab or window.</div></div><div class="toggle-switch" id="ctrlAutoPause"><div class="knob"></div></div></div>
-        <div class="setting-row"><div><div class="s-name">Co-op Rewards</div><div class="s-desc">Shared splits every XP, gold and crystal orb evenly across the party, so each player levels and earns at the solo pace. Separate gives the whole orb to whoever picked it up.</div></div>
-          <div class="seg-control" id="coopXp"><button class="seg-btn" data-val="shared">Shared</button><button class="seg-btn" data-val="separate">Separate</button></div></div>
-        <div class="setting-row" style="flex-direction:column; align-items:stretch; gap:10px;">
-          <div><div class="s-name">Key Bindings</div><div class="s-desc" id="bindHint">Bound keys glow on the board. Arrow keys stay with the second keyboard player.</div></div>
-          <div class="seg-control" id="bindDevice" style="align-self:flex-start;"><button class="seg-btn" data-val="keyboard">Keyboard</button><button class="seg-btn" data-val="gamepad">Gamepad</button></div>
-          <div id="bindBoard"></div>
-          <div id="bindList" class="bind-list"></div>
-          <button class="buy-btn" id="bindReset" style="align-self:flex-start; border-color:var(--warning); color:var(--warning);">RESET TO DEFAULTS</button>
+        <div class="settings-group">
+          <div class="sg-title">Gameplay</div>
+          <div class="sg-rows">
+            <div class="setting-row"><div><div class="s-name">Movement Input</div><div class="s-desc">Auto uses a floating touch joystick on phones/tablets and keyboard (WASD / arrows) elsewhere.</div></div>
+              <div class="seg-control" id="ctrlMode"><button class="seg-btn" data-val="auto">Auto</button><button class="seg-btn" data-val="joystick">Joystick</button><button class="seg-btn" data-val="keyboard">Keyboard</button></div></div>
+            <div class="setting-row"><div><div class="s-name">Vibration</div><div class="s-desc">Short haptic pulse on hits, level-ups and death.</div></div><div class="toggle-switch" id="ctrlHaptics"><div class="knob"></div></div></div>
+            <div class="setting-row"><div><div class="s-name">Auto-Pause</div><div class="s-desc">Pause the run automatically when you switch away from this tab or window.</div></div><div class="toggle-switch" id="ctrlAutoPause"><div class="knob"></div></div></div>
+          </div>
         </div>
-        <div class="setting-row"><div><div class="s-name">Second Keyboard Player</div><div class="s-desc">Splits the keyboard: WASD stays with player 1, the arrow keys plus Enter and right Shift become player 2. Also on F2. Extra gamepads join with L1+R1 during a run.</div></div><div class="toggle-switch" id="coopKeyboardSplit"><div class="knob"></div></div></div>
+        <div class="settings-group">
+          <div class="sg-title">Local co-op</div>
+          <div class="sg-rows">
+            <div class="setting-row"><div><div class="s-name">Co-op Rewards</div><div class="s-desc">Shared splits every XP, gold and crystal orb evenly across the party, so each player levels and earns at the solo pace. Separate gives the whole orb to whoever picked it up.</div></div>
+              <div class="seg-control" id="coopXp"><button class="seg-btn" data-val="shared">Shared</button><button class="seg-btn" data-val="separate">Separate</button></div></div>
+            <div class="setting-row"><div><div class="s-name">Second Keyboard Player</div><div class="s-desc">Splits the keyboard: WASD stays with player 1, the arrow keys plus Enter and right Shift become player 2. Also on F2. Extra gamepads join with L1+R1 during a run.</div></div><div class="toggle-switch" id="coopKeyboardSplit"><div class="knob"></div></div></div>
+          </div>
+        </div>
+        <div class="settings-group">
+          <div class="sg-title">Key bindings</div>
+          <div class="sg-body bind-layout">
+            <div class="bind-list-col">
+              <div id="bindList" class="bind-list"></div>
+              <button class="buy-btn" id="bindReset" style="align-self:flex-start; border-color:var(--warning); color:var(--warning);">RESET TO DEFAULTS</button>
+            </div>
+            <div class="bind-device-col">
+              <div class="seg-control" id="bindDevice"><button class="seg-btn" data-val="keyboard">Keyboard</button><button class="seg-btn" data-val="gamepad">Gamepad</button></div>
+              <div id="bindBoard"></div>
+              <div class="s-desc" id="bindHint">Bound keys glow on the board. Arrow keys stay with the second keyboard player.</div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="settings-pane hidden" id="pane-video">
-        <div class="setting-row"><div><div class="s-name">Graphics Quality</div><div class="s-desc">Lower settings reduce glow and particle effects.</div></div>
-          <div class="seg-control" id="vidQuality"><button class="seg-btn" data-val="low">Low</button><button class="seg-btn" data-val="medium">Medium</button><button class="seg-btn" data-val="high">High</button></div></div>
-        <div class="setting-row"><div><div class="s-name">Enemy Density</div><div class="s-desc">Caps how many enemies can exist at once. Independent of graphics quality — lower this only if the game is slowing down, not for a harder/easier fight.</div></div>
-          <div class="seg-control" id="vidDensity"><button class="seg-btn" data-val="low">Low</button><button class="seg-btn" data-val="medium">Medium</button><button class="seg-btn" data-val="high">High</button></div></div>
-        <div class="setting-row"><div><div class="s-name">Camera Angle</div><div class="s-desc">How the world is tilted. Top-down is flat and reads fastest; isometric and oblique tilt the plane. Movement follows the screen at any angle.</div></div>
-          <div class="seg-control" id="vidCamera"><button class="seg-btn" data-val="top_down">Top-down</button><button class="seg-btn" data-val="oblique">Oblique</button><button class="seg-btn" data-val="isometric">Isometric</button></div></div>
-        <div class="setting-row"><div><div class="s-name">Screen Shake</div><div class="s-desc">Camera shake on hits and impacts.</div></div><div class="toggle-switch" id="vidShake"><div class="knob"></div></div></div>
-        <div class="setting-row"><div><div class="s-name">Damage Numbers</div><div class="s-desc">Show floating damage numbers on hits.</div></div><div class="toggle-switch" id="vidDamageNumbers"><div class="knob"></div></div></div>
-        <div class="setting-row"><div><div class="s-name">Reduce Flashing</div><div class="s-desc">Softer, less synchronized hit-flash when many enemies are struck at once.</div></div><div class="toggle-switch" id="vidReduceFlashing"><div class="knob"></div></div></div>
-        <div class="setting-row"><div><div class="s-name">Fullscreen</div><div class="s-desc">Expand the game to fill your entire screen.</div></div><button class="buy-btn" id="fullscreenToggleBtn" style="border-color:var(--accent); color:var(--accent);">ENTER FULLSCREEN</button></div>
-        <div class="setting-row"><div><div class="s-name">Debug Overlay</div><div class="s-desc">Shows FPS, frame time, and live entity counts — useful for diagnosing slowdowns.</div></div><div class="toggle-switch" id="vidDebugOverlay"><div class="knob"></div></div></div>
+        <div class="settings-group">
+          <div class="sg-title">Display</div>
+          <div class="sg-rows">
+            <div class="setting-row"><div><div class="s-name">Camera Angle</div><div class="s-desc">How the world is tilted. Top-down is flat and reads fastest; isometric and oblique tilt the plane. Movement follows the screen at any angle.</div></div>
+              <div class="seg-control" id="vidCamera"><button class="seg-btn" data-val="top_down">Top-down</button><button class="seg-btn" data-val="oblique">Oblique</button><button class="seg-btn" data-val="isometric">Isometric</button></div></div>
+            <div class="setting-row"><div><div class="s-name">Fullscreen</div><div class="s-desc">Expand the game to fill your entire screen.</div></div><button class="buy-btn" id="fullscreenToggleBtn" style="border-color:var(--accent); color:var(--accent);">ENTER FULLSCREEN</button></div>
+          </div>
+        </div>
+        <div class="settings-group">
+          <div class="sg-title">Performance</div>
+          <div class="sg-rows">
+            <div class="setting-row"><div><div class="s-name">Graphics Quality</div><div class="s-desc">Lower settings reduce glow and particle effects.</div></div>
+              <div class="seg-control" id="vidQuality"><button class="seg-btn" data-val="low">Low</button><button class="seg-btn" data-val="medium">Medium</button><button class="seg-btn" data-val="high">High</button></div></div>
+            <div class="setting-row"><div><div class="s-name">Enemy Density</div><div class="s-desc">Caps how many enemies can exist at once. Independent of graphics quality — lower this only if the game is slowing down, not for a harder/easier fight.</div></div>
+              <div class="seg-control" id="vidDensity"><button class="seg-btn" data-val="low">Low</button><button class="seg-btn" data-val="medium">Medium</button><button class="seg-btn" data-val="high">High</button></div></div>
+            <div class="setting-row"><div><div class="s-name">Debug Overlay</div><div class="s-desc">Shows FPS, frame time, and live entity counts — useful for diagnosing slowdowns.</div></div><div class="toggle-switch" id="vidDebugOverlay"><div class="knob"></div></div></div>
+          </div>
+        </div>
+        <div class="settings-group">
+          <div class="sg-title">Effects</div>
+          <div class="sg-rows">
+            <div class="setting-row"><div><div class="s-name">Screen Shake</div><div class="s-desc">Camera shake on hits and impacts.</div></div><div class="toggle-switch" id="vidShake"><div class="knob"></div></div></div>
+            <div class="setting-row"><div><div class="s-name">Damage Numbers</div><div class="s-desc">Show floating damage numbers on hits.</div></div><div class="toggle-switch" id="vidDamageNumbers"><div class="knob"></div></div></div>
+            <div class="setting-row"><div><div class="s-name">Reduce Flashing</div><div class="s-desc">Softer, less synchronized hit-flash when many enemies are struck at once.</div></div><div class="toggle-switch" id="vidReduceFlashing"><div class="knob"></div></div></div>
+          </div>
+        </div>
       </div>
       <div class="settings-pane hidden" id="pane-audio">
-        <div class="setting-row"><div><div class="s-name">SFX Volume</div><div class="s-desc">Volume for hit, weapon and UI sound effects.</div></div><div class="slider-row"><input type="range" id="audioVolume" min="0" max="100" value="100"><span class="slider-val" id="audioVolumeVal">100</span></div></div>
-        <div class="setting-row"><div><div class="s-name">Music Volume</div><div class="s-desc">Volume for the background music loop.</div></div><div class="slider-row"><input type="range" id="musicVolume" min="0" max="100" value="35"><span class="slider-val" id="musicVolumeVal">35</span></div></div>
-        <div class="setting-row"><div><div class="s-name">Mute</div><div class="s-desc">Quickly silence all sound, including music.</div></div><div class="toggle-switch" id="audioMuted"><div class="knob"></div></div></div>
-      </div>
-      <div class="settings-pane hidden" id="pane-data">
-        <div class="setting-row"><div><div class="s-name">Reset Save</div><div class="s-desc">Erase all artifacts and talent progression. This cannot be undone.</div></div>
-          <button class="buy-btn" id="btnReset" style="border-color:#ff4d5e; color:#ff4d5e;">RESET SAVE</button></div>
+        <div class="settings-group">
+          <div class="sg-title">Volume</div>
+          <div class="sg-rows">
+            <div class="setting-row"><div><div class="s-name">SFX Volume</div><div class="s-desc">Volume for hit, weapon and UI sound effects.</div></div><div class="slider-row"><input type="range" id="audioVolume" min="0" max="100" value="100"><span class="slider-val" id="audioVolumeVal">100</span></div></div>
+            <div class="setting-row"><div><div class="s-name">Music Volume</div><div class="s-desc">Volume for the background music loop.</div></div><div class="slider-row"><input type="range" id="musicVolume" min="0" max="100" value="35"><span class="slider-val" id="musicVolumeVal">35</span></div></div>
+            <div class="setting-row"><div><div class="s-name">Mute</div><div class="s-desc">Quickly silence all sound, including music.</div></div><div class="toggle-switch" id="audioMuted"><div class="knob"></div></div></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="back-link" id="settingsBack">← BACK</div>
