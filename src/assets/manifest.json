@@ -625,37 +625,21 @@
     }
    }
   },
-  "fx": {
-   "dir": "fx",
-   "title": "Взрывы",
-   "unit": "strips",
-   "load": false,
-   "bake": "tools/art/bake-fx-sprites.mjs",
-   "cell": 128,
-   "orphan": "загрузчик удалён, площадные взрывы теперь берутся из атласа форм",
+  "atlas": {
+   "dir": "atlas",
+   "title": "GPU атлас",
+   "unit": "cells",
+   "load": true,
+   "bake": "tools/art/bake-atlas.mjs",
+   "json": "atlas.json",
    "sets": {
-    "explosion": {
-     "source": "explosionLightning",
+    "atlas": {
      "parts": {
-      "fire": {
-       "file": "fire.png",
-       "frames": 10
-      },
-      "lightning": {
-       "file": "lightning.png",
-       "frames": 10
-      },
-      "frost": {
-       "file": "frost.png",
-       "frames": 10
-      },
-      "poison": {
-       "file": "poison.png",
-       "frames": 10
-      },
-      "void": {
-       "file": "void.png",
-       "frames": 10
+      "full": {
+       "file": "atlas.png",
+       "cells": 1465,
+       "w": 4094,
+       "h": 1570
       }
      }
     }
