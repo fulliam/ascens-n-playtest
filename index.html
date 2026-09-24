@@ -234,7 +234,7 @@
     99%{opacity:0.85; clip-path:inset(0 0 0 0);}
   }
   #screen-base .title, #screen-victory .title{animation:glitchRgb 4.5s infinite;}
-  #screen-achievements .title{animation:glitchScan 6s infinite;}
+  #screen-progress .title{animation:glitchScan 6s infinite;}
   #screen-pause .title{animation:glitchFreeze 3.8s infinite;}
   @keyframes glitchFreeze{
     0%,90%,100%{transform:translateX(0); filter:none;}
@@ -657,6 +657,9 @@
   .card .icon{font-size:68px; width:100%; height:100%; display:flex; align-items:center; justify-content:center;}
   .card .name{font-family:'Unbounded',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",sans-serif; font-weight:700; font-size:18px; letter-spacing:0.5px; line-height:1.25;}
   .card .desc{font-size:14px; color:color-mix(in srgb, var(--text) 78%, var(--dim)); line-height:1.4; flex:1; text-align:left;}
+  .wicon{display:inline-block; width:1.35em; height:1.35em; vertical-align:middle; background-repeat:no-repeat; font-style:normal; flex:none; pointer-events:none;}
+  .slot-icon .wicon, .wsel-tile-icon .wicon, .wtt-icon .wicon, .item-icon .wicon, .pr-wpn .wicon, .wpn-icon .wicon{width:1.55em; height:1.55em;}
+  .inv-slot:has(.slot-badge) .slot-icon .wicon{position:relative; top:-0.22em;}
   .icon, .slot-icon, .item-icon, .rt-fx-icon, .wsel-tile-icon, .wtt-icon, .up-icon, .rx-ach-icon, .t-icon, .upg-icon{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",system-ui,sans-serif; font-variant-emoji:emoji;}
   .rt-effects{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px; text-align:left;}
   .rt-fx{display:grid; grid-template-columns:20px 1fr; column-gap:7px; align-items:start;}
@@ -1090,6 +1093,13 @@
   #screen-graph .back-link{position:absolute; bottom:calc(16px + var(--safe-bottom)); left:50%; transform:translateX(-50%); z-index:3;
     margin-top:0; background:var(--panel); padding:6px 14px; border-radius:20px; border:1px solid var(--line);}
   #screen-graph .back-link.disabled{opacity:0.45; cursor:not-allowed; color:var(--dim);}
+  .graph-stage{position:absolute; inset:0;}
+  #progGraph{position:relative; border:1px solid var(--line); border-radius:6px;}
+  #progGraph .graph-header{top:12px;}
+  #progGraph .graph-header > .title-wrap{display:none;}
+  .codex-bar{display:flex; align-items:center; gap:10px 14px; flex-wrap:wrap;}
+  .codex-bar > .seg-control{margin:0;}
+  #progCodex .codex-note{grid-column:1 / -1;}
   .graph-viewport{position:absolute; inset:0; width:100%; height:100%; margin:0; overflow:hidden;
     border:none; border-radius:0; touch-action:none; cursor:grab;
     background:
@@ -1159,47 +1169,6 @@
   .graph-node .gn-pips .pip.filled.pip-6{--pip:#ffd447;}
   .graph-node.just-unlocked .gn-hex{animation:talentUnlockPulse .6s ease-out;}
   @keyframes talentUnlockPulse{0%{transform:scale(0.7); box-shadow:0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);} 50%{transform:scale(1.22); box-shadow:0 0 26px var(--branch-glow-strong,color-mix(in srgb, var(--accent) 70%, transparent));} 100%{transform:scale(1); box-shadow:0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);}}
-  #screen-metamap{justify-content:flex-start;}
-  .mm-header{position:absolute; top:calc(16px + var(--safe-top)); left:50%; transform:translateX(-50%); z-index:3;
-    display:flex; align-items:center; gap:14px; pointer-events:none;}
-  .mm-header > *{pointer-events:auto;}
-  .mm-header .title{white-space:nowrap; font-size:30px;}
-  .mm-chips{display:flex; gap:8px; flex-wrap:wrap;}
-  .mm-chip{font-family:'Martian Mono',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",monospace; font-size:12px; padding:6px 12px; border:1px solid var(--line);
-    border-radius:20px; color:var(--dim); background:var(--panel); white-space:nowrap;}
-  .mm-chip b{color:var(--text); font-weight:600;}
-  .mm-chip.artifacts{border-color:var(--artifact);} .mm-chip.artifacts b{color:var(--artifact);}
-  .mm-chip.points{border-color:var(--accent);} .mm-chip.points b{color:var(--accent);}
-  .mm-viewport{position:absolute; inset:92px 0 60px 0; overflow:hidden;}
-  #metaMapCanvas{position:absolute; inset:0; width:100%; height:100%; display:block;
-    image-rendering:pixelated; image-rendering:crisp-edges; cursor:grab; touch-action:none;}
-  #metaMapCanvas.dragging{cursor:grabbing;}
-  .mm-info{position:absolute; z-index:4; right:calc(24px + var(--safe-right)); bottom:calc(74px + var(--safe-bottom));
-    width:min(320px,84vw); background:linear-gradient(180deg,var(--panel2),var(--panel));
-    border:1px solid var(--line); border-left:3px solid var(--dim); border-radius:3px; padding:12px 14px;
-    box-shadow:0 12px 34px rgba(0,0,0,0.55);}
-  .mm-info[data-state="available"]{border-left-color:var(--accent);}
-  .mm-info[data-state="unlocked"]{border-left-color:var(--xp);}
-  .mm-info-head{display:flex; align-items:center; gap:9px;}
-  .mm-info-icon{font-size:22px; line-height:1;}
-  .mm-info-name{font-family:'Unbounded',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",sans-serif; font-weight:700; font-size:19px; letter-spacing:1px; color:var(--text);}
-  .mm-info-type{font-family:'Martian Mono',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",monospace; font-size:9.5px; letter-spacing:1.5px;
-    text-transform:uppercase; color:var(--accent); opacity:.85; margin-top:5px;}
-  .mm-info-desc{font-size:11.5px; color:var(--dim); line-height:1.45; margin-top:8px;}
-  .mm-info-cost{font-family:'Martian Mono',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",monospace; font-size:11px; color:var(--gold); margin-top:9px;}
-  .mm-info-cost.short{color:var(--danger);}
-  .mm-info-req{font-size:10.5px; color:var(--warning); margin-top:5px; line-height:1.4;}
-  .mm-info .mm-unlock{margin-top:11px; width:100%; text-align:center; font-size:13px; padding:9px 12px;}
-  .mm-legend{position:absolute; z-index:3; left:calc(24px + var(--safe-left)); bottom:calc(74px + var(--safe-bottom));
-    display:flex; flex-direction:column; gap:5px; font-family:'Martian Mono',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",monospace; font-size:10px; color:var(--dim);}
-  .mm-legend div{display:flex; align-items:center; gap:7px;}
-  .mm-legend i{width:9px; height:9px; display:block; border:1px solid var(--line); background:var(--panel);}
-  .mm-legend i.on{background:var(--teal); border-color:var(--teal);}
-  .mm-legend i.next{background:color-mix(in srgb, var(--teal) 25%, var(--panel2)); border-color:var(--text);}
-  .mm-hint{position:absolute; z-index:3; left:50%; transform:translateX(-50%); bottom:calc(44px + var(--safe-bottom));
-    font-family:'Martian Mono',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",monospace; font-size:10px; letter-spacing:1.5px; color:var(--dim); opacity:.7; white-space:nowrap;}
-  #metaMapBack{position:absolute; z-index:4; left:calc(24px + var(--safe-left)); top:calc(20px + var(--safe-top)); margin:0;}
-  @media (max-width:720px){ .mm-legend{display:none;} .mm-hint{display:none;} }
   #gameTooltip{position:fixed; z-index:60; max-width:280px; background:linear-gradient(180deg,var(--panel2),var(--panel));
     border:1px solid var(--accent); border-radius:6px; padding:12px 14px; pointer-events:none; opacity:0;
     transform:translateY(4px); transition:opacity .12s, transform .12s; box-shadow:0 10px 30px rgba(0,0,0,0.5);}
@@ -1629,8 +1598,8 @@
     .screen::before{content:''; flex:0 0 auto; margin-top:auto;}
     .screen::after{content:''; flex:0 0 auto; margin-bottom:auto;}
     .screen > .veil{position:fixed; inset:0;}
-    #screen-graph, #screen-metamap{overflow:visible; touch-action:none; padding:0;}
-    #screen-graph::before, #screen-graph::after, #screen-metamap::before, #screen-metamap::after{display:none;}
+    #screen-graph{overflow:visible; touch-action:none; padding:0;}
+    #screen-graph::before, #screen-graph::after{display:none;}
     .wsel, .cards-wrap, .settings-wrap, .stats-grid, .ach-wrap, .event-desc-box{width:100%; max-width:100%;}
     .back-link{min-height:44px; display:flex; align-items:center; justify-content:center; padding:0 14px;}
     .settings-tab{min-height:44px; display:flex; align-items:center; justify-content:center;}
@@ -1643,21 +1612,10 @@
     .slider-row input[type=range]{height:44px; background:transparent;}
     .slider-row input[type=range]::-webkit-slider-runnable-track{height:4px; background:var(--line); border-radius:2px;}
     .slider-row input[type=range]::-webkit-slider-thumb{margin-top:-8px; width:20px; height:20px;}
-    .mm-header{max-width:calc(100% - 16px); flex-wrap:wrap; justify-content:center; gap:8px;}
-    .mm-header .title{font-size:19px; letter-spacing:2px;}
-    .mm-header .kicker{font-size:9px; letter-spacing:2px; margin-bottom:3px;}
-    .mm-chips{justify-content:center;}
-    .mm-chip{font-size:10px; padding:5px 9px;}
     .settings-wrap{height:auto; max-height:none; overflow:visible; padding-right:0;}
     .stats-grid{height:auto; max-height:none; overflow:visible;}
     .ach-wrap{max-height:none; overflow:visible;}
     .cards-wrap, #screen-shop .cards-wrap, #screen-event .cards-wrap{max-height:none; overflow:visible;}
-    .mm-legend, .mm-hint{display:none;}
-  }
-  @media (max-width:560px){
-    #metaMapBack{top:calc(10px + var(--safe-top)); left:calc(10px + var(--safe-left));}
-    .mm-header{top:calc(62px + var(--safe-top)); left:0; right:0; transform:none; flex-direction:column; gap:6px;}
-    .mm-viewport{inset:calc(158px + var(--safe-top)) 0 calc(52px + var(--safe-bottom)) 0;}
   }
   @media (pointer:coarse) and (max-height:500px){
     .title{font-size:26px; letter-spacing:2px;}
@@ -1779,11 +1737,58 @@
     width:100%; max-width:none; height:auto; max-height:none; overflow:visible; margin:0; padding:0;}
   .screen-body > .ach-wrap{grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr)); gap:10px; align-content:start;}
   .screen-body > .saves-wrap{grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr)); gap:12px;}
-  #screen-stats .screen-body > .stats-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr)); gap:12px;}
-  #screen-stats .stat-row{flex-direction:column; justify-content:flex-start; gap:8px; padding:16px 18px 18px;
+  #screen-progress .pg-lifetime{display:grid; width:100%; height:auto; max-height:none; overflow:visible; margin:0; padding:0;
+    grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr)); gap:10px;}
+  #screen-progress .pg-lifetime .stat-row{flex-direction:column; justify-content:flex-start; gap:8px; padding:14px 16px 16px;
     background:var(--panel); border:1px solid var(--line); border-radius:6px;}
-  #screen-stats .stat-row .k{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; white-space:normal;}
-  #screen-stats .stat-row > span:last-child{font-family:'Unbounded',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",sans-serif; font-weight:700; font-size:28px; line-height:1.1;}
+  #screen-progress .pg-lifetime .stat-row .k{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; white-space:normal;}
+  #screen-progress .pg-lifetime .stat-row > span:last-child{font-family:'Unbounded',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",sans-serif; font-weight:700; font-size:28px; line-height:1.1;}
+  #screen-progress .screen-body{gap:18px;}
+  #screen-progress .screen-bar > .settings-tabs{gap:6px;}
+  #screen-progress .settings-tab{min-width:0; padding-left:10px; padding-right:10px;}
+  .pg-section{display:flex; flex-direction:column; gap:10px; min-width:0;}
+  .pg-h{font-family:'Martian Mono',ui-monospace,monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--dim);
+    padding-bottom:6px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+  .pg-h b{color:var(--text); font-weight:700; letter-spacing:1px;}
+  .pg-note{font-size:12px; line-height:1.45; color:var(--dim);}
+  .pg-wallets{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:10px;}
+  .pg-wallet{appearance:none; display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:4px 12px; text-align:left;
+    padding:14px 16px; border:1px solid var(--line); border-left:3px solid var(--wc); border-radius:6px; background:var(--panel); color:var(--text); font:inherit;}
+  button.pg-wallet{cursor:pointer; transition:border-color .15s, background .15s;}
+  button.pg-wallet:hover{background:var(--panel2); border-color:var(--wc);}
+  .pg-wallet-ic{grid-row:1 / span 2; font-size:24px; line-height:1;}
+  .pg-wallet-k{font-family:'Martian Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim); min-width:0;}
+  .pg-wallet-v{grid-column:2; font-family:'Unbounded',system-ui,sans-serif; font-weight:700; font-size:24px; line-height:1.1; color:var(--wc);}
+  .pg-wallet-go{grid-row:1 / span 2; grid-column:3; font-family:'Martian Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:1px; color:var(--dim); white-space:nowrap;}
+  .pg-wallet-sub{grid-column:2 / span 2; font-size:11.5px; color:var(--dim); line-height:1.35;}
+  .pg-power{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:10px;}
+  .pg-prow{display:flex; flex-direction:column; gap:7px; padding:12px 14px; border:1px solid var(--line); border-radius:6px; background:var(--panel); min-width:0;}
+  .pg-prow-h{display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+  .pg-prow-k{font-size:13px; font-weight:600;}
+  .pg-prow-v{font-family:'Martian Mono',ui-monospace,monospace; font-size:14px; font-weight:700;}
+  .pg-prow-v small{font-size:10.5px; font-weight:400; color:var(--dim); margin-left:6px;}
+  .pg-bar{display:flex; height:10px; border-radius:5px; overflow:hidden; background:var(--panel2);}
+  .pg-bar i{display:block; height:100%; min-width:0;}
+  .pg-legend{display:flex; flex-wrap:wrap; gap:4px 12px; font-family:'Martian Mono',ui-monospace,monospace; font-size:10.5px; color:var(--dim);}
+  .pg-legend span{display:inline-flex; align-items:center; gap:5px; white-space:nowrap;}
+  .pg-legend span::before{content:''; width:8px; height:8px; border-radius:2px; background:var(--sc);}
+  .pg-legend b{color:var(--text); font-weight:700;}
+  .pg-goals{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr)); gap:10px;}
+  .pg-goals .ach-card.locked{opacity:1;}
+  .pg-actions{display:flex; flex-wrap:wrap; gap:10px;}
+  .pg-actions .btn{flex:0 1 280px; margin:0;}
+  #screen-progress .slot-grid{max-height:none; overflow:visible; padding:0;}
+  #screen-progress .item-grid{width:100%; max-height:none; overflow:visible; padding:0;}
+  #screen-progress .ach-wrap{width:100%; max-width:none; max-height:none; overflow:visible; margin:0; padding:0;
+    grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr)); gap:10px; align-content:start;}
+  .ach-rewards{margin-top:4px; display:flex; flex-wrap:wrap; gap:2px 10px; font-family:'Martian Mono',ui-monospace,monospace; font-size:10px; color:var(--artifact);}
+  .pg-titles{display:flex; flex-wrap:wrap; gap:8px;}
+  .pg-title{padding:6px 12px; border:1px solid color-mix(in srgb, var(--gold) 50%, transparent); border-radius:14px; background:var(--panel);
+    font-family:'Unbounded',system-ui,sans-serif; font-weight:700; font-size:12px; color:var(--gold);}
+  .ach-goal{margin-top:7px; display:flex; flex-direction:column; gap:3px;}
+  .ach-goal-bar{height:5px; border-radius:3px; overflow:hidden; background:var(--panel2);}
+  .ach-goal-bar i{display:block; height:100%; background:var(--gold);}
+  .ach-goal-k{display:flex; justify-content:space-between; gap:8px; font-family:'Martian Mono',ui-monospace,monospace; font-size:10px; color:var(--dim);}
   #screen-shop .screen-body > .cards-wrap, #screen-event .screen-body > .cards-wrap{max-height:none; overflow:visible; padding:0;}
   #screen-shop .screen-body > .cards-wrap{width:100%; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr)); gap:10px; align-content:start;}
   #screen-saves .saves-actions{margin:0; justify-content:flex-end;}
@@ -2012,14 +2017,7 @@
     <div class="menu-col">
       <button class="btn hidden" id="btnContinue">Continue Run<span class="continue-sub" id="continueInfo"></span></button>
       <button class="btn primary" id="btnNewRun">New Run</button>
-      <button class="btn" id="btnStats">Statistics</button>
-      <button class="btn" id="btnAchievements">Achievements <span id="achProgressChip" class="ach-chip"></span></button>
-      <button class="btn" id="btnTalents">Talents <span id="talentChip" class="ach-chip"></span></button>
-      <button class="btn" id="btnMetaMap">Progression Map <span id="metaMapChip" class="ach-chip"></span></button>
-      <button class="btn" id="btnArmory">Armory <span id="armoryChip" class="ach-chip"></span></button>
-      <button class="btn" id="btnInventory">Inventory</button>
-      <button class="btn" id="btnShopCatalogue">Shop <span id="shopChip" class="ach-chip"></span></button>
-      <button class="btn" id="btnBestiary">Codex</button>
+      <button class="btn" id="btnProgress">Progress <span id="progressChip" class="ach-chip"></span></button>
       <button class="btn" id="btnSaves">Saves <span id="savesChip" class="ach-chip"></span></button>
       <button class="btn" id="btnSettings">Settings</button>
     </div>
@@ -2064,9 +2062,7 @@
 
   <div class="screen hidden screen-full" id="screen-ingame-stats">
     <div class="veil"></div>
-    <div class="screen-head"><div class="title-wrap"><div class="kicker" id="invKicker">current build</div><div class="title" style="font-size:36px;" id="invTitle">CHARACTER</div></div>
-      <div class="screen-head-aux"><div class="inv-wallet hidden" id="invWallet"></div></div>
-    </div>
+    <div class="screen-head"><div class="title-wrap"><div class="kicker" id="invKicker">current build</div><div class="title" style="font-size:36px;" id="invTitle">CHARACTER</div></div></div>
     <div class="screen-bar"><div class="settings-tabs inv-tabs" id="charInfoTabs"></div></div>
     <div class="screen-body is-fill">
     <div class="inv-panel">
@@ -2079,6 +2075,7 @@
 
   <div class="screen hidden" id="screen-graph">
     <div class="veil"></div>
+    <div class="graph-stage" id="graphStage">
     <div class="graph-header">
       <div class="title-wrap" style="margin-bottom:0;"><div class="kicker" id="graphKicker">in-run progression</div><div class="title" style="font-size:30px;">TALENT GRAPH</div></div>
       <div class="graph-points-chip">Points: <span id="graphPointsVal">0</span></div>
@@ -2087,35 +2084,8 @@
     <div class="graph-viewport" id="graphViewport">
       <div class="graph-canvas" id="graphCanvas"></div>
     </div>
+    </div>
     <div class="back-link" id="graphBack" style="margin-top:14px;">← RESUME RUN</div>
-  </div>
-
-  <div class="screen hidden" id="screen-metamap">
-    <div class="veil"></div>
-    <div class="mm-viewport"><canvas id="metaMapCanvas"></canvas></div>
-    <div class="mm-header">
-      <div class="title-wrap" style="margin-bottom:0;"><div class="kicker">between the runs</div><div class="title">PROGRESSION MAP</div></div>
-      <div class="mm-chips">
-        <div class="mm-chip">UNLOCKED <b id="metaMapProgress">0 / 0</b></div>
-        <div class="mm-chip points">POINTS <b id="metaMapPoints">0</b></div>
-        <div class="mm-chip artifacts">ARTIFACTS <b id="metaMapArtifacts">0</b></div>
-      </div>
-    </div>
-    <div class="mm-info hidden" id="metaMapInfo">
-      <div class="mm-info-head"><span class="mm-info-icon" id="metaMapInfoIcon"></span><span class="mm-info-name" id="metaMapInfoName"></span></div>
-      <div class="mm-info-type" id="metaMapInfoType"></div>
-      <div class="mm-info-desc" id="metaMapInfoDesc"></div>
-      <div class="mm-info-cost" id="metaMapInfoCost"></div>
-      <div class="mm-info-req" id="metaMapInfoReq"></div>
-      <button class="btn mm-unlock hidden" id="metaMapUnlock">UNLOCK</button>
-    </div>
-    <div class="mm-legend">
-      <div><i class="on"></i> unlocked</div>
-      <div><i class="next"></i> reachable now</div>
-      <div><i></i> locked</div>
-    </div>
-    <div class="mm-hint">WASD / ARROWS — MOVE · ENTER — UNLOCK · DRAG — PAN · WHEEL — ZOOM · ESC — BACK</div>
-    <div class="back-link" id="metaMapBack">← BACK TO BASE</div>
   </div>
 
   <div class="screen hidden" id="screen-pause">
@@ -2167,50 +2137,35 @@
     </div>
   </div>
 
-  <div class="screen hidden screen-full" id="screen-stats">
+  <div class="screen hidden screen-full" id="screen-progress">
     <div class="veil"></div>
-    <div class="screen-head"><div class="title-wrap"><div class="kicker">lifetime record</div><div class="title" style="font-size:38px;">STATISTICS</div></div></div>
-    <div class="screen-body"><div class="stats-grid" id="lifetimeStats"></div></div>
-    <div class="back-link" id="statsBackMenu">← BACK TO BASE</div>
-  </div>
-
-  <div class="screen hidden screen-full" id="screen-achievements">
-    <div class="veil"></div>
-    <div class="screen-head"><div class="title-wrap"><div class="kicker">proof of ascension</div><div class="title" style="font-size:38px;">ACHIEVEMENTS</div></div><div class="screen-head-aux"><div class="subtitle" id="achSummary"></div></div></div>
-    <div class="screen-body"><div class="ach-wrap" id="achWrap"></div></div>
-    <div class="back-link" id="achBack">← BACK TO BASE</div>
-  </div>
-
-  <div class="screen hidden screen-full" id="screen-bestiary">
-    <div class="veil"></div>
-    <div class="screen-head"><div class="title-wrap"><div class="kicker">database of everything</div><div class="title" style="font-size:38px;">CODEX</div></div></div>
-    <div class="screen-bar">
-    <div class="seg-control" id="codexCategoryTabs" style="margin:14px 0 8px;">
-      <button class="seg-btn" data-val="bestiary">Bestiary</button>
-      <button class="seg-btn" data-val="upgrades">Upgrades</button>
+    <div class="screen-head"><div class="title-wrap"><div class="kicker">what you keep between runs</div><div class="title" style="font-size:38px;">PROGRESS</div></div><div class="screen-head-aux"><div class="inv-wallet" id="progWallet"></div></div></div>
+    <div class="screen-bar"><div class="settings-tabs" id="progTabs"></div></div>
+    <div class="screen-body" id="progBody"></div>
+    <div class="screen-body is-fill hidden" id="progGraph"></div>
+    <div class="screen-body hidden" id="progCodex">
+      <div class="codex-bar">
+        <div class="seg-control" id="codexCategoryTabs">
+          <button class="seg-btn" data-val="bestiary">Bestiary</button>
+          <button class="seg-btn" data-val="upgrades">Upgrades</button>
+          <button class="seg-btn" data-val="shop">Shop</button>
+        </div>
+        <div class="seg-control" id="bestiaryTabs">
+          <button class="seg-btn" data-val="normal">Normal</button>
+          <button class="seg-btn" data-val="elite">Elite</button>
+          <button class="seg-btn" data-val="boss">Boss</button>
+          <button class="seg-btn" data-val="mutation">Mutations</button>
+        </div>
+        <div class="seg-control hidden" id="upgradesTabs">
+          <button class="seg-btn" data-val="weapons">Weapons</button>
+          <button class="seg-btn" data-val="cards">Cards</button>
+          <button class="seg-btn" data-val="passives">Passives</button>
+          <button class="seg-btn" data-val="synergies">Synergies</button>
+        </div>
+      </div>
+      <div class="ach-wrap" id="bestiaryWrap"></div>
     </div>
-    <div class="seg-control" id="bestiaryTabs" style="margin:0 0 14px;">
-      <button class="seg-btn" data-val="normal">Normal</button>
-      <button class="seg-btn" data-val="elite">Elite</button>
-      <button class="seg-btn" data-val="boss">Boss</button>
-      <button class="seg-btn" data-val="mutation">Mutations</button>
-    </div>
-    <div class="seg-control hidden" id="upgradesTabs" style="margin:0 0 14px;">
-      <button class="seg-btn" data-val="weapons">Weapons</button>
-      <button class="seg-btn" data-val="cards">Cards</button>
-      <button class="seg-btn" data-val="passives">Passives</button>
-      <button class="seg-btn" data-val="synergies">Synergies</button>
-    </div>
-    </div>
-    <div class="screen-body"><div class="ach-wrap" id="bestiaryWrap"></div></div>
-    <div class="back-link" id="bestiaryBack">← BACK TO BASE</div>
-  </div>
-
-  <div class="screen hidden screen-full" id="screen-armory">
-    <div class="veil"></div>
-    <div class="screen-head"><div class="title-wrap"><div class="kicker">spend your artifacts</div><div class="title" style="font-size:38px;">ARMORY</div></div><div class="screen-head-aux"><div class="subtitle" id="armorySummary"></div></div></div>
-    <div class="screen-body"><div class="ach-wrap" id="armoryWrap"></div></div>
-    <div class="back-link" id="armoryBack">← BACK TO BASE</div>
+    <div class="back-link" id="progBack">← BACK TO BASE</div>
   </div>
 
   <div class="screen hidden screen-full" id="screen-event">

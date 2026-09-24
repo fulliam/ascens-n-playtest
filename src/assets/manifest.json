@@ -644,6 +644,6148 @@
      }
     }
    }
+  },
+  "icon": {
+   "dir": "icons",
+   "title": "Иконки UI",
+   "unit": "sheets",
+   "load": false,
+   "bake": "tools/art/bake-weapon-icons.mjs",
+   "cols": 16,
+   "sets": {
+    "weapons": {
+     "cols": 16,
+     "rows": 11,
+     "cells": {
+      "absolute_glacier": 0,
+      "absolute_zero": 1,
+      "absolute_zero_trap": 2,
+      "alpha_pack": 3,
+      "alpha_wolf": 4,
+      "annihilator": 5,
+      "arc_lance": 6,
+      "auto_sentry_mount": 7,
+      "barrage_fletching": 8,
+      "bear_trap_array": 9,
+      "bear_trap_overkill": 10,
+      "berserkers_fury": 11,
+      "big_boom": 12,
+      "black_hole_chain": 13,
+      "black_hole_hammer": 14,
+      "blade_maelstrom": 15,
+      "bleeding_trail": 16,
+      "blight_frost": 17,
+      "blood_blade": 18,
+      "bone_colossus": 19,
+      "bone_pack": 20,
+      "bow": 21,
+      "bramble_god": 22,
+      "bullet_hell": 23,
+      "bullwhip_barrage": 24,
+      "caltrops": 25,
+      "carpet_bomb": 26,
+      "cataclysm_barrel": 27,
+      "chain_cascade": 28,
+      "chain_hook": 29,
+      "chain_lightning": 30,
+      "chain_lightning_2": 31,
+      "chain_reaction": 32,
+      "cluster_charge": 33,
+      "colossal_bloom": 34,
+      "colossus_cleave": 35,
+      "concentrated_blight": 36,
+      "creeping_plague": 37,
+      "crimson_executioner": 38,
+      "crimson_fang": 39,
+      "crimson_maelstrom": 40,
+      "deadeye_focus": 41,
+      "death_ray": 42,
+      "diamond_hailstorm": 43,
+      "endless_current": 44,
+      "endless_horde": 45,
+      "entropy_bloom": 46,
+      "event_horizon": 47,
+      "faraday_field": 48,
+      "final_cut": 49,
+      "fire_nova": 50,
+      "fireball_barrage": 51,
+      "flash_freeze": 52,
+      "flurry_of_blows": 53,
+      "focused_bolt": 54,
+      "frost_field": 55,
+      "frost_nova_mine": 56,
+      "gauss_needle": 57,
+      "glacier_totem": 58,
+      "golden_shuriken": 59,
+      "gravity_chain": 60,
+      "gravity_hammer": 61,
+      "hammer_time": 62,
+      "hand_cannon": 63,
+      "harpoon": 64,
+      "hive_mind": 65,
+      "hive_overmind": 66,
+      "holy_aura": 67,
+      "ice_age": 68,
+      "ice_age_trap": 69,
+      "indiana_bones": 70,
+      "inferno": 71,
+      "javelin": 72,
+      "javelin_barrage": 73,
+      "javelin_storm": 74,
+      "kaleidoscope": 75,
+      "laser_array": 76,
+      "last_light": 77,
+      "lich_court": 78,
+      "lightning_rod": 79,
+      "maelstrom_chain": 80,
+      "maelstrom_of_ruin": 81,
+      "meat_hook": 82,
+      "meteor_shower": 83,
+      "miasma": 84,
+      "minefield": 85,
+      "minigun": 86,
+      "naruto_run": 87,
+      "necro_staff": 88,
+      "nuclear_option": 89,
+      "one_punch": 90,
+      "orbital_strike": 91,
+      "overcharge": 92,
+      "overhealer": 93,
+      "overload_coil": 94,
+      "overload_spike": 95,
+      "permafrost": 96,
+      "petal_storm": 97,
+      "pew_pew": 98,
+      "piercing_lance": 99,
+      "plague_zone": 100,
+      "plasma_cannon": 101,
+      "plasma_cutter": 102,
+      "plasma_lance": 103,
+      "plasma_rifle": 104,
+      "plasma_spray": 105,
+      "pocket_singularity": 106,
+      "poison_cloud": 107,
+      "poison_dart_frog": 108,
+      "prism_beam": 109,
+      "prism_focus": 110,
+      "prism_storm": 111,
+      "quantum_beam": 112,
+      "queens_champion": 113,
+      "radiant_field": 114,
+      "rail_spam": 115,
+      "railgun": 116,
+      "railgun_burst": 117,
+      "railway_spike": 118,
+      "rapid_chamber": 119,
+      "rapid_grapple": 120,
+      "razor_rain": 121,
+      "sakura_barrage": 122,
+      "scatter_load": 123,
+      "seismic_maul": 124,
+      "shuriken_storm": 125,
+      "single_bloom": 126,
+      "single_bolt": 127,
+      "singularity_beam": 128,
+      "skeletal_horde": 129,
+      "sniper_needle": 130,
+      "solar_lance": 131,
+      "spectral_hunt": 132,
+      "spectral_lance": 133,
+      "spike_trap": 134,
+      "spirit_pack_alpha": 135,
+      "spirit_wolves": 136,
+      "spray_and_pray": 137,
+      "static_cling": 138,
+      "storm_chain": 139,
+      "storm_pylon": 140,
+      "storm_surge": 141,
+      "storm_volley": 142,
+      "stormpiercer": 143,
+      "sunwell": 144,
+      "swarm_hive": 145,
+      "tempest_lash": 146,
+      "tesla_coil": 147,
+      "teslas_revenge": 148,
+      "thorn_aura": 149,
+      "thousand_cuts": 150,
+      "thunderbolt": 151,
+      "thunderdome": 152,
+      "thunderstorm_cascade": 153,
+      "toxic_waste": 154,
+      "twin_daggers": 155,
+      "twin_nock": 156,
+      "vampires_kiss": 157,
+      "void_rift": 158,
+      "void_sniper": 159,
+      "voltaic_spikes": 160,
+      "warhammer": 161,
+      "weakening_edge": 162,
+      "whip": 163,
+      "whip_crack": 164,
+      "wide_beam": 165,
+      "wide_spectrum": 166,
+      "will_o_wisp_swarm": 167,
+      "wolf_swarm": 168,
+      "world_ender": 169,
+      "world_piercer": 170,
+      "wraithcall": 171,
+      "zerg_rush": 172,
+      "zeus_wrath": 173
+     },
+     "parts": {
+      "1x": {
+       "file": "weapons@1x.webp",
+       "cell": 64,
+       "w": 1024,
+       "h": 704
+      },
+      "2x": {
+       "file": "weapons@2x.webp",
+       "cell": 128,
+       "w": 2048,
+       "h": 1408
+      }
+     }
+    }
+   }
+  },
+  "weapon": {
+   "dir": "weapons",
+   "title": "Снаряды оружия",
+   "unit": "sheets",
+   "load": false,
+   "bake": "tools/art/bake-weapon-proj.mjs",
+   "buckets": 24,
+   "spinFrames": 8,
+   "sets": {
+    "arrow": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "bow"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-arrow@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "blossom": {
+     "spin": true,
+     "fold": 5,
+     "frames": 8,
+     "step": 9,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "blood": 0,
+      "poison": 1,
+      "steel": 2
+     },
+     "weapons": [
+      "kaleidoscope",
+      "colossal_bloom",
+      "entropy_bloom",
+      "single_bloom"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-blossom@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "bolt": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "poison": 0,
+      "steel": 1
+     },
+     "weapons": [
+      "twin_nock",
+      "poison_dart_frog",
+      "javelin_storm",
+      "sniper_needle"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-bolt@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "bone": {
+     "spin": true,
+     "fold": 2,
+     "frames": 8,
+     "step": 22.5,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "blood": 0,
+      "void": 1
+     },
+     "weapons": [
+      "bone_pack",
+      "bone_colossus",
+      "indiana_bones"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-bone@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 64
+      }
+     }
+    },
+    "bubble": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "frost": 0,
+      "poison": 1
+     },
+     "weapons": [
+      "blight_frost",
+      "toxic_waste",
+      "creeping_plague"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-bubble@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "buckshot": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "fire": 0,
+      "steel": 1,
+      "void": 2
+     },
+     "weapons": [
+      "swarm_hive",
+      "spray_and_pray",
+      "wolf_swarm",
+      "scatter_load",
+      "bullet_hell",
+      "hive_overmind",
+      "hive_mind",
+      "endless_horde",
+      "plasma_spray",
+      "carpet_bomb"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-buckshot@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 288
+      }
+     }
+    },
+    "bullet": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "hand_cannon",
+      "rail_spam",
+      "auto_sentry_mount",
+      "rapid_chamber",
+      "minigun"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-bullet@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "card": {
+     "spin": true,
+     "fold": 1,
+     "frames": 8,
+     "step": 45,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "storm_volley"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-card@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 32
+      }
+     }
+    },
+    "chain_link": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "blood": 0
+     },
+     "weapons": [
+      "whip",
+      "tempest_lash",
+      "bullwhip_barrage",
+      "whip_crack"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-chain_link@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "chakram": {
+     "spin": true,
+     "fold": 6,
+     "frames": 8,
+     "step": 7.5,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "blood": 0,
+      "lightning": 1
+     },
+     "weapons": [
+      "storm_chain",
+      "naruto_run",
+      "thunderstorm_cascade",
+      "storm_surge"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-chakram@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 64
+      }
+     }
+    },
+    "coin": {
+     "spin": true,
+     "fold": 1,
+     "frames": 8,
+     "step": 45,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "fire": 0
+     },
+     "weapons": [
+      "cluster_charge"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-coin@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 32
+      }
+     }
+    },
+    "comet": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "fire": 0,
+      "steel": 1
+     },
+     "weapons": [
+      "plasma_lance",
+      "plasma_cannon",
+      "world_ender",
+      "meteor_shower",
+      "cataclysm_barrel"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-comet@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "cross": {
+     "spin": true,
+     "fold": 4,
+     "frames": 8,
+     "step": 11.25,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "holy": 0
+     },
+     "weapons": [
+      "last_light"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-cross@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 32
+      }
+     }
+    },
+    "crystal": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "frost": 0,
+      "steel": 1
+     },
+     "weapons": [
+      "prism_beam",
+      "solar_lance",
+      "fireball_barrage",
+      "prism_storm",
+      "ice_age",
+      "diamond_hailstorm",
+      "absolute_glacier"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-crystal@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "dagger": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "twin_daggers",
+      "thousand_cuts",
+      "bleeding_trail",
+      "weakening_edge"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-dagger@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "droplet": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "frost": 0,
+      "poison": 1
+     },
+     "weapons": [
+      "poison_cloud",
+      "plague_zone",
+      "miasma",
+      "concentrated_blight"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-droplet@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "energy_dart": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "fire": 0,
+      "steel": 1
+     },
+     "weapons": [
+      "laser_array",
+      "void_sniper",
+      "annihilator",
+      "quantum_beam",
+      "death_ray",
+      "wide_beam",
+      "pew_pew"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-energy_dart@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "eye": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "poison": 0,
+      "steel": 1
+     },
+     "weapons": [
+      "void_rift",
+      "deadeye_focus",
+      "spectral_hunt",
+      "event_horizon"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-eye@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "fang": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0,
+      "void": 1
+     },
+     "weapons": [
+      "spirit_wolves",
+      "spirit_pack_alpha",
+      "alpha_pack",
+      "zerg_rush",
+      "alpha_wolf"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-fang@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "feather": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "barrage_fletching"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-feather@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "fireball": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "fire": 0
+     },
+     "weapons": [
+      "fire_nova",
+      "inferno",
+      "nuclear_option"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-fireball@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "gear": {
+     "spin": true,
+     "fold": 9,
+     "frames": 8,
+     "step": 5,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "lightning": 0
+     },
+     "weapons": [
+      "maelstrom_chain",
+      "endless_current"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-gear@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 32
+      }
+     }
+    },
+    "glass_shard": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "lightning": 0
+     },
+     "weapons": [
+      "arc_lance",
+      "singularity_beam",
+      "lightning_rod",
+      "teslas_revenge"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-glass_shard@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "harpoon": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0,
+      "void": 1
+     },
+     "weapons": [
+      "chain_hook",
+      "gravity_chain",
+      "meat_hook",
+      "rapid_grapple",
+      "black_hole_chain",
+      "harpoon"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-harpoon@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "ice_shard": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "frost": 0
+     },
+     "weapons": [
+      "frost_field",
+      "permafrost",
+      "flash_freeze"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-ice_shard@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "icicle": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "frost": 0
+     },
+     "weapons": [
+      "glacier_totem",
+      "absolute_zero",
+      "ice_age_trap",
+      "absolute_zero_trap"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-icicle@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "javelin": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "javelin",
+      "piercing_lance",
+      "javelin_barrage"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-javelin@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "kunai": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "lightning": 0
+     },
+     "weapons": [
+      "spectral_lance",
+      "prism_focus",
+      "wide_spectrum"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-kunai@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "leaf": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "blood": 0,
+      "poison": 1
+     },
+     "weapons": [
+      "thorn_aura",
+      "bramble_god",
+      "petal_storm"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-leaf@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "lightning_bolt": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "lightning": 0
+     },
+     "weapons": [
+      "chain_lightning",
+      "maelstrom_of_ruin",
+      "overcharge",
+      "zeus_wrath",
+      "thunderbolt",
+      "single_bolt",
+      "focused_bolt"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-lightning_bolt@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "missile": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "stormpiercer",
+      "orbital_strike",
+      "world_piercer"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-missile@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "needle_trio": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0,
+      "void": 1
+     },
+     "weapons": [
+      "gauss_needle",
+      "skeletal_horde",
+      "caltrops"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-needle_trio@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "orb": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "holy": 0
+     },
+     "weapons": [
+      "sunwell"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-orb@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "petal": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "blood": 0
+     },
+     "weapons": [
+      "sakura_barrage"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-petal@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "plasma_bolt": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "fire": 0
+     },
+     "weapons": [
+      "plasma_rifle"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-plasma_bolt@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "railslug": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "railgun",
+      "railway_spike",
+      "railgun_burst"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-railslug@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "rune_stone": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "gravity_hammer",
+      "black_hole_hammer",
+      "pocket_singularity"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-rune_stone@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "sawblade": {
+     "spin": true,
+     "fold": 14,
+     "frames": 8,
+     "step": 3.2142857142857144,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "blood": 0,
+      "fire": 1,
+      "steel": 2
+     },
+     "weapons": [
+      "voltaic_spikes",
+      "plasma_cutter",
+      "razor_rain",
+      "bear_trap_overkill",
+      "chain_cascade"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-sawblade@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "scythe": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "blood": 0,
+      "steel": 1
+     },
+     "weapons": [
+      "crimson_fang",
+      "colossus_cleave",
+      "crimson_maelstrom"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-scythe@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "shuriken4": {
+     "spin": true,
+     "fold": 4,
+     "frames": 8,
+     "step": 11.25,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "blood": 0
+     },
+     "weapons": [
+      "shuriken_storm"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-shuriken4@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 32
+      }
+     }
+    },
+    "shuriken6": {
+     "spin": true,
+     "fold": 6,
+     "frames": 8,
+     "step": 7.5,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "blood": 0
+     },
+     "weapons": [
+      "blade_maelstrom"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-shuriken6@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 32
+      }
+     }
+    },
+    "sickle": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "blood": 0
+     },
+     "weapons": [
+      "blood_blade",
+      "crimson_executioner",
+      "vampires_kiss",
+      "flurry_of_blows",
+      "berserkers_fury"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-sickle@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "skull": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "void": 0
+     },
+     "weapons": [
+      "necro_staff",
+      "wraithcall"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-skull@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "spark_ball": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "fire": 0,
+      "lightning": 1
+     },
+     "weapons": [
+      "tesla_coil",
+      "will_o_wisp_swarm",
+      "storm_pylon",
+      "overload_coil",
+      "chain_reaction",
+      "faraday_field",
+      "static_cling",
+      "chain_lightning_2"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-spark_ball@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "spiked_ball": {
+     "spin": true,
+     "fold": 8,
+     "frames": 8,
+     "step": 5.625,
+     "cols": 8,
+     "rows": 1,
+     "elems": {
+      "fire": 0,
+      "frost": 1,
+      "steel": 2
+     },
+     "weapons": [
+      "warhammer",
+      "seismic_maul",
+      "thunderdome",
+      "one_punch",
+      "hammer_time",
+      "bear_trap_array",
+      "queens_champion",
+      "frost_nova_mine",
+      "overload_spike",
+      "big_boom"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-spiked_ball@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "star_holy": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "blood": 0,
+      "holy": 1
+     },
+     "weapons": [
+      "holy_aura",
+      "golden_shuriken",
+      "radiant_field",
+      "overhealer"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-star_holy@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 192
+      }
+     }
+    },
+    "sword_thrown": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "blood": 0
+     },
+     "weapons": [
+      "final_cut"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-sword_thrown@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "thorn": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "steel": 0
+     },
+     "weapons": [
+      "spike_trap",
+      "minefield"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-thorn@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    },
+    "tome": {
+     "spin": false,
+     "fold": 1,
+     "frames": 24,
+     "step": 15,
+     "cols": 8,
+     "rows": 3,
+     "elems": {
+      "void": 0
+     },
+     "weapons": [
+      "lich_court"
+     ],
+     "overrides": [],
+     "parts": {
+      "1x": {
+       "file": "proj-tome@1x.webp",
+       "cell": 32,
+       "w": 256,
+       "h": 96
+      }
+     }
+    }
+   }
+  },
+  "weaponfx": {
+   "dir": "weapons/fx",
+   "title": "Эффекты оружия",
+   "unit": "strips",
+   "load": false,
+   "bake": "tools/art/bake-weapon-fx.mjs",
+   "sizes": {
+    "hi": 192,
+    "lo": 128
+   },
+   "sets": {
+    "aura.flame_skirt.fire": {
+     "kind": "aura",
+     "id": "flame_skirt",
+     "elem": "fire",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/flame_skirt.mjs",
+     "hash": "6477772c2867",
+     "reach": 24.84,
+     "weapons": [
+      "fire_nova",
+      "inferno",
+      "meteor_shower",
+      "will_o_wisp_swarm",
+      "nuclear_option"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-flame_skirt-fire@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-flame_skirt-fire@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.flame_skirt.holy": {
+     "kind": "aura",
+     "id": "flame_skirt",
+     "elem": "holy",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/flame_skirt.mjs",
+     "hash": "6477772c2867",
+     "reach": 24.84,
+     "weapons": [
+      "radiant_field"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-flame_skirt-holy@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-flame_skirt-holy@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.frost_crystals.frost": {
+     "kind": "aura",
+     "id": "frost_crystals",
+     "elem": "frost",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/frost_crystals.mjs",
+     "hash": "6d13de2af109",
+     "reach": 24.77,
+     "weapons": [
+      "frost_field",
+      "glacier_totem",
+      "blight_frost",
+      "absolute_zero",
+      "permafrost",
+      "flash_freeze",
+      "ice_age",
+      "absolute_glacier",
+      "ice_age_trap",
+      "frost_nova_mine",
+      "absolute_zero_trap",
+      "concentrated_blight"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-frost_crystals-frost@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-frost_crystals-frost@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.hex_field.frost": {
+     "kind": "aura",
+     "id": "hex_field",
+     "elem": "frost",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/hex_field.mjs",
+     "hash": "4fcf9d92aff8",
+     "reach": 25.04,
+     "weapons": [
+      "creeping_plague"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-hex_field-frost@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-hex_field-frost@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.hex_field.lightning": {
+     "kind": "aura",
+     "id": "hex_field",
+     "elem": "lightning",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/hex_field.mjs",
+     "hash": "4fcf9d92aff8",
+     "reach": 25.04,
+     "weapons": [
+      "faraday_field"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-hex_field-lightning@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-hex_field-lightning@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.hex_field.poison": {
+     "kind": "aura",
+     "id": "hex_field",
+     "elem": "poison",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/hex_field.mjs",
+     "hash": "4fcf9d92aff8",
+     "reach": 25.04,
+     "weapons": [
+      "plague_zone",
+      "bramble_god"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-hex_field-poison@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-hex_field-poison@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.hex_field.steel": {
+     "kind": "aura",
+     "id": "hex_field",
+     "elem": "steel",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/hex_field.mjs",
+     "hash": "4fcf9d92aff8",
+     "reach": 25.04,
+     "weapons": [
+      "hive_overmind"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-hex_field-steel@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-hex_field-steel@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.hex_field.void": {
+     "kind": "aura",
+     "id": "hex_field",
+     "elem": "void",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/hex_field.mjs",
+     "hash": "4fcf9d92aff8",
+     "reach": 25.04,
+     "weapons": [
+      "lich_court"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-hex_field-void@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-hex_field-void@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.holy_halo.holy": {
+     "kind": "aura",
+     "id": "holy_halo",
+     "elem": "holy",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/holy_halo.mjs",
+     "hash": "6dfbb87a2db2",
+     "reach": 24.03,
+     "weapons": [
+      "holy_aura",
+      "last_light"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-holy_halo-holy@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-holy_halo-holy@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.orbit_motes.blood": {
+     "kind": "aura",
+     "id": "orbit_motes",
+     "elem": "blood",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/orbit_motes.mjs",
+     "hash": "3902a40c99f4",
+     "reach": 25.17,
+     "weapons": [
+      "shuriken_storm",
+      "blade_maelstrom",
+      "naruto_run",
+      "razor_rain",
+      "golden_shuriken"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-orbit_motes-blood@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-orbit_motes-blood@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.orbit_motes.lightning": {
+     "kind": "aura",
+     "id": "orbit_motes",
+     "elem": "lightning",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/orbit_motes.mjs",
+     "hash": "3902a40c99f4",
+     "reach": 25.17,
+     "weapons": [
+      "maelstrom_chain",
+      "endless_current",
+      "focused_bolt"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-orbit_motes-lightning@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-orbit_motes-lightning@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.orbit_motes.steel": {
+     "kind": "aura",
+     "id": "orbit_motes",
+     "elem": "steel",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/orbit_motes.mjs",
+     "hash": "3902a40c99f4",
+     "reach": 25.17,
+     "weapons": [
+      "spirit_wolves",
+      "twin_daggers",
+      "alpha_pack",
+      "wolf_swarm",
+      "spectral_hunt",
+      "thousand_cuts",
+      "bleeding_trail",
+      "weakening_edge",
+      "colossus_cleave",
+      "hive_mind"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-orbit_motes-steel@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-orbit_motes-steel@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.orbit_motes.void": {
+     "kind": "aura",
+     "id": "orbit_motes",
+     "elem": "void",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/orbit_motes.mjs",
+     "hash": "3902a40c99f4",
+     "reach": 25.17,
+     "weapons": [
+      "bone_pack",
+      "endless_horde",
+      "alpha_wolf"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-orbit_motes-void@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-orbit_motes-void@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.pulse_wave.blood": {
+     "kind": "aura",
+     "id": "pulse_wave",
+     "elem": "blood",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/pulse_wave.mjs",
+     "hash": "155abd5969b1",
+     "reach": 24.23,
+     "weapons": [
+      "blood_blade",
+      "crimson_fang",
+      "crimson_executioner",
+      "vampires_kiss",
+      "flurry_of_blows",
+      "berserkers_fury",
+      "crimson_maelstrom",
+      "final_cut"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-pulse_wave-blood@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-pulse_wave-blood@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.pulse_wave.holy": {
+     "kind": "aura",
+     "id": "pulse_wave",
+     "elem": "holy",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/pulse_wave.mjs",
+     "hash": "155abd5969b1",
+     "reach": 24.23,
+     "weapons": [
+      "overhealer"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-pulse_wave-holy@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-pulse_wave-holy@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.pulse_wave.lightning": {
+     "kind": "aura",
+     "id": "pulse_wave",
+     "elem": "lightning",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/pulse_wave.mjs",
+     "hash": "155abd5969b1",
+     "reach": 24.23,
+     "weapons": [
+      "spectral_lance",
+      "prism_focus",
+      "wide_spectrum"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-pulse_wave-lightning@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-pulse_wave-lightning@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.pulse_wave.poison": {
+     "kind": "aura",
+     "id": "pulse_wave",
+     "elem": "poison",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/pulse_wave.mjs",
+     "hash": "155abd5969b1",
+     "reach": 24.23,
+     "weapons": [
+      "void_rift",
+      "event_horizon",
+      "entropy_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-pulse_wave-poison@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-pulse_wave-poison@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.pulse_wave.steel": {
+     "kind": "aura",
+     "id": "pulse_wave",
+     "elem": "steel",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/pulse_wave.mjs",
+     "hash": "155abd5969b1",
+     "reach": 24.23,
+     "weapons": [
+      "warhammer",
+      "gravity_hammer",
+      "seismic_maul",
+      "thunderdome",
+      "one_punch",
+      "hammer_time",
+      "spirit_pack_alpha",
+      "black_hole_hammer",
+      "pocket_singularity"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-pulse_wave-steel@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-pulse_wave-steel@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.pulse_wave.void": {
+     "kind": "aura",
+     "id": "pulse_wave",
+     "elem": "void",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/pulse_wave.mjs",
+     "hash": "155abd5969b1",
+     "reach": 24.23,
+     "weapons": [
+      "necro_staff",
+      "skeletal_horde",
+      "bone_colossus",
+      "wraithcall"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-pulse_wave-void@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-pulse_wave-void@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.ring_dashed.blood": {
+     "kind": "aura",
+     "id": "ring_dashed",
+     "elem": "blood",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/ring_dashed.mjs",
+     "hash": "8b1bb0c453b3",
+     "reach": 24.99,
+     "weapons": [
+      "whip",
+      "tempest_lash",
+      "bullwhip_barrage",
+      "whip_crack",
+      "indiana_bones"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-ring_dashed-blood@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-ring_dashed-blood@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.ring_dashed.fire": {
+     "kind": "aura",
+     "id": "ring_dashed",
+     "elem": "fire",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/ring_dashed.mjs",
+     "hash": "8b1bb0c453b3",
+     "reach": 24.99,
+     "weapons": [
+      "cluster_charge",
+      "carpet_bomb",
+      "big_boom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-ring_dashed-fire@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-ring_dashed-fire@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.ring_dashed.holy": {
+     "kind": "aura",
+     "id": "ring_dashed",
+     "elem": "holy",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/ring_dashed.mjs",
+     "hash": "8b1bb0c453b3",
+     "reach": 24.99,
+     "weapons": [
+      "sunwell"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-ring_dashed-holy@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-ring_dashed-holy@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.ring_dashed.steel": {
+     "kind": "aura",
+     "id": "ring_dashed",
+     "elem": "steel",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/ring_dashed.mjs",
+     "hash": "8b1bb0c453b3",
+     "reach": 24.99,
+     "weapons": [
+      "bow",
+      "railgun",
+      "laser_array",
+      "prism_beam",
+      "javelin",
+      "hand_cannon",
+      "stormpiercer",
+      "void_sniper",
+      "barrage_fletching",
+      "twin_nock",
+      "deadeye_focus",
+      "world_ender",
+      "rail_spam",
+      "orbital_strike",
+      "piercing_lance",
+      "quantum_beam",
+      "death_ray",
+      "wide_beam",
+      "pew_pew",
+      "kaleidoscope",
+      "solar_lance",
+      "fireball_barrage",
+      "prism_storm",
+      "world_piercer",
+      "javelin_barrage",
+      "harpoon",
+      "javelin_storm",
+      "cataclysm_barrel",
+      "auto_sentry_mount",
+      "rapid_chamber",
+      "scatter_load",
+      "railway_spike",
+      "storm_volley"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-ring_dashed-steel@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-ring_dashed-steel@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.ring_dashed.void": {
+     "kind": "aura",
+     "id": "ring_dashed",
+     "elem": "void",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/ring_dashed.mjs",
+     "hash": "8b1bb0c453b3",
+     "reach": 24.99,
+     "weapons": [
+      "chain_hook",
+      "gravity_chain",
+      "meat_hook",
+      "rapid_grapple",
+      "black_hole_chain"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-ring_dashed-void@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-ring_dashed-void@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.spore_cloud.blood": {
+     "kind": "aura",
+     "id": "spore_cloud",
+     "elem": "blood",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/spore_cloud.mjs",
+     "hash": "67ec82957c80",
+     "reach": 25.16,
+     "weapons": [
+      "sakura_barrage",
+      "petal_storm",
+      "single_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-spore_cloud-blood@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-spore_cloud-blood@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.spore_cloud.poison": {
+     "kind": "aura",
+     "id": "spore_cloud",
+     "elem": "poison",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/spore_cloud.mjs",
+     "hash": "67ec82957c80",
+     "reach": 25.16,
+     "weapons": [
+      "poison_cloud",
+      "toxic_waste",
+      "poison_dart_frog",
+      "miasma",
+      "colossal_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-spore_cloud-poison@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-spore_cloud-poison@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.spore_cloud.steel": {
+     "kind": "aura",
+     "id": "spore_cloud",
+     "elem": "steel",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/spore_cloud.mjs",
+     "hash": "67ec82957c80",
+     "reach": 25.16,
+     "weapons": [
+      "swarm_hive",
+      "zerg_rush",
+      "queens_champion"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-spore_cloud-steel@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-spore_cloud-steel@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.static_field.fire": {
+     "kind": "aura",
+     "id": "static_field",
+     "elem": "fire",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/static_field.mjs",
+     "hash": "13febddb6a37",
+     "reach": 24.73,
+     "weapons": [
+      "plasma_rifle",
+      "annihilator",
+      "plasma_cutter",
+      "spray_and_pray",
+      "plasma_cannon"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-static_field-fire@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-static_field-fire@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.static_field.lightning": {
+     "kind": "aura",
+     "id": "static_field",
+     "elem": "lightning",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/static_field.mjs",
+     "hash": "13febddb6a37",
+     "reach": 24.73,
+     "weapons": [
+      "tesla_coil",
+      "chain_lightning",
+      "arc_lance",
+      "storm_chain",
+      "storm_pylon",
+      "overload_coil",
+      "chain_reaction",
+      "maelstrom_of_ruin",
+      "overcharge",
+      "zeus_wrath",
+      "static_cling",
+      "singularity_beam",
+      "lightning_rod",
+      "thunderbolt",
+      "teslas_revenge",
+      "thunderstorm_cascade",
+      "chain_lightning_2",
+      "single_bolt",
+      "storm_surge"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-static_field-lightning@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-static_field-lightning@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.static_field.steel": {
+     "kind": "aura",
+     "id": "static_field",
+     "elem": "steel",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/static_field.mjs",
+     "hash": "13febddb6a37",
+     "reach": 24.73,
+     "weapons": [
+      "gauss_needle",
+      "voltaic_spikes",
+      "plasma_lance",
+      "diamond_hailstorm",
+      "minigun",
+      "sniper_needle",
+      "bullet_hell",
+      "chain_cascade",
+      "overload_spike",
+      "railgun_burst",
+      "plasma_spray"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-static_field-steel@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-static_field-steel@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.thorn_ring.poison": {
+     "kind": "aura",
+     "id": "thorn_ring",
+     "elem": "poison",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/thorn_ring.mjs",
+     "hash": "7a9c96dfce1c",
+     "reach": 24.38,
+     "weapons": [
+      "thorn_aura"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-thorn_ring-poison@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-thorn_ring-poison@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "aura.thorn_ring.steel": {
+     "kind": "aura",
+     "id": "thorn_ring",
+     "elem": "steel",
+     "frames": 12,
+     "loop": true,
+     "once": false,
+     "src": "aura/thorn_ring.mjs",
+     "hash": "7a9c96dfce1c",
+     "reach": 24.38,
+     "weapons": [
+      "spike_trap",
+      "bear_trap_array",
+      "minefield",
+      "caltrops",
+      "bear_trap_overkill"
+     ],
+     "parts": {
+      "hi": {
+       "file": "aura-thorn_ring-steel@192.webp",
+       "cell": 192,
+       "w": 2304,
+       "h": 192
+      },
+      "lo": {
+       "file": "aura-thorn_ring-steel@128.webp",
+       "cell": 128,
+       "w": 1536,
+       "h": 128
+      }
+     }
+    },
+    "beam.beam_charge.lightning": {
+     "kind": "beam",
+     "id": "beam_charge",
+     "elem": "lightning",
+     "frames": 8,
+     "loop": true,
+     "once": true,
+     "src": "beam/beam_charge.mjs",
+     "hash": "332501541863",
+     "reach": 25.04,
+     "weapons": [
+      "prism_focus",
+      "focused_bolt"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-beam_charge-lightning@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-beam_charge-lightning@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.beam_charge.steel": {
+     "kind": "beam",
+     "id": "beam_charge",
+     "elem": "steel",
+     "frames": 8,
+     "loop": true,
+     "once": true,
+     "src": "beam/beam_charge.mjs",
+     "hash": "332501541863",
+     "reach": 25.04,
+     "weapons": [
+      "death_ray"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-beam_charge-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-beam_charge-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.chain_lightning.lightning": {
+     "kind": "beam",
+     "id": "chain_lightning",
+     "elem": "lightning",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/chain_lightning.mjs",
+     "hash": "7126dccbb283",
+     "reach": 23.9,
+     "weapons": [
+      "chain_lightning",
+      "storm_chain",
+      "maelstrom_chain",
+      "storm_pylon",
+      "maelstrom_of_ruin",
+      "overcharge",
+      "zeus_wrath",
+      "static_cling",
+      "lightning_rod",
+      "chain_lightning_2",
+      "single_bolt",
+      "storm_surge"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-chain_lightning-lightning@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-chain_lightning-lightning@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.chain_lightning.steel": {
+     "kind": "beam",
+     "id": "chain_lightning",
+     "elem": "steel",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/chain_lightning.mjs",
+     "hash": "7126dccbb283",
+     "reach": 23.9,
+     "weapons": [
+      "chain_cascade"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-chain_lightning-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-chain_lightning-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.cone_flame.fire": {
+     "kind": "beam",
+     "id": "cone_flame",
+     "elem": "fire",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/cone_flame.mjs",
+     "hash": "8929ea91fcfb",
+     "reach": 25.75,
+     "weapons": [
+      "fire_nova",
+      "inferno",
+      "meteor_shower",
+      "will_o_wisp_swarm",
+      "nuclear_option"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-cone_flame-fire@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-cone_flame-fire@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.cone_flame.steel": {
+     "kind": "beam",
+     "id": "cone_flame",
+     "elem": "steel",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/cone_flame.mjs",
+     "hash": "8929ea91fcfb",
+     "reach": 25.75,
+     "weapons": [
+      "fireball_barrage"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-cone_flame-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-cone_flame-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.cone_frost.frost": {
+     "kind": "beam",
+     "id": "cone_frost",
+     "elem": "frost",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/cone_frost.mjs",
+     "hash": "1427421ca29e",
+     "reach": 25.03,
+     "weapons": [
+      "frost_field",
+      "glacier_totem",
+      "blight_frost",
+      "absolute_zero",
+      "permafrost",
+      "flash_freeze",
+      "ice_age",
+      "absolute_glacier",
+      "ice_age_trap",
+      "frost_nova_mine",
+      "absolute_zero_trap",
+      "creeping_plague",
+      "concentrated_blight"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-cone_frost-frost@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-cone_frost-frost@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.drill_beam.lightning": {
+     "kind": "beam",
+     "id": "drill_beam",
+     "elem": "lightning",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/drill_beam.mjs",
+     "hash": "94b7fbcd7c51",
+     "reach": 22.55,
+     "weapons": [
+      "singularity_beam"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-drill_beam-lightning@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-drill_beam-lightning@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.drill_beam.steel": {
+     "kind": "beam",
+     "id": "drill_beam",
+     "elem": "steel",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/drill_beam.mjs",
+     "hash": "94b7fbcd7c51",
+     "reach": 22.55,
+     "weapons": [
+      "plasma_lance",
+      "solar_lance",
+      "railgun_burst",
+      "plasma_spray"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-drill_beam-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-drill_beam-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.laser_beam.blood": {
+     "kind": "beam",
+     "id": "laser_beam",
+     "elem": "blood",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/laser_beam.mjs",
+     "hash": "987b1b731983",
+     "reach": 22.76,
+     "weapons": [
+      "blood_blade",
+      "shuriken_storm",
+      "whip",
+      "crimson_fang",
+      "sakura_barrage",
+      "crimson_executioner",
+      "vampires_kiss",
+      "flurry_of_blows",
+      "berserkers_fury",
+      "blade_maelstrom",
+      "naruto_run",
+      "razor_rain",
+      "golden_shuriken",
+      "tempest_lash",
+      "bullwhip_barrage",
+      "whip_crack",
+      "indiana_bones",
+      "crimson_maelstrom",
+      "final_cut",
+      "petal_storm",
+      "single_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-laser_beam-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-laser_beam-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.laser_beam.fire": {
+     "kind": "beam",
+     "id": "laser_beam",
+     "elem": "fire",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/laser_beam.mjs",
+     "hash": "987b1b731983",
+     "reach": 22.76,
+     "weapons": [
+      "plasma_rifle",
+      "cluster_charge",
+      "annihilator",
+      "plasma_cutter",
+      "spray_and_pray",
+      "plasma_cannon",
+      "carpet_bomb",
+      "big_boom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-laser_beam-fire@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-laser_beam-fire@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.laser_beam.holy": {
+     "kind": "beam",
+     "id": "laser_beam",
+     "elem": "holy",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/laser_beam.mjs",
+     "hash": "987b1b731983",
+     "reach": 22.76,
+     "weapons": [
+      "holy_aura",
+      "radiant_field",
+      "overhealer",
+      "sunwell",
+      "last_light"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-laser_beam-holy@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-laser_beam-holy@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.laser_beam.poison": {
+     "kind": "beam",
+     "id": "laser_beam",
+     "elem": "poison",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/laser_beam.mjs",
+     "hash": "987b1b731983",
+     "reach": 22.76,
+     "weapons": [
+      "poison_cloud",
+      "thorn_aura",
+      "plague_zone",
+      "toxic_waste",
+      "poison_dart_frog",
+      "miasma",
+      "bramble_god",
+      "colossal_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-laser_beam-poison@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-laser_beam-poison@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.laser_beam.steel": {
+     "kind": "beam",
+     "id": "laser_beam",
+     "elem": "steel",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/laser_beam.mjs",
+     "hash": "987b1b731983",
+     "reach": 22.76,
+     "weapons": [
+      "warhammer",
+      "bow",
+      "laser_array",
+      "spirit_wolves",
+      "spike_trap",
+      "twin_daggers",
+      "javelin",
+      "hand_cannon",
+      "gauss_needle",
+      "swarm_hive",
+      "voltaic_spikes",
+      "gravity_hammer",
+      "seismic_maul",
+      "thunderdome",
+      "one_punch",
+      "hammer_time",
+      "void_sniper",
+      "barrage_fletching",
+      "twin_nock",
+      "deadeye_focus",
+      "pew_pew",
+      "spirit_pack_alpha",
+      "alpha_pack",
+      "wolf_swarm",
+      "spectral_hunt",
+      "bear_trap_array",
+      "minefield",
+      "caltrops",
+      "bear_trap_overkill",
+      "thousand_cuts",
+      "bleeding_trail",
+      "weakening_edge",
+      "colossus_cleave",
+      "world_piercer",
+      "javelin_barrage",
+      "harpoon",
+      "javelin_storm",
+      "cataclysm_barrel",
+      "auto_sentry_mount",
+      "rapid_chamber",
+      "scatter_load",
+      "diamond_hailstorm",
+      "minigun",
+      "sniper_needle",
+      "bullet_hell",
+      "hive_overmind",
+      "zerg_rush",
+      "queens_champion",
+      "hive_mind",
+      "overload_spike",
+      "black_hole_hammer",
+      "pocket_singularity"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-laser_beam-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-laser_beam-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.laser_beam.void": {
+     "kind": "beam",
+     "id": "laser_beam",
+     "elem": "void",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/laser_beam.mjs",
+     "hash": "987b1b731983",
+     "reach": 22.76,
+     "weapons": [
+      "bone_pack",
+      "endless_horde",
+      "alpha_wolf"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-laser_beam-void@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-laser_beam-void@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.laser_wide.lightning": {
+     "kind": "beam",
+     "id": "laser_wide",
+     "elem": "lightning",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/laser_wide.mjs",
+     "hash": "0a2df29299fb",
+     "reach": 23.01,
+     "weapons": [
+      "wide_spectrum"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-laser_wide-lightning@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-laser_wide-lightning@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.laser_wide.steel": {
+     "kind": "beam",
+     "id": "laser_wide",
+     "elem": "steel",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/laser_wide.mjs",
+     "hash": "0a2df29299fb",
+     "reach": 23.01,
+     "weapons": [
+      "wide_beam",
+      "prism_storm"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-laser_wide-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-laser_wide-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.lightning_arc.lightning": {
+     "kind": "beam",
+     "id": "lightning_arc",
+     "elem": "lightning",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/lightning_arc.mjs",
+     "hash": "7e1708d3e81b",
+     "reach": 23.51,
+     "weapons": [
+      "tesla_coil",
+      "arc_lance",
+      "overload_coil",
+      "chain_reaction",
+      "faraday_field",
+      "thunderbolt",
+      "teslas_revenge",
+      "thunderstorm_cascade",
+      "endless_current"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-lightning_arc-lightning@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-lightning_arc-lightning@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.prism_split.steel": {
+     "kind": "beam",
+     "id": "prism_split",
+     "elem": "steel",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/prism_split.mjs",
+     "hash": "7b8f6cdf7cfb",
+     "reach": 24.68,
+     "weapons": [
+      "prism_beam",
+      "kaleidoscope"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-prism_split-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-prism_split-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.rail_trail.steel": {
+     "kind": "beam",
+     "id": "rail_trail",
+     "elem": "steel",
+     "frames": 8,
+     "loop": true,
+     "once": true,
+     "src": "beam/rail_trail.mjs",
+     "hash": "f338eca3028b",
+     "reach": 22.86,
+     "weapons": [
+      "railgun",
+      "stormpiercer",
+      "world_ender",
+      "rail_spam",
+      "orbital_strike",
+      "piercing_lance",
+      "railway_spike",
+      "storm_volley"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-rail_trail-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-rail_trail-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.scan_line.steel": {
+     "kind": "beam",
+     "id": "scan_line",
+     "elem": "steel",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/scan_line.mjs",
+     "hash": "da89212039d0",
+     "reach": 23.67,
+     "weapons": [
+      "quantum_beam"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-scan_line-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-scan_line-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.tether_beam.lightning": {
+     "kind": "beam",
+     "id": "tether_beam",
+     "elem": "lightning",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/tether_beam.mjs",
+     "hash": "d6ac05fa8adc",
+     "reach": 23.6,
+     "weapons": [
+      "spectral_lance"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-tether_beam-lightning@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-tether_beam-lightning@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.tether_beam.poison": {
+     "kind": "beam",
+     "id": "tether_beam",
+     "elem": "poison",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/tether_beam.mjs",
+     "hash": "d6ac05fa8adc",
+     "reach": 23.6,
+     "weapons": [
+      "void_rift",
+      "event_horizon",
+      "entropy_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-tether_beam-poison@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-tether_beam-poison@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "beam.tether_beam.void": {
+     "kind": "beam",
+     "id": "tether_beam",
+     "elem": "void",
+     "frames": 8,
+     "loop": true,
+     "once": false,
+     "src": "beam/tether_beam.mjs",
+     "hash": "d6ac05fa8adc",
+     "reach": 23.6,
+     "weapons": [
+      "chain_hook",
+      "necro_staff",
+      "gravity_chain",
+      "meat_hook",
+      "rapid_grapple",
+      "black_hole_chain",
+      "lich_court",
+      "skeletal_horde",
+      "bone_colossus",
+      "wraithcall"
+     ],
+     "parts": {
+      "hi": {
+       "file": "beam-tether_beam-void@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "beam-tether_beam-void@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "blast.black_hole.lightning": {
+     "kind": "blast",
+     "id": "black_hole",
+     "elem": "lightning",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/black_hole.mjs",
+     "hash": "0a36f12a1c85",
+     "reach": 23.78,
+     "weapons": [
+      "maelstrom_chain",
+      "singularity_beam",
+      "endless_current",
+      "focused_bolt"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-black_hole-lightning@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-black_hole-lightning@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.black_hole.poison": {
+     "kind": "blast",
+     "id": "black_hole",
+     "elem": "poison",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/black_hole.mjs",
+     "hash": "0a36f12a1c85",
+     "reach": 23.78,
+     "weapons": [
+      "event_horizon"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-black_hole-poison@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-black_hole-poison@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.black_hole.steel": {
+     "kind": "blast",
+     "id": "black_hole",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/black_hole.mjs",
+     "hash": "0a36f12a1c85",
+     "reach": 23.78,
+     "weapons": [
+      "gravity_hammer"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-black_hole-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-black_hole-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.black_hole.void": {
+     "kind": "blast",
+     "id": "black_hole",
+     "elem": "void",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/black_hole.mjs",
+     "hash": "0a36f12a1c85",
+     "reach": 23.78,
+     "weapons": [
+      "black_hole_chain"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-black_hole-void@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-black_hole-void@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.blood_splatter.blood": {
+     "kind": "blast",
+     "id": "blood_splatter",
+     "elem": "blood",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/blood_splatter.mjs",
+     "hash": "a0240b6afbc3",
+     "reach": 25.95,
+     "weapons": [
+      "blood_blade",
+      "crimson_fang",
+      "crimson_executioner",
+      "vampires_kiss",
+      "flurry_of_blows",
+      "berserkers_fury",
+      "crimson_maelstrom",
+      "final_cut"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-blood_splatter-blood@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-blood_splatter-blood@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.blood_splatter.steel": {
+     "kind": "blast",
+     "id": "blood_splatter",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/blood_splatter.mjs",
+     "hash": "a0240b6afbc3",
+     "reach": 25.95,
+     "weapons": [
+      "bleeding_trail"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-blood_splatter-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-blood_splatter-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.blood_splatter.void": {
+     "kind": "blast",
+     "id": "blood_splatter",
+     "elem": "void",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/blood_splatter.mjs",
+     "hash": "a0240b6afbc3",
+     "reach": 25.95,
+     "weapons": [
+      "meat_hook"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-blood_splatter-void@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-blood_splatter-void@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.crater_ring.blood": {
+     "kind": "blast",
+     "id": "crater_ring",
+     "elem": "blood",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/crater_ring.mjs",
+     "hash": "7708d0842aa3",
+     "reach": 27.46,
+     "weapons": [
+      "single_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-crater_ring-blood@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-crater_ring-blood@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.crater_ring.fire": {
+     "kind": "blast",
+     "id": "crater_ring",
+     "elem": "fire",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/crater_ring.mjs",
+     "hash": "7708d0842aa3",
+     "reach": 27.46,
+     "weapons": [
+      "inferno",
+      "big_boom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-crater_ring-fire@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-crater_ring-fire@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.crater_ring.frost": {
+     "kind": "blast",
+     "id": "crater_ring",
+     "elem": "frost",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/crater_ring.mjs",
+     "hash": "7708d0842aa3",
+     "reach": 27.46,
+     "weapons": [
+      "permafrost",
+      "absolute_glacier",
+      "concentrated_blight"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-crater_ring-frost@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-crater_ring-frost@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.crater_ring.poison": {
+     "kind": "blast",
+     "id": "crater_ring",
+     "elem": "poison",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/crater_ring.mjs",
+     "hash": "7708d0842aa3",
+     "reach": 27.46,
+     "weapons": [
+      "entropy_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-crater_ring-poison@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-crater_ring-poison@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.crater_ring.steel": {
+     "kind": "blast",
+     "id": "crater_ring",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/crater_ring.mjs",
+     "hash": "7708d0842aa3",
+     "reach": 27.46,
+     "weapons": [
+      "railgun",
+      "javelin",
+      "stormpiercer",
+      "one_punch",
+      "rail_spam",
+      "piercing_lance",
+      "bear_trap_array",
+      "world_piercer",
+      "javelin_barrage",
+      "harpoon",
+      "javelin_storm",
+      "storm_volley",
+      "pocket_singularity",
+      "railgun_burst"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-crater_ring-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-crater_ring-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.crater_ring.void": {
+     "kind": "blast",
+     "id": "crater_ring",
+     "elem": "void",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/crater_ring.mjs",
+     "hash": "7708d0842aa3",
+     "reach": 27.46,
+     "weapons": [
+      "chain_hook",
+      "rapid_grapple",
+      "bone_colossus"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-crater_ring-void@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-crater_ring-void@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.fireburst.fire": {
+     "kind": "blast",
+     "id": "fireburst",
+     "elem": "fire",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/fireburst.mjs",
+     "hash": "5f5616c9d636",
+     "reach": 23.04,
+     "weapons": [
+      "fire_nova",
+      "carpet_bomb"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-fireburst-fire@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-fireburst-fire@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.frost_bloom.frost": {
+     "kind": "blast",
+     "id": "frost_bloom",
+     "elem": "frost",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/frost_bloom.mjs",
+     "hash": "32123cbdfaaf",
+     "reach": 25.69,
+     "weapons": [
+      "frost_field",
+      "glacier_totem"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-frost_bloom-frost@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-frost_bloom-frost@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.holy_pillar.holy": {
+     "kind": "blast",
+     "id": "holy_pillar",
+     "elem": "holy",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/holy_pillar.mjs",
+     "hash": "b874f9e76311",
+     "reach": 29.5,
+     "weapons": [
+      "holy_aura",
+      "radiant_field",
+      "overhealer",
+      "sunwell",
+      "last_light"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-holy_pillar-holy@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-holy_pillar-holy@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.lightning_strike.lightning": {
+     "kind": "blast",
+     "id": "lightning_strike",
+     "elem": "lightning",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/lightning_strike.mjs",
+     "hash": "6f4b6aa599d7",
+     "reach": 26.85,
+     "weapons": [
+      "tesla_coil",
+      "chain_lightning",
+      "arc_lance",
+      "storm_chain",
+      "storm_pylon",
+      "chain_reaction",
+      "faraday_field",
+      "overcharge",
+      "zeus_wrath",
+      "static_cling",
+      "lightning_rod",
+      "thunderbolt",
+      "teslas_revenge",
+      "thunderstorm_cascade",
+      "chain_lightning_2",
+      "single_bolt"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-lightning_strike-lightning@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-lightning_strike-lightning@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.lightning_strike.steel": {
+     "kind": "blast",
+     "id": "lightning_strike",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/lightning_strike.mjs",
+     "hash": "6f4b6aa599d7",
+     "reach": 26.85,
+     "weapons": [
+      "thunderdome",
+      "orbital_strike"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-lightning_strike-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-lightning_strike-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.meteor_impact.fire": {
+     "kind": "blast",
+     "id": "meteor_impact",
+     "elem": "fire",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/meteor_impact.mjs",
+     "hash": "2243d7a5409f",
+     "reach": 27.85,
+     "weapons": [
+      "cluster_charge",
+      "plasma_cannon",
+      "meteor_shower"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-meteor_impact-fire@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-meteor_impact-fire@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.meteor_impact.steel": {
+     "kind": "blast",
+     "id": "meteor_impact",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/meteor_impact.mjs",
+     "hash": "2243d7a5409f",
+     "reach": 27.85,
+     "weapons": [
+      "world_ender",
+      "minefield",
+      "cataclysm_barrel",
+      "railway_spike",
+      "overload_spike"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-meteor_impact-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-meteor_impact-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.nova_double.frost": {
+     "kind": "blast",
+     "id": "nova_double",
+     "elem": "frost",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/nova_double.mjs",
+     "hash": "1bcd93725447",
+     "reach": 26.67,
+     "weapons": [
+      "ice_age",
+      "ice_age_trap"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-nova_double-frost@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-nova_double-frost@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.nova_double.lightning": {
+     "kind": "blast",
+     "id": "nova_double",
+     "elem": "lightning",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/nova_double.mjs",
+     "hash": "1bcd93725447",
+     "reach": 26.67,
+     "weapons": [
+      "overload_coil",
+      "storm_surge"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-nova_double-lightning@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-nova_double-lightning@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.nova_double.steel": {
+     "kind": "blast",
+     "id": "nova_double",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/nova_double.mjs",
+     "hash": "1bcd93725447",
+     "reach": 26.67,
+     "weapons": [
+      "warhammer",
+      "seismic_maul",
+      "hammer_time"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-nova_double-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-nova_double-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.nova_ring.blood": {
+     "kind": "blast",
+     "id": "nova_ring",
+     "elem": "blood",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/nova_ring.mjs",
+     "hash": "9981a4ef2430",
+     "reach": 27.34,
+     "weapons": [
+      "whip",
+      "tempest_lash",
+      "bullwhip_barrage",
+      "whip_crack",
+      "indiana_bones"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-nova_ring-blood@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-nova_ring-blood@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.nova_ring.steel": {
+     "kind": "blast",
+     "id": "nova_ring",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/nova_ring.mjs",
+     "hash": "9981a4ef2430",
+     "reach": 27.34,
+     "weapons": [
+      "bow",
+      "laser_array",
+      "void_sniper",
+      "barrage_fletching",
+      "twin_nock",
+      "deadeye_focus",
+      "quantum_beam",
+      "death_ray",
+      "wide_beam",
+      "pew_pew"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-nova_ring-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-nova_ring-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.pixel_dissolve.blood": {
+     "kind": "blast",
+     "id": "pixel_dissolve",
+     "elem": "blood",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/pixel_dissolve.mjs",
+     "hash": "5a9068774b50",
+     "reach": 26.67,
+     "weapons": [
+      "sakura_barrage"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-pixel_dissolve-blood@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-pixel_dissolve-blood@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.pixel_dissolve.poison": {
+     "kind": "blast",
+     "id": "pixel_dissolve",
+     "elem": "poison",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/pixel_dissolve.mjs",
+     "hash": "5a9068774b50",
+     "reach": 26.67,
+     "weapons": [
+      "miasma"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-pixel_dissolve-poison@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-pixel_dissolve-poison@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.poison_cloud.frost": {
+     "kind": "blast",
+     "id": "poison_cloud",
+     "elem": "frost",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/poison_cloud.mjs",
+     "hash": "5dec8b22ab3b",
+     "reach": 20.36,
+     "weapons": [
+      "creeping_plague"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-poison_cloud-frost@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-poison_cloud-frost@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.poison_cloud.poison": {
+     "kind": "blast",
+     "id": "poison_cloud",
+     "elem": "poison",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/poison_cloud.mjs",
+     "hash": "5dec8b22ab3b",
+     "reach": 20.36,
+     "weapons": [
+      "poison_cloud",
+      "plague_zone",
+      "poison_dart_frog",
+      "bramble_god"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-poison_cloud-poison@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-poison_cloud-poison@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.rune_circle.lightning": {
+     "kind": "blast",
+     "id": "rune_circle",
+     "elem": "lightning",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/rune_circle.mjs",
+     "hash": "b1bf2d0993de",
+     "reach": 27.87,
+     "weapons": [
+      "spectral_lance",
+      "prism_focus",
+      "wide_spectrum"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-rune_circle-lightning@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-rune_circle-lightning@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.rune_circle.void": {
+     "kind": "blast",
+     "id": "rune_circle",
+     "elem": "void",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/rune_circle.mjs",
+     "hash": "b1bf2d0993de",
+     "reach": 27.87,
+     "weapons": [
+      "necro_staff",
+      "lich_court",
+      "skeletal_horde",
+      "wraithcall"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-rune_circle-void@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-rune_circle-void@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.shatter_glass.blood": {
+     "kind": "blast",
+     "id": "shatter_glass",
+     "elem": "blood",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/shatter_glass.mjs",
+     "hash": "105168212cb8",
+     "reach": 27.95,
+     "weapons": [
+      "razor_rain"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-shatter_glass-blood@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-shatter_glass-blood@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.shatter_glass.frost": {
+     "kind": "blast",
+     "id": "shatter_glass",
+     "elem": "frost",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/shatter_glass.mjs",
+     "hash": "105168212cb8",
+     "reach": 27.95,
+     "weapons": [
+      "blight_frost",
+      "absolute_zero",
+      "absolute_zero_trap"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-shatter_glass-frost@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-shatter_glass-frost@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.shatter_glass.steel": {
+     "kind": "blast",
+     "id": "shatter_glass",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/shatter_glass.mjs",
+     "hash": "105168212cb8",
+     "reach": 27.95,
+     "weapons": [
+      "bear_trap_overkill",
+      "diamond_hailstorm"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-shatter_glass-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-shatter_glass-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.smoke_puff.poison": {
+     "kind": "blast",
+     "id": "smoke_puff",
+     "elem": "poison",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/smoke_puff.mjs",
+     "hash": "00dfae19add6",
+     "reach": 24.93,
+     "weapons": [
+      "toxic_waste"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-smoke_puff-poison@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-smoke_puff-poison@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.smoke_puff.steel": {
+     "kind": "blast",
+     "id": "smoke_puff",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/smoke_puff.mjs",
+     "hash": "00dfae19add6",
+     "reach": 24.93,
+     "weapons": [
+      "spirit_wolves",
+      "hand_cannon",
+      "swarm_hive",
+      "spirit_pack_alpha",
+      "alpha_pack",
+      "wolf_swarm",
+      "spectral_hunt",
+      "auto_sentry_mount",
+      "rapid_chamber",
+      "scatter_load",
+      "hive_overmind",
+      "zerg_rush",
+      "queens_champion",
+      "hive_mind"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-smoke_puff-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-smoke_puff-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.smoke_puff.void": {
+     "kind": "blast",
+     "id": "smoke_puff",
+     "elem": "void",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/smoke_puff.mjs",
+     "hash": "00dfae19add6",
+     "reach": 24.93,
+     "weapons": [
+      "bone_pack",
+      "endless_horde",
+      "alpha_wolf"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-smoke_puff-void@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-smoke_puff-void@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.sparkle_pop.blood": {
+     "kind": "blast",
+     "id": "sparkle_pop",
+     "elem": "blood",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/sparkle_pop.mjs",
+     "hash": "5e3cf8c7b812",
+     "reach": 27.98,
+     "weapons": [
+      "shuriken_storm",
+      "naruto_run",
+      "golden_shuriken",
+      "petal_storm"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-sparkle_pop-blood@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-sparkle_pop-blood@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.sparkle_pop.fire": {
+     "kind": "blast",
+     "id": "sparkle_pop",
+     "elem": "fire",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/sparkle_pop.mjs",
+     "hash": "5e3cf8c7b812",
+     "reach": 27.98,
+     "weapons": [
+      "plasma_rifle",
+      "annihilator",
+      "plasma_cutter",
+      "spray_and_pray",
+      "will_o_wisp_swarm"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-sparkle_pop-fire@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-sparkle_pop-fire@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.sparkle_pop.frost": {
+     "kind": "blast",
+     "id": "sparkle_pop",
+     "elem": "frost",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/sparkle_pop.mjs",
+     "hash": "5e3cf8c7b812",
+     "reach": 27.98,
+     "weapons": [
+      "flash_freeze",
+      "frost_nova_mine"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-sparkle_pop-frost@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-sparkle_pop-frost@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.sparkle_pop.steel": {
+     "kind": "blast",
+     "id": "sparkle_pop",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/sparkle_pop.mjs",
+     "hash": "5e3cf8c7b812",
+     "reach": 27.98,
+     "weapons": [
+      "prism_beam",
+      "twin_daggers",
+      "gauss_needle",
+      "plasma_lance",
+      "kaleidoscope",
+      "solar_lance",
+      "fireball_barrage",
+      "prism_storm",
+      "thousand_cuts",
+      "weakening_edge",
+      "colossus_cleave",
+      "minigun",
+      "sniper_needle",
+      "bullet_hell",
+      "plasma_spray"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-sparkle_pop-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-sparkle_pop-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.spike_eruption.poison": {
+     "kind": "blast",
+     "id": "spike_eruption",
+     "elem": "poison",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/spike_eruption.mjs",
+     "hash": "a37f426723b9",
+     "reach": 20.24,
+     "weapons": [
+      "thorn_aura",
+      "colossal_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-spike_eruption-poison@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-spike_eruption-poison@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.spike_eruption.steel": {
+     "kind": "blast",
+     "id": "spike_eruption",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/spike_eruption.mjs",
+     "hash": "a37f426723b9",
+     "reach": 20.24,
+     "weapons": [
+      "spike_trap",
+      "voltaic_spikes",
+      "caltrops",
+      "chain_cascade"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-spike_eruption-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-spike_eruption-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.void_implosion.blood": {
+     "kind": "blast",
+     "id": "void_implosion",
+     "elem": "blood",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/void_implosion.mjs",
+     "hash": "47291396a172",
+     "reach": 26.74,
+     "weapons": [
+      "blade_maelstrom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-void_implosion-blood@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-void_implosion-blood@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.void_implosion.fire": {
+     "kind": "blast",
+     "id": "void_implosion",
+     "elem": "fire",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/void_implosion.mjs",
+     "hash": "47291396a172",
+     "reach": 26.74,
+     "weapons": [
+      "nuclear_option"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-void_implosion-fire@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-void_implosion-fire@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.void_implosion.lightning": {
+     "kind": "blast",
+     "id": "void_implosion",
+     "elem": "lightning",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/void_implosion.mjs",
+     "hash": "47291396a172",
+     "reach": 26.74,
+     "weapons": [
+      "maelstrom_of_ruin"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-void_implosion-lightning@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-void_implosion-lightning@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.void_implosion.poison": {
+     "kind": "blast",
+     "id": "void_implosion",
+     "elem": "poison",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/void_implosion.mjs",
+     "hash": "47291396a172",
+     "reach": 26.74,
+     "weapons": [
+      "void_rift"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-void_implosion-poison@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-void_implosion-poison@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.void_implosion.steel": {
+     "kind": "blast",
+     "id": "void_implosion",
+     "elem": "steel",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/void_implosion.mjs",
+     "hash": "47291396a172",
+     "reach": 26.74,
+     "weapons": [
+      "black_hole_hammer"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-void_implosion-steel@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-void_implosion-steel@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "blast.void_implosion.void": {
+     "kind": "blast",
+     "id": "void_implosion",
+     "elem": "void",
+     "frames": 10,
+     "loop": false,
+     "once": false,
+     "src": "blast/void_implosion.mjs",
+     "hash": "47291396a172",
+     "reach": 26.74,
+     "weapons": [
+      "gravity_chain"
+     ],
+     "parts": {
+      "hi": {
+       "file": "blast-void_implosion-void@192.webp",
+       "cell": 192,
+       "w": 1920,
+       "h": 192
+      },
+      "lo": {
+       "file": "blast-void_implosion-void@128.webp",
+       "cell": 128,
+       "w": 1280,
+       "h": 128
+      }
+     }
+    },
+    "melee.blade_flurry.blood": {
+     "kind": "melee",
+     "id": "blade_flurry",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/blade_flurry.mjs",
+     "hash": "199494d699db",
+     "reach": 23.71,
+     "weapons": [
+      "shuriken_storm",
+      "flurry_of_blows",
+      "blade_maelstrom",
+      "naruto_run",
+      "razor_rain",
+      "golden_shuriken",
+      "bullwhip_barrage"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-blade_flurry-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-blade_flurry-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.blade_flurry.steel": {
+     "kind": "melee",
+     "id": "blade_flurry",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/blade_flurry.mjs",
+     "hash": "199494d699db",
+     "reach": 23.71,
+     "weapons": [
+      "gauss_needle",
+      "swarm_hive",
+      "hammer_time",
+      "thousand_cuts",
+      "diamond_hailstorm",
+      "minigun",
+      "sniper_needle",
+      "bullet_hell",
+      "hive_overmind",
+      "zerg_rush",
+      "queens_champion",
+      "hive_mind"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-blade_flurry-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-blade_flurry-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.chain_whip.void": {
+     "kind": "melee",
+     "id": "chain_whip",
+     "elem": "void",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/chain_whip.mjs",
+     "hash": "c9efe2cc62e4",
+     "reach": 23.72,
+     "weapons": [
+      "chain_hook",
+      "gravity_chain",
+      "black_hole_chain"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-chain_whip-void@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-chain_whip-void@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.claw_triple.blood": {
+     "kind": "melee",
+     "id": "claw_triple",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/claw_triple.mjs",
+     "hash": "5e00fa55a323",
+     "reach": 22.5,
+     "weapons": [
+      "crimson_fang"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-claw_triple-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-claw_triple-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.claw_triple.poison": {
+     "kind": "melee",
+     "id": "claw_triple",
+     "elem": "poison",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/claw_triple.mjs",
+     "hash": "5e00fa55a323",
+     "reach": 22.5,
+     "weapons": [
+      "thorn_aura",
+      "bramble_god",
+      "colossal_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-claw_triple-poison@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-claw_triple-poison@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.claw_triple.steel": {
+     "kind": "melee",
+     "id": "claw_triple",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/claw_triple.mjs",
+     "hash": "5e00fa55a323",
+     "reach": 22.5,
+     "weapons": [
+      "spirit_wolves",
+      "spirit_pack_alpha",
+      "alpha_pack",
+      "wolf_swarm",
+      "spectral_hunt"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-claw_triple-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-claw_triple-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.claw_triple.void": {
+     "kind": "melee",
+     "id": "claw_triple",
+     "elem": "void",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/claw_triple.mjs",
+     "hash": "5e00fa55a323",
+     "reach": 22.5,
+     "weapons": [
+      "bone_pack",
+      "endless_horde",
+      "alpha_wolf"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-claw_triple-void@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-claw_triple-void@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.cone_sweep.fire": {
+     "kind": "melee",
+     "id": "cone_sweep",
+     "elem": "fire",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/cone_sweep.mjs",
+     "hash": "affa994cbe58",
+     "reach": 23.71,
+     "weapons": [
+      "fire_nova",
+      "inferno",
+      "meteor_shower",
+      "will_o_wisp_swarm",
+      "nuclear_option"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-cone_sweep-fire@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-cone_sweep-fire@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.cone_sweep.frost": {
+     "kind": "melee",
+     "id": "cone_sweep",
+     "elem": "frost",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/cone_sweep.mjs",
+     "hash": "affa994cbe58",
+     "reach": 23.71,
+     "weapons": [
+      "blight_frost",
+      "creeping_plague",
+      "concentrated_blight"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-cone_sweep-frost@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-cone_sweep-frost@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.cone_sweep.steel": {
+     "kind": "melee",
+     "id": "cone_sweep",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/cone_sweep.mjs",
+     "hash": "affa994cbe58",
+     "reach": 23.71,
+     "weapons": [
+      "warhammer"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-cone_sweep-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-cone_sweep-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.crescent_double.blood": {
+     "kind": "melee",
+     "id": "crescent_double",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/crescent_double.mjs",
+     "hash": "33cb39d113a5",
+     "reach": 23.94,
+     "weapons": [
+      "blood_blade"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-crescent_double-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-crescent_double-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.crescent_wide.blood": {
+     "kind": "melee",
+     "id": "crescent_wide",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/crescent_wide.mjs",
+     "hash": "6560be02675f",
+     "reach": 23.94,
+     "weapons": [
+      "tempest_lash"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-crescent_wide-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-crescent_wide-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.crescent_wide.frost": {
+     "kind": "melee",
+     "id": "crescent_wide",
+     "elem": "frost",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/crescent_wide.mjs",
+     "hash": "6560be02675f",
+     "reach": 23.94,
+     "weapons": [
+      "frost_field",
+      "absolute_zero",
+      "permafrost",
+      "flash_freeze",
+      "ice_age"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-crescent_wide-frost@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-crescent_wide-frost@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.crescent_wide.steel": {
+     "kind": "melee",
+     "id": "crescent_wide",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/crescent_wide.mjs",
+     "hash": "6560be02675f",
+     "reach": 23.94,
+     "weapons": [
+      "bleeding_trail"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-crescent_wide-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-crescent_wide-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.cross_slash.blood": {
+     "kind": "melee",
+     "id": "cross_slash",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/cross_slash.mjs",
+     "hash": "5a1ca7432181",
+     "reach": 24.51,
+     "weapons": [
+      "final_cut"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-cross_slash-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-cross_slash-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.cross_slash.steel": {
+     "kind": "melee",
+     "id": "cross_slash",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/cross_slash.mjs",
+     "hash": "5a1ca7432181",
+     "reach": 24.51,
+     "weapons": [
+      "twin_daggers"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-cross_slash-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-cross_slash-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.dash_slash.fire": {
+     "kind": "melee",
+     "id": "dash_slash",
+     "elem": "fire",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/dash_slash.mjs",
+     "hash": "1ecadc79b53d",
+     "reach": 23.5,
+     "weapons": [
+      "plasma_rifle",
+      "annihilator",
+      "plasma_cutter",
+      "spray_and_pray",
+      "plasma_cannon"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-dash_slash-fire@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-dash_slash-fire@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.dash_slash.lightning": {
+     "kind": "melee",
+     "id": "dash_slash",
+     "elem": "lightning",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/dash_slash.mjs",
+     "hash": "1ecadc79b53d",
+     "reach": 23.5,
+     "weapons": [
+      "tesla_coil",
+      "chain_lightning",
+      "arc_lance",
+      "storm_pylon",
+      "overload_coil",
+      "chain_reaction",
+      "faraday_field",
+      "maelstrom_of_ruin",
+      "overcharge",
+      "zeus_wrath",
+      "static_cling",
+      "singularity_beam",
+      "lightning_rod",
+      "thunderbolt",
+      "teslas_revenge"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-dash_slash-lightning@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-dash_slash-lightning@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.dash_slash.steel": {
+     "kind": "melee",
+     "id": "dash_slash",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/dash_slash.mjs",
+     "hash": "1ecadc79b53d",
+     "reach": 23.5,
+     "weapons": [
+      "laser_array",
+      "plasma_lance",
+      "quantum_beam",
+      "death_ray",
+      "wide_beam",
+      "pew_pew",
+      "railgun_burst",
+      "plasma_spray"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-dash_slash-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-dash_slash-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.dash_slash.void": {
+     "kind": "melee",
+     "id": "dash_slash",
+     "elem": "void",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/dash_slash.mjs",
+     "hash": "1ecadc79b53d",
+     "reach": 23.5,
+     "weapons": [
+      "rapid_grapple"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-dash_slash-void@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-dash_slash-void@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.fan_slash.blood": {
+     "kind": "melee",
+     "id": "fan_slash",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/fan_slash.mjs",
+     "hash": "450a9d30ab39",
+     "reach": 23.63,
+     "weapons": [
+      "sakura_barrage",
+      "petal_storm",
+      "single_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-fan_slash-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-fan_slash-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.fan_slash.holy": {
+     "kind": "melee",
+     "id": "fan_slash",
+     "elem": "holy",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/fan_slash.mjs",
+     "hash": "450a9d30ab39",
+     "reach": 23.63,
+     "weapons": [
+      "holy_aura",
+      "radiant_field",
+      "overhealer",
+      "sunwell",
+      "last_light"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-fan_slash-holy@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-fan_slash-holy@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.fan_slash.steel": {
+     "kind": "melee",
+     "id": "fan_slash",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/fan_slash.mjs",
+     "hash": "450a9d30ab39",
+     "reach": 23.63,
+     "weapons": [
+      "prism_beam",
+      "kaleidoscope",
+      "solar_lance",
+      "fireball_barrage",
+      "prism_storm"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-fan_slash-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-fan_slash-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.ground_rip.frost": {
+     "kind": "melee",
+     "id": "ground_rip",
+     "elem": "frost",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/ground_rip.mjs",
+     "hash": "f6ddea3d1958",
+     "reach": 24.53,
+     "weapons": [
+      "glacier_totem",
+      "absolute_glacier",
+      "ice_age_trap",
+      "frost_nova_mine",
+      "absolute_zero_trap"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-ground_rip-frost@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-ground_rip-frost@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.ground_rip.poison": {
+     "kind": "melee",
+     "id": "ground_rip",
+     "elem": "poison",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/ground_rip.mjs",
+     "hash": "f6ddea3d1958",
+     "reach": 24.53,
+     "weapons": [
+      "poison_cloud",
+      "plague_zone",
+      "toxic_waste",
+      "poison_dart_frog",
+      "miasma"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-ground_rip-poison@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-ground_rip-poison@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.ground_rip.steel": {
+     "kind": "melee",
+     "id": "ground_rip",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/ground_rip.mjs",
+     "hash": "f6ddea3d1958",
+     "reach": 24.53,
+     "weapons": [
+      "spike_trap",
+      "voltaic_spikes",
+      "bear_trap_array",
+      "minefield",
+      "caltrops",
+      "bear_trap_overkill",
+      "chain_cascade",
+      "overload_spike"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-ground_rip-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-ground_rip-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.ground_rip.void": {
+     "kind": "melee",
+     "id": "ground_rip",
+     "elem": "void",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/ground_rip.mjs",
+     "hash": "f6ddea3d1958",
+     "reach": 24.53,
+     "weapons": [
+      "necro_staff",
+      "lich_court",
+      "skeletal_horde",
+      "bone_colossus",
+      "wraithcall"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-ground_rip-void@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-ground_rip-void@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.hammer_quake.steel": {
+     "kind": "melee",
+     "id": "hammer_quake",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/hammer_quake.mjs",
+     "hash": "81afb05dea1b",
+     "reach": 22.98,
+     "weapons": [
+      "gravity_hammer",
+      "seismic_maul",
+      "black_hole_hammer"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-hammer_quake-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-hammer_quake-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.overhead_smash.blood": {
+     "kind": "melee",
+     "id": "overhead_smash",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/overhead_smash.mjs",
+     "hash": "77ac89d706b8",
+     "reach": 24.63,
+     "weapons": [
+      "vampires_kiss"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-overhead_smash-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-overhead_smash-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.overhead_smash.fire": {
+     "kind": "melee",
+     "id": "overhead_smash",
+     "elem": "fire",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/overhead_smash.mjs",
+     "hash": "77ac89d706b8",
+     "reach": 24.63,
+     "weapons": [
+      "cluster_charge",
+      "carpet_bomb",
+      "big_boom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-overhead_smash-fire@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-overhead_smash-fire@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.overhead_smash.steel": {
+     "kind": "melee",
+     "id": "overhead_smash",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/overhead_smash.mjs",
+     "hash": "77ac89d706b8",
+     "reach": 24.63,
+     "weapons": [
+      "hand_cannon",
+      "weakening_edge",
+      "cataclysm_barrel",
+      "auto_sentry_mount",
+      "rapid_chamber",
+      "scatter_load"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-overhead_smash-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-overhead_smash-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.overhead_smash.void": {
+     "kind": "melee",
+     "id": "overhead_smash",
+     "elem": "void",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/overhead_smash.mjs",
+     "hash": "77ac89d706b8",
+     "reach": 24.63,
+     "weapons": [
+      "meat_hook"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-overhead_smash-void@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-overhead_smash-void@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.spin_360.blood": {
+     "kind": "melee",
+     "id": "spin_360",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/spin_360.mjs",
+     "hash": "656fe0734d55",
+     "reach": 22.88,
+     "weapons": [
+      "berserkers_fury",
+      "crimson_maelstrom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-spin_360-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-spin_360-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.spin_360.lightning": {
+     "kind": "melee",
+     "id": "spin_360",
+     "elem": "lightning",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/spin_360.mjs",
+     "hash": "656fe0734d55",
+     "reach": 22.88,
+     "weapons": [
+      "storm_chain",
+      "maelstrom_chain",
+      "thunderstorm_cascade",
+      "chain_lightning_2",
+      "single_bolt",
+      "storm_surge",
+      "endless_current",
+      "focused_bolt"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-spin_360-lightning@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-spin_360-lightning@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.spin_360.poison": {
+     "kind": "melee",
+     "id": "spin_360",
+     "elem": "poison",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/spin_360.mjs",
+     "hash": "656fe0734d55",
+     "reach": 22.88,
+     "weapons": [
+      "void_rift",
+      "event_horizon",
+      "entropy_bloom"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-spin_360-poison@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-spin_360-poison@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.spin_360.steel": {
+     "kind": "melee",
+     "id": "spin_360",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/spin_360.mjs",
+     "hash": "656fe0734d55",
+     "reach": 22.88,
+     "weapons": [
+      "thunderdome",
+      "colossus_cleave"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-spin_360-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-spin_360-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.thrust.lightning": {
+     "kind": "melee",
+     "id": "thrust",
+     "elem": "lightning",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/thrust.mjs",
+     "hash": "b7d3edc3c887",
+     "reach": 22.83,
+     "weapons": [
+      "spectral_lance",
+      "prism_focus",
+      "wide_spectrum"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-thrust-lightning@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-thrust-lightning@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.thrust.steel": {
+     "kind": "melee",
+     "id": "thrust",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/thrust.mjs",
+     "hash": "b7d3edc3c887",
+     "reach": 22.83,
+     "weapons": [
+      "bow",
+      "railgun",
+      "javelin",
+      "stormpiercer",
+      "void_sniper",
+      "barrage_fletching",
+      "twin_nock",
+      "deadeye_focus",
+      "world_ender",
+      "rail_spam",
+      "orbital_strike",
+      "piercing_lance",
+      "world_piercer",
+      "javelin_barrage",
+      "harpoon",
+      "javelin_storm",
+      "railway_spike",
+      "storm_volley"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-thrust-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-thrust-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.uppercut.blood": {
+     "kind": "melee",
+     "id": "uppercut",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/uppercut.mjs",
+     "hash": "6cf813c80fcf",
+     "reach": 23.57,
+     "weapons": [
+      "crimson_executioner"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-uppercut-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-uppercut-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.uppercut.steel": {
+     "kind": "melee",
+     "id": "uppercut",
+     "elem": "steel",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/uppercut.mjs",
+     "hash": "6cf813c80fcf",
+     "reach": 23.57,
+     "weapons": [
+      "one_punch",
+      "pocket_singularity"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-uppercut-steel@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-uppercut-steel@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    },
+    "melee.whip_lash.blood": {
+     "kind": "melee",
+     "id": "whip_lash",
+     "elem": "blood",
+     "frames": 8,
+     "loop": false,
+     "once": false,
+     "src": "melee/whip_lash.mjs",
+     "hash": "7d9ad70714f7",
+     "reach": 23.64,
+     "weapons": [
+      "whip",
+      "whip_crack",
+      "indiana_bones"
+     ],
+     "parts": {
+      "hi": {
+       "file": "melee-whip_lash-blood@192.webp",
+       "cell": 192,
+       "w": 1536,
+       "h": 192
+      },
+      "lo": {
+       "file": "melee-whip_lash-blood@128.webp",
+       "cell": 128,
+       "w": 1024,
+       "h": 128
+      }
+     }
+    }
+   }
   }
  }
 }
