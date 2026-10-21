@@ -1648,6 +1648,10 @@
   .ap-card.ap-locked{border-style:dashed;}
   .ap-card.ap-locked .item-icon, .ap-card.ap-locked .item-id, .ap-card.ap-locked .ap-shape{opacity:.45; filter:grayscale(.8);}
   .ap-lock{display:flex; align-items:center; gap:6px; font-family:'Martian Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.5px; color:var(--gold);}
+  .ap-card.ap-locked .ap-peek{opacity:.7;}
+  .ap-card.ap-new{border-color:var(--gold); animation:ap-unlock .55s cubic-bezier(.2,.8,.2,1);}
+  @keyframes ap-unlock{0%{transform:scale(.94); opacity:.35;} 55%{transform:scale(1.025); opacity:1;} 100%{transform:none;}}
+  @media (prefers-reduced-motion:reduce){ .ap-card.ap-new{animation:none;} }
   #screen-progress .item-grid{width:100%; max-height:none; overflow:visible; padding:0;}
   #screen-progress .ach-wrap{width:100%; max-width:none; max-height:none; overflow:visible; margin:0; padding:0;
     grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr)); gap:10px; align-content:start;}
@@ -3526,6 +3530,7 @@
   .screen.uk :is(.card,.item-card):is(.rarity-legendary){box-shadow:inset 0 2px 0 color-mix(in srgb,var(--rar-legendary) 73%,transparent), 0 0 14px color-mix(in srgb,var(--rar-legendary) 8%,transparent);}
   .screen.uk :is(.card,.item-card).rarity-mythic{box-shadow:inset 0 2px 0 color-mix(in srgb,var(--rar-mythic) 73%,transparent), 0 0 14px color-mix(in srgb,var(--rar-mythic) 9%,transparent);}
   .screen.uk .ap-card.ap-locked{box-shadow:none;}
+  .screen.uk .ap-card.ap-new{border-image:var(--uk-f-gold) 2 / calc(var(--px)*2) stretch; box-shadow:inset 0 2px 0 #ffcf5aaa;}
   @media (max-width:600px){
     #screen-progress.uk .screen-bar > .settings-tabs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2px 6px;}
     #screen-progress.uk .screen-bar > .settings-tabs .settings-tab{text-align:center; padding:calc(var(--u)*.55) 0;}
@@ -3771,6 +3776,9 @@
   .pk-shelf .s-gone img{filter:grayscale(.85) brightness(.6); opacity:.6;}
   .pk-shelf .s-inb img{filter:saturate(.55) brightness(.7); opacity:.75;}
   .pk-shelf > .cx:hover img{filter:grayscale(.3) brightness(.95); opacity:1;}
+  .pk-shelf > .pk-silc{position:absolute; left:0; top:0; pointer-events:none; image-rendering:pixelated;}
+  .pk-shelf > .cx.pk-hov img{opacity:0;}
+  .pk-shelf > .cx.pk-hov:hover img{opacity:1;}
   .pk-shelf .cn{position:absolute; right:0; bottom:0; z-index:2; padding:2px 3px; font:700 11px/1 var(--uk-mono); font-style:normal; color:#fff3d6; background:#0b0710cc;}
   .lu-card.pk-lu .pk-try{margin-top:6px; padding:5px 8px; font:700 13px/1.2 var(--uk-body); color:#7fe896; text-align:center; background:#0b0710b3; border:1px solid #2f6b45;}
   .pk-shelf .tg{position:absolute; left:0; top:0; z-index:2; padding:2px 3px; font:700 11px/1 var(--uk-mono); font-style:normal; color:#0b0710; background:#5fd18a; pointer-events:none;}
