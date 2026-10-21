@@ -2761,7 +2761,7 @@
 <style id="pack-panel">
   .pk-root{position:fixed; top:0; right:0; bottom:0; z-index:58; width:var(--pk-w); display:flex; flex-direction:column; gap:8px; padding:calc(12px + var(--safe-top,0px)) calc(12px + var(--safe-right,0px)) 12px 12px; overflow-y:auto; overflow-x:hidden;
     background:linear-gradient(90deg,#0b0710d9,#0e0b15f2 12%); box-shadow:-2px 0 0 #0b0710,-4px 0 0 #d49a5866; touch-action:none; user-select:none; -webkit-user-select:none; color:#f4eefa; font-family:var(--uk-body);}
-  .pk-root[hidden]{display:none;}
+  .pk-root[hidden]{content-visibility:hidden; visibility:hidden;}
 .pk-root{will-change:transform; contain:strict;}
 #eventLog{contain:content;}
 .pk-root.pk-off{transform:translateX(105%); pointer-events:none;}
@@ -2968,11 +2968,11 @@
   .pk-synl img{width:12px; height:12px; vertical-align:-2px;}
   @keyframes pk-synl{0%{opacity:0;transform:translate(-50%,-60%)}15%{opacity:1;transform:translate(-50%,-110%)}75%{opacity:1}100%{opacity:0;transform:translate(-50%,-190%)}}
   #packThreads{position:fixed; left:0; top:0; width:100vw; height:100vh; pointer-events:none; z-index:94;}
-  body.pk-dragging, body.pk-dragging *{cursor:var(--cur-grabbing, grabbing)!important;}
-  body.pk-dragging.pk-cur-merge, body.pk-dragging.pk-cur-merge *{cursor:var(--cur-merge, copy)!important;}
-  body.pk-dragging.pk-cur-socket, body.pk-dragging.pk-cur-socket *{cursor:var(--cur-socket, copy)!important;}
-  body.pk-dragging.pk-cur-stash, body.pk-dragging.pk-cur-stash *{cursor:var(--cur-stash, grabbing)!important;}
-  body.pk-dragging.pk-cur-deny, body.pk-dragging.pk-cur-deny *{cursor:var(--cur-deny, not-allowed)!important;}
+  .pk-ghost.grab .gi{pointer-events:auto; cursor:var(--cur-grabbing, grabbing)!important;}
+  .pk-ghost.grab.c-merge .gi{cursor:var(--cur-merge, copy)!important;}
+  .pk-ghost.grab.c-socket .gi{cursor:var(--cur-socket, copy)!important;}
+  .pk-ghost.grab.c-stash .gi{cursor:var(--cur-stash, grabbing)!important;}
+  .pk-ghost.grab.c-deny .gi{cursor:var(--cur-deny, not-allowed)!important;}
   .pk-root .pk-btn[data-rot], .pk-root [data-act=rot]{cursor:var(--cur-rotate, pointer);}
   #packTip{position:fixed; left:0; top:0; z-index:96; width:max-content; max-width:min(420px,calc(100vw - 16px)); pointer-events:none; font-size:13px; filter:drop-shadow(0 6px 0 #0b0710aa); font-family:var(--uk-body);}
   #packTip[hidden]{display:none;} #packTip.pinned{pointer-events:auto;} :is(#packTip,.pk-tipbox) p{margin:0;}
