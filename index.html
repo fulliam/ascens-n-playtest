@@ -218,7 +218,7 @@
   canvas{position:absolute; inset:0; width:100%; height:100%; display:block; touch-action:none;}
   .display{font-family:'Unbounded',system-ui,"Noto Sans","Hiragino Sans","Microsoft YaHei",sans-serif; font-weight:700; letter-spacing:0.5px;}
   .screen{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; z-index:10;
-    opacity:1; transform:scale(1); transition:opacity .22s ease, transform .22s ease;}
+    opacity:1; transform:scale(1); transition:opacity .15s cubic-bezier(.2,.8,.2,1), transform .15s cubic-bezier(.2,.8,.2,1);}
   .screen.screen-out{opacity:0; transform:scale(0.97); pointer-events:none;}
   .screen.screen-in{opacity:0; transform:scale(1.02);}
   .hidden{display:none !important;}
@@ -1649,6 +1649,16 @@
   .ap-card.ap-locked .item-icon, .ap-card.ap-locked .item-id, .ap-card.ap-locked .ap-shape{opacity:.45; filter:grayscale(.8);}
   .ap-lock{display:flex; align-items:center; gap:6px; font-family:'Martian Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.5px; color:var(--gold);}
   .ap-card.ap-locked .ap-peek{opacity:.7;}
+  .guide-box{display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px; align-items:start;}
+  .guide-body{display:flex; flex-direction:column; min-width:0;}
+  .guide-rest{opacity:0;}
+  .guide-ava{position:relative; width:80px; height:80px; margin:-4px 0 0 -4px; animation:ga-bob 2.6s ease-in-out infinite;}
+  .guide-ava::before{content:""; position:absolute; inset:6px 4px 0; background:radial-gradient(circle at 50% 60%,#5ef2ff33,#5ef2ff00 70%);}
+  .ga-face{position:absolute; inset:0;}
+  .ga-px{width:80px; height:80px; image-rendering:pixelated; display:block;}
+  .ga-sheet{width:80px; height:80px; background-repeat:no-repeat; background-size:400% 400%;}
+  @keyframes ga-bob{50%{transform:translateY(-2px);}}
+  @media (prefers-reduced-motion:reduce){ .guide-ava{animation:none;} }
   .ap-card.ap-new{border-color:var(--gold); animation:ap-unlock .55s cubic-bezier(.2,.8,.2,1);}
   @keyframes ap-unlock{0%{transform:scale(.94); opacity:.35;} 55%{transform:scale(1.025); opacity:1;} 100%{transform:none;}}
   @media (prefers-reduced-motion:reduce){ .ap-card.ap-new{animation:none;} }
