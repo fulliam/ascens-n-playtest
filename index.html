@@ -4559,6 +4559,55 @@
   .pk-shdiv span{position:absolute; left:50%; top:0; transform:translate(-50%,-50%); padding:2px 8px; white-space:nowrap; font:700 10px/1 var(--uk-body); letter-spacing:.08em; text-transform:uppercase; color:#e6d3ae; background:#2a1a0f; box-shadow:0 0 0 1px #0b0710;}
   html.pkt-wood .pk-root .pk-stash{border-radius:4px;}
   .pk-root .pk-craft:empty{display:none;}
+  .pk-root.pk-sided{display:grid; grid-template-columns:minmax(0,1fr) auto; grid-template-rows:auto auto auto auto auto minmax(0,1fr) auto; column-gap:8px; row-gap:6px; align-content:stretch;}
+  .pk-root.pk-sided .pk-head{grid-column:1/-1; grid-row:1;}
+  .pk-root.pk-sided .pk-builds{grid-column:1/-1; grid-row:2;}
+  .pk-root.pk-sided .pk-cap{grid-column:1; grid-row:3; min-width:0; flex-wrap:nowrap; overflow:hidden;}
+  .pk-root.pk-sided .pk-tools{grid-column:2; grid-row:3; justify-content:flex-end;}
+  .pk-root.pk-sided .pk-cap>*{flex:none; white-space:nowrap;}
+  .pk-root.pk-sided .pk-board{grid-column:1/-1; grid-row:4;}
+  .pk-root.pk-sided .pk-craft{grid-column:1/-1; grid-row:5;}
+  .pk-root.pk-sided .pk-side{grid-column:1/-1; grid-row:6; display:grid; grid-template-columns:auto minmax(0,1fr) auto auto; grid-template-rows:auto minmax(0,1fr); gap:6px; min-height:0; min-width:0;}
+  .pk-root.pk-sided .pk-ribbon{grid-column:1/-1; grid-row:7;}
+  .pk-root.pk-sided .pk-sthead{display:contents;}
+  .pk-root.pk-sided .pk-stt{grid-column:1; grid-row:1; align-self:center;}
+  .pk-root.pk-sided .pk-tabs{grid-column:2; grid-row:1; min-width:0; align-self:center;}
+  .pk-root.pk-sided .pk-sthead .pk-btn{grid-row:1; align-self:center;}
+  .pk-root.pk-sided [data-view]{grid-column:3;}
+  .pk-root.pk-sided [data-tidy]{grid-column:4;}
+  .pk-root.pk-sided .pk-shname{grid-column:1/-1; grid-row:2; position:relative; z-index:9; align-self:end; justify-self:end; margin:0 10px 8px 0; padding:2px 6px; max-width:60%; pointer-events:none; background:#0b0710b3; font-size:11px;}
+  .pk-root.pk-sided .pk-stash{grid-column:1/-1; grid-row:2; min-height:0;}
+  .pk-root.pk-cols{grid-template-columns:var(--pk-bw,300px) minmax(0,1fr); grid-template-rows:auto auto auto minmax(0,1fr) auto; column-gap:12px; row-gap:4px;}
+  .pk-root.pk-cols .pk-builds,.pk-root.pk-cols .pk-cap,.pk-root.pk-cols .pk-craft{display:none;}
+  .pk-root.pk-cols .pk-board{grid-column:1; grid-row:2;}
+  .pk-root.pk-cols .pk-tools{grid-column:1; grid-row:3/6; align-self:start; justify-content:flex-start;}
+  .pk-root.pk-cols .pk-side{grid-column:2; grid-row:2/5;}
+  .pk-root.pk-cols .pk-ribbon{grid-column:2; grid-row:5; height:36px;}
+  .pk-root .pk-tabs{flex-wrap:nowrap; overflow-x:auto; overflow-y:hidden; scrollbar-width:none; overscroll-behavior-x:contain; padding:6px 6px 4px 0;}
+  .pk-root .pk-tabs::-webkit-scrollbar{display:none;}
+  .pk-root .pk-tab{flex:none;}
+  .pk-sthead .pk-vw,.pk-sthead .pk-full{flex:none;}
+  .pk-stash.pk-heap .pk-heapbox{background-image:none; margin:0 auto;}
+  .pk-heapbox > .it{transition:filter .12s;}
+  .pk-heapbox > .it img{filter:drop-shadow(0 3px 0 #0b071099);}
+  .pk-heapempty{position:absolute; left:0; right:0; bottom:38%; margin:0; padding:0 12px; text-align:center; font:600 13px/1.4 var(--uk-body); color:#e6d3aecc; text-shadow:0 1px 0 #0b0710; pointer-events:none;}
+  .pk-root.pk-sided .pk-full{display:none;}
+  .pk-root .pk-shname:empty{display:none;}
+  @media (max-width:440px){ .pk-root:not(.pk-sided) .pk-stt{display:none;} .pk-root:not(.pk-sided) .pk-sthead{justify-content:flex-end;} }
+  .pk-root:not(.pk-sided) .pk-hint{display:none;}
+  .pk-root:not(.pk-sided) .pk-help{display:inline-grid; place-items:center; flex:none; min-width:28px; font-weight:800; margin-left:auto;}
+  .pk-root:not(.pk-sided){gap:5px;}
+  .pk-root:not(.pk-sided) .pk-board{margin-top:4px !important; margin-bottom:6px !important;}
+  .pk-root:not(.pk-sided) .pk-stash{min-height:120px;}
+  .pk-root:not(.pk-sided) .pk-builds:empty{display:none;}
+  .pk-root:not(.pk-sided) .pk-sthead{margin-top:2px;}
+  .pk-root:not(.pk-sided) .pk-tabs{padding-top:3px; padding-bottom:1px;}
+  .pk-root:not(.pk-sided) .pk-cap{flex-wrap:nowrap; overflow-x:auto; overflow-y:hidden; scrollbar-width:none; white-space:nowrap;}
+  .pk-root:not(.pk-sided) .pk-cap>*{flex:none;}
+  .pk-root.pk-stfull .pk-builds,.pk-root.pk-stfull .pk-cap,.pk-root.pk-stfull .pk-tools,.pk-root.pk-stfull .pk-craft{display:none;}
+  .pk-root.pk-stfull .pk-board{margin:2px auto !important; box-shadow:0 0 0 2px #0b0710, 0 0 0 4px #7f4b27; cursor:var(--cur-pointer, pointer);}
+  .pk-root.pk-stfull .pk-board .sk,.pk-root.pk-stfull .pk-board .ub,.pk-root.pk-stfull .pk-board .lv,.pk-root.pk-stfull .pk-board .dps{display:none;}
+  .pk-root.pk-stfull .pk-board.pk-wake{box-shadow:0 0 0 2px #0b0710, 0 0 0 4px #ffcf5a;}
   @media (prefers-reduced-motion:reduce){ .pk-tab i,.pk-shelf > .new img,.pk-shelf > .new::before,.pk-root .pk-board .it.find{animation:none;} }
 </style>
 <style id="touch-ui">
