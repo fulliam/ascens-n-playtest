@@ -1658,62 +1658,14 @@
   .ga-frame::after{content:""; position:absolute; left:0; right:0; top:0; height:30%; background:linear-gradient(#ffffff00,#ffffff12,#ffffff00); animation:ga-scan 4.4s linear infinite;}
   .ga-live{position:absolute; right:4%; bottom:3.5%; z-index:1; padding:.1em .45em .1em 1.25em; border-radius:.35em; background:#e0304acc; color:#fff; font:800 7px/1.2 'Martian Mono',ui-monospace,monospace; font-size:max(6.5px,6.4cqw); letter-spacing:.08em;}
   .ga-live::before{content:""; position:absolute; left:.45em; top:50%; width:.5em; height:.5em; margin-top:-.25em; border-radius:50%; background:#fff; animation:ga-led 1.2s steps(1) infinite;}
-  .ga-rgb{fill:#ff5c9a; animation:ga-rgb 4s linear infinite;}
-  @keyframes ga-rgb{0%,100%{fill:#ff5c9a;}33%{fill:#5ef2ff;}66%{fill:#b07ae0;}}
   @keyframes ga-bokeh{to{transform:translate(3px,-2px); opacity:.7;}}
   .ga-art{position:absolute; inset:0; -webkit-mask-image:linear-gradient(#000 80%,transparent 99%); mask-image:linear-gradient(#000 80%,transparent 99%);}
-  .ga-svg{width:100%; height:100%; display:block;}
-  .ga-head,.ga-hb{animation:ga-head 5.6s ease-in-out infinite;}
-  .ga-body,.ga-arms{animation:ga-breath 3.4s ease-in-out infinite;}
-  .ga-wave{animation:ga-wave .5s ease-in-out infinite alternate;}
-  .ga-gs{animation:ga-raise .32s cubic-bezier(.2,.9,.3,1.2);}
-  .ga-tilt{transition:transform .25s linear;}
-  .ga-driven .ga-head,.ga-driven .ga-hb,.ga-driven .ga-body,.ga-driven .ga-arms{animation:none;}
-  .ga-pend{animation:ga-glow 2.2s ease-in-out infinite;}
-  .ga-lockL{animation:ga-sway 3.3s ease-in-out infinite;}
-  .ga-lockR{animation:ga-sway 3.3s ease-in-out -1.2s infinite reverse;}
-  .ga-tailL{animation:ga-sway 3.8s ease-in-out -.4s infinite;}
-  .ga-phys .ga-lockL,.ga-phys .ga-lockR,.ga-phys .ga-tailL,.ga-phys .ga-tailR,.ga-phys .ga-aho{animation:none;}
-  .ga-noline [stroke="#2b1f45"],.ga-noline [stroke="#16205a"]{stroke:transparent;}
-  .ga-tailR{animation:ga-sway 3.8s ease-in-out -2.1s infinite reverse;}
-  .ga-aho{animation:ga-aho 2.4s ease-in-out infinite;}
-  .talking .ga-aho{animation-duration:.46s;}
-  .ga-tip{animation:ga-glow 1.9s ease-in-out infinite;}
-  .ga-led{animation:ga-led 1.6s steps(1) infinite;}
-  .ga-svg[data-mood=alert] .ga-led{animation-duration:.5s;}
-  .ga-mic{opacity:.35;}
-  .talking .ga-mic{opacity:1; animation:ga-glow .3s ease-in-out infinite;}
-  .ga-sheen{animation:ga-dash 4s linear infinite;}
-  .ga-band{animation:ga-dash 2.2s linear infinite reverse;}
-  .ga-glint{animation:ga-glow 2.8s ease-in-out infinite;}
-  .ga-trace{animation:ga-glow 2.6s ease-in-out infinite;}
-  .ga-s1,.ga-s2,.ga-s3{animation:ga-twk 1.4s ease-in-out infinite;}
-  .ga-s2{animation-delay:-.5s;} .ga-s3{animation-delay:-.9s;}
-  .ga-bang{animation:ga-bang .9s ease-in-out infinite;}
-  .ga-zap{animation:ga-led .5s steps(1) infinite;}
-  .ga-bub{animation:ga-float 2.6s ease-in-out infinite;}
-  .ga-d1,.ga-d2,.ga-d3{animation:ga-dot 1.2s ease-in-out infinite;}
-  .ga-d2{animation-delay:.2s;} .ga-d3{animation-delay:.4s;}
   .ga-in .ga-art{animation:ga-glitch .5s linear;}
   .ga-in .ga-frame{animation:ga-pop .38s cubic-bezier(.2,.9,.25,1);}
-  .ga-hop .ga-art{animation:ga-hop .55s cubic-bezier(.3,.9,.3,1);}
   .ga-shake .ga-art{animation:ga-shake .38s ease-in-out 2;}
-  @keyframes ga-head{0%,100%{transform:rotate(-1.6deg);}50%{transform:rotate(2deg) translateY(-1px);}}
-  @keyframes ga-wave{from{transform:rotate(-12deg);}to{transform:rotate(10deg);}}
-  @keyframes ga-raise{from{transform:translateY(40px); opacity:0;}to{transform:none; opacity:1;}}
-  @keyframes ga-breath{50%{transform:translateY(-1.5px) scale(1.012,1.014);}}
-  @keyframes ga-sway{0%,100%{transform:rotate(-2.6deg);}50%{transform:rotate(2.6deg);}}
-  @keyframes ga-aho{0%,100%{transform:rotate(-7deg);}50%{transform:rotate(9deg);}}
-  @keyframes ga-glow{50%{opacity:.45;}}
   @keyframes ga-led{55%{opacity:.2;}}
-  @keyframes ga-dash{to{stroke-dashoffset:-58;}}
-  @keyframes ga-twk{0%,100%{transform:scale(.55) rotate(0);opacity:.45;}50%{transform:scale(1.1) rotate(45deg);opacity:1;}}
-  @keyframes ga-bang{0%,100%{transform:translateY(0) rotate(-6deg);}50%{transform:translateY(-6px) rotate(6deg);}}
-  @keyframes ga-float{50%{transform:translateY(-4px);}}
-  @keyframes ga-dot{0%,70%,100%{opacity:.25;}35%{opacity:1;}}
   @keyframes ga-scan{from{transform:translateY(-100%);}to{transform:translateY(340%);}}
   @keyframes ga-pop{from{transform:scaleY(.08); opacity:0;}to{transform:none; opacity:1;}}
-  @keyframes ga-hop{40%{transform:translateY(-7px);}70%{transform:translateY(1px);}}
   @keyframes ga-shake{25%{transform:translateX(-3px);}75%{transform:translateX(3px);}}
   @keyframes ga-glitch{0%{opacity:0; clip-path:inset(70% 0 10% 0); transform:translateX(-5px);}12%{opacity:1; clip-path:inset(62% 0 18% 0); transform:translateX(-5px); filter:drop-shadow(3px 0 #ff5c9a) drop-shadow(-3px 0 #5ef2ff);}26%{clip-path:inset(12% 0 52% 0); transform:translateX(4px);}40%{clip-path:inset(36% 0 28% 0); transform:translateX(-2px);}54%{clip-path:inset(0 0 0 0); transform:none; filter:drop-shadow(1px 0 #ff5c9a) drop-shadow(-1px 0 #5ef2ff);}70%{opacity:.6;}78%{opacity:1; filter:none;}100%{clip-path:inset(0 0 0 0); transform:none; filter:none; opacity:1;}}
   @media (prefers-reduced-motion:reduce){ .guide-ava, .guide-ava *, .guide-ava *::before, .guide-ava *::after{animation:none !important; transition:none !important;} }
@@ -4537,6 +4489,22 @@
   html.pkt-wood .pk-root .pk-stash{border-radius:4px;}
   .pk-root .pk-craft:empty{display:none;}
   @media (prefers-reduced-motion:reduce){ .pk-tab i,.pk-shelf > .new img,.pk-shelf > .new::before,.pk-root .pk-board .it.find{animation:none;} }
+</style>
+<style id="touch-ui">
+  @media (pointer:coarse) and (max-width:600px), (pointer:coarse) and (max-height:600px){
+    .pk-root .pk-btn, .pk-root .pk-tab, .hub-tab, .seg-btn, .settings-tab, .uk .btn, #globalBack, .hd-btn, .toggle-switch{min-height:44px !important;}
+    .hd-btn, .pk-root .pk-help, .pk-root .pk-tab, .seg-btn, .hub-tab{min-width:44px !important;}
+    .toggle-switch{min-width:56px !important;}
+    #pkHandle{min-width:44px !important;}
+    .settings-tab, .settings-tab span, .seg-btn, .sg-title, .s-desc, .kicker, .subtitle, .pg-note, .pg-h, .pg-h b, .pg-wallet-k, .pg-wallet-sub, .pr-k, .hh-k, .lbl:not(.lu-foot), .item-sub, .chip-t, .uk .btn, .uk .btn small, .ach-chip, .slot-name, .slot-when, .slot-badge, .slot-run-text, .slot-stat .k, #savesStatus, .dp-kicker, .cs-cta-sub, .base-siege-title, .rx-chip i, .pg-legend span, .pg-legend b, .new-slot, .inv-section-title, .rt-num, .bm-q, .ach-rewards span, .pk-root .pk-shdiv span, .pk-root .pk-tab b, .pk-root .pk-tab i, #hudDockPack{font-size:11px !important;}
+    .hh-v, .pr-v, .pg-wallet-go, #lvlChipVal, .s-name, .cs-cta-name, .rx-chip b, .slot-stat .v, .hh-hp{font-size:12px !important;}
+  }
+  @media (pointer:coarse) and (max-width:600px){
+    .slot-stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  }
+  @media (pointer:coarse) and (max-height:560px){
+    .screen.screen-full > .screen-body:not(.is-fill){min-height:auto;}
+  }
 </style>
 </head>
 <body>
