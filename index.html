@@ -2844,6 +2844,24 @@
   @keyframes hzSpin{to{transform:rotate(360deg);}}
   .hz-ring{position:absolute; left:50%; top:36%; width:0; height:0; z-index:3; transition:opacity .2s;}
   .hz-ring.off{opacity:0; pointer-events:none;}
+  .hz-card{position:absolute; left:50%; top:calc(var(--u)*6.6); bottom:calc(var(--u)*9.6); transform:translateX(-50%); width:min(calc(var(--u)*23.5),100%); z-index:2; display:none; flex-direction:column; gap:calc(var(--u)*.55); padding:calc(var(--u)*.75) calc(var(--u)*.85); box-sizing:border-box; border:6px solid transparent; border-image:var(--px-frame-hi); background:linear-gradient(180deg,#241a2ef2,#120c18f2); min-height:0;}
+  .hz-stage.stats .hz-card{display:flex;}
+  .hz-stage.stats .hz-hero,.hz-stage.stats .hz-rune{display:none;}
+  .hz-ctop{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:calc(var(--u)*.4); flex:none;}
+  .hz-ct{display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto; column-gap:calc(var(--u)*.35); align-items:center; padding:calc(var(--u)*.35) calc(var(--u)*.45); background:#00000040; border-left:3px solid #b98cff66; min-width:0;}
+  .hz-ct > :first-child{grid-row:1 / span 2; width:calc(var(--u)*1.7); height:calc(var(--u)*1.7);}
+  .hz-ct b{font-size:calc(var(--u)*1.3); line-height:1; color:#fff4dc; text-shadow:0 2px 0 #000; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .hz-ct b.up{color:#7cff6b;}
+  .hz-ct span{grid-column:2; font-size:max(11px,calc(var(--u)*.6)); line-height:1.1; color:#a99cb8; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .hz-ct small{grid-column:1 / -1; font-size:max(11px,calc(var(--u)*.58)); color:#5ce1e6;}
+  .hz-crest{flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; display:grid; grid-template-columns:1fr 1fr; gap:2px calc(var(--u)*.6); align-content:start; scrollbar-width:thin;}
+  .hz-cg{grid-column:1/-1; font:600 max(11px,calc(var(--u)*.56))/1 var(--hd); letter-spacing:.18em; color:#b98cff; margin-top:calc(var(--u)*.35); text-transform:uppercase; display:flex; align-items:center; gap:8px;}
+  .hz-cg::after{content:""; flex:1; height:2px; background:linear-gradient(90deg,#b98cff55,transparent);}
+  .hz-cr{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:5px; padding:1px 4px 1px 2px; min-width:0;}
+  .hz-cr > :first-child{width:calc(var(--u)*1.05); height:calc(var(--u)*1.05);}
+  .hz-cr span{font-size:max(11px,calc(var(--u)*.58)); color:#cbbfd6; line-height:1.15; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .hz-cr b{font-size:max(11px,calc(var(--u)*.7)); text-shadow:0 2px 0 #000;}
+  .hz-cr.up b{color:#7cff6b;}
   .hz-wp{position:absolute; left:calc(var(--x)*var(--u)); top:calc(var(--y)*var(--u)); width:calc(var(--u)*5.2); height:calc(var(--u)*5.2); margin:calc(var(--u)*-2.6) 0 0 calc(var(--u)*-2.6); display:grid; place-items:center; background:radial-gradient(circle,#2a1d3ae0,#120c1ae0); border:4px solid transparent; border-image:var(--px-frame-hi); cursor:help; animation:hzFloat 2.4s steps(8) var(--d,0s) infinite;}
   .hz-wp b{position:absolute; bottom:calc(var(--u)*-1.1); left:50%; transform:translateX(-50%); font-size:calc(var(--u)*.85); text-shadow:var(--ink); white-space:nowrap;}
   .hz-wp.weak{border-image:var(--px-frame); filter:saturate(.4);}
@@ -2926,7 +2944,6 @@
   .hz-lt{font:700 calc(var(--u)*1)/1.1 var(--hd); text-shadow:var(--ink);}
   .hz-ld{color:#8d8496; font-size:calc(var(--u)*.68); margin-top:4px;}
   .hz-lock .hz-buy{margin-left:auto;}
-  .hz-sheet{display:grid; grid-template-columns:1fr 1fr; gap:4px 10px; align-content:start;}
   .hz-tix{display:flex; flex-direction:column; gap:4px; margin-bottom:6px;}
   .hz-tk{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:8px; padding:4px 8px 4px 4px; background:#00000030; border-left:3px solid #5ce1e6;}
   .hz-tk b{display:block; font:600 calc(var(--u)*.7)/1.15 var(--hd); text-shadow:0 2px 0 #000;}
@@ -2934,12 +2951,6 @@
   .hz-tk>b.num{font-size:calc(var(--u)*.72); color:#5ce1e6;}
   .hz-tb{position:relative; display:block; height:4px; margin-top:4px; background:#ffffff14;}
   .hz-tb i{position:absolute; inset:0 auto 0 0; width:calc(var(--v)*100%); background:#5ce1e6;}
-  .hz-sg{grid-column:1/-1; font:600 calc(var(--u)*.62)/1 var(--hd); letter-spacing:.2em; color:#b98cff; margin-top:6px; text-shadow:0 2px 0 #000; display:flex; align-items:center; gap:8px; text-transform:uppercase;}
-  .hz-sg::after{content:""; flex:1; height:2px; background:linear-gradient(90deg,#b98cff55,transparent);}
-  .hz-st{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:6px; padding:3px 6px 3px 3px; background:#00000030; border-left:3px solid #ffffff10;}
-  .hz-st span{font-size:calc(var(--u)*.62); color:#cbbfd6; line-height:1.15;}
-  .hz-st b{font-size:calc(var(--u)*.8); text-shadow:0 2px 0 #000;}
-  .hz-st b.up{color:#7cff6b;}
   .hz-tt{max-width:260px; font-size:13px; line-height:1.4;}
   .hz.setv{--rw:min(calc(var(--u)*44),46vw);}
   .hz.mob{--u:clamp(9px,2.9vw,13px); overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; display:flex; flex-direction:column; gap:calc(var(--u)*.9); padding:calc(var(--u)*.8 + var(--safe-top,0px)) calc(var(--u)*.8 + var(--safe-right,0px)) calc(var(--u)*1.6 + var(--safe-bottom,0px)) calc(var(--u)*.8 + var(--safe-left,0px)); scrollbar-width:none;}
@@ -2961,6 +2972,9 @@
   .hz.mob .hz-hero{position:relative; left:auto; top:auto; transform:none; width:calc(var(--u)*12); height:calc(var(--u)*13.5); margin:calc(var(--u)*-1) 0 calc(var(--u)*-2.2);}
   .hz.mob .hz-rune{top:calc(var(--u)*13.5); width:calc(var(--u)*13); height:calc(var(--u)*13);}
   .hz.mob .hz-ring{display:none;}
+  .hz.mob .hz-card{position:relative; left:auto; top:auto; bottom:auto; transform:none; width:100%; order:-1;}
+  .hz.mob .hz-crest{max-height:calc(var(--u)*15);}
+  .hz.mob .hz-ct b{font-size:calc(var(--u)*1.6);}
   .hz.mob .hz-plate{position:relative; left:auto; bottom:auto; transform:none; width:100%;}
   .hz.mob .hz-pltop{flex-wrap:wrap;}
   .hz.mob .hz-menu{order:3; display:grid; grid-template-columns:1fr 1fr; gap:calc(var(--u)*.4);}
@@ -2979,7 +2993,6 @@
   .hz.mob .hz-set .set-tabs{grid-template-columns:repeat(3,minmax(0,1fr));}
   .hz.mob .hz-set .setting-row{flex-wrap:wrap;}
   .hz.mob .hz-set .seg-control{max-width:none;}
-  .hz.mob .hz-sheet{grid-template-columns:1fr;}
   .hz.mob .hz-diffs{grid-template-columns:repeat(3,minmax(0,1fr));}
   .hz.mob .hz-slots{grid-template-columns:repeat(5,minmax(0,1fr));}
   .hz.mob .hz-stage,.hz.mob .hz-top{transition:none;}
@@ -2996,6 +3009,8 @@
   .hz.mob.land .hz-stage{grid-column:2; grid-row:1 / span 2;}
   .hz.mob.land .hz-side{grid-column:2; grid-row:3;}
   .hz.mob.land .hz-hero,.hz.mob.land .hz-rune,.hz.mob.land .hz-stage::before{display:none;}
+  .hz.mob.land .hz-ctop{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .hz.mob.land .hz-ct b{font-size:calc(var(--u)*1.35);}
   .hz-stage,.hz-top{transition:right .25s ease-out;}
   .hz-setp{gap:calc(var(--u)*.5);}
   .hz-set{flex:1; min-height:0; display:flex; flex-direction:column; gap:calc(var(--u)*.5);}
@@ -4928,6 +4943,7 @@
             <div class="setting-row"><div><div class="s-name">Enemy Density</div><div class="s-desc">Caps how many enemies can exist at once. Independent of graphics quality — lower this only if the game is slowing down, not for a harder/easier fight.</div></div>
               <div class="seg-control" id="vidDensity"><button class="seg-btn" data-val="low">Low</button><button class="seg-btn" data-val="medium">Medium</button><button class="seg-btn" data-val="high">High</button></div></div>
             <div class="setting-row"><div><div class="s-name">Debug Overlay</div><div class="s-desc">Shows FPS, frame time, and live entity counts — useful for diagnosing slowdowns.</div></div><div class="toggle-switch" id="vidDebugOverlay"><div class="knob"></div></div></div>
+            <div class="setting-row"><div><div class="s-name">Hitch Log</div><div class="s-desc">Frames longer than 50 ms are kept on this device with the systems that took the time. Copy the log and paste it into your report. Nothing is sent anywhere.</div></div><button class="buy-btn" id="hitchLogBtn" style="border-color:var(--accent); color:var(--accent);">COPY</button></div>
           </div>
         </div>
       </div>
