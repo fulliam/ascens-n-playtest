@@ -3632,7 +3632,7 @@ html:has(#screen-book:not(.hidden):not(.screen-out)) #walletBar{display:none;}
 #screen-book.mob .t-page .cmb{grid-template-columns:1fr;}
 #screen-book.mob .fgslot{position:relative; inset:auto; overflow:visible; padding:0;}
 #screen-book.mob .tip{max-width:calc(100vw - 20px);}
-#screen-book .t-page .tro .tn{white-space:normal; overflow-wrap:break-word; hyphens:auto; max-width:100%; font-size:10px; line-height:1.15; letter-spacing:0;}
+#screen-book .t-page .tro .tn{white-space:normal; overflow-wrap:normal; word-break:normal; hyphens:manual; max-width:100%; font-size:10px; line-height:1.15; letter-spacing:0;}
 #screen-book .bk-veil{position:absolute; inset:0; background:radial-gradient(70% 60% at 50% 40%,#1c1030e0 0,#07050cf8 80%);}
 #screen-book .bk-pg{padding:calc(24px + var(--safe-top,0px)) 28px 22px;}
 #screen-book button{font:inherit; color:inherit;}
@@ -3640,6 +3640,7 @@ html:has(#screen-book:not(.hidden):not(.screen-out)) #walletBar{display:none;}
 #screen-book kbd{font-family:ui-monospace,monospace; font-size:10px; padding:3px 6px 2px; border:2px solid #ffffff26; border-bottom-width:4px; border-radius:3px; color:#cfc6d8; background:#0008;}
 #screen-book .bk-ic{display:inline-grid; place-items:center; flex:none; vertical-align:middle;}
 #screen-book .bk-ic > *{max-width:100%; max-height:100%;}
+#screen-book .bk-ic > .picon.fit{display:block; width:100%; height:100%;}
 #screen-book .mic canvas{image-rendering:pixelated;}
 #screen-book .fgslot{position:absolute; inset:0; overflow:hidden auto; scrollbar-width:none; padding:8px 0 30px;}
 #screen-book .fgslot::-webkit-scrollbar{display:none;}
@@ -3808,6 +3809,15 @@ html:has(#screen-book:not(.hidden):not(.screen-out)) #walletBar{display:none;}
 #screen-book .bk-rx .rx-foot .btn .continue-sub{color:#6a4a28;}
 #screen-book .bk-rx .rx-anim{animation:none; opacity:1; transform:none;}
 #screen-book:not(.mob) .tome{box-sizing:border-box;}
+#screen-book.mob .tome .thumbs{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px; margin:0 0 6px;}
+@media (min-aspect-ratio:4/3){ #screen-book.mob .tome .thumbs{grid-template-columns:repeat(8,minmax(0,1fr));} }
+#screen-book.mob .tome .thumbs .tab{width:auto; height:48px; min-height:0; padding:5px 2px 4px; gap:3px; justify-content:center; flex-direction:column;}
+#screen-book.mob .tome .thumbs .tab .bk-ic,#screen-book.mob .tome .thumbs .tab .bk-ic > *{width:24px !important; height:24px !important;}
+#screen-book.mob .tome .thumbs .tab span{font-size:9px; letter-spacing:0; max-width:100%; overflow:hidden; text-overflow:clip; white-space:nowrap;}
+#screen-book.mob .t-page .seals{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px 6px; justify-items:center;}
+#screen-book.mob .t-page .tro{width:100%; max-width:110px;}
+#screen-book.mob .t-page .tro .tn{font-size:11px; padding:0 2px 4px;}
+#screen-book.mob .t-page .tro.bk-lock .tn{color:#5a4026;}
 </style>
 <style>
 @font-face{
