@@ -3623,6 +3623,11 @@ html:has(#screen-book:not(.hidden):not(.screen-out)) #walletBar{display:none;}
 #screen-book .bh-rh.locked i{background:repeating-linear-gradient(45deg,rgba(58,37,22,.18) 0 3px,transparent 3px 6px); border:1px dashed rgba(58,37,22,.45);}
 #screen-book .bh-rh:hover i,#screen-book .bh-rh:focus-visible i{box-shadow:0 0 0 2px rgba(214,167,74,.8);}
 #screen-book .ph h2,#screen-book .ph .phs{font-family:'Cormorant Garamond',Georgia,serif;}
+#screen-book .mon-art .mon-fig{position:absolute; left:calc(50% + var(--dx,0%)); bottom:calc(7% + var(--dy,0%)); height:calc(var(--s,.6) * 92%); aspect-ratio:1; max-width:96%; translate:-50% 0;}
+#screen-book .mon-art .mon-fig .mon-pic{position:absolute; inset:0;}
+#screen-book .mon-art .mon-fig .mon-pic .bk-ic,#screen-book .mon-art .mon-fig .mon-pic canvas{width:100% !important;}
+#screen-book .mon .mon-gnd{left:calc(50% - var(--s,.6) * 34%); right:calc(50% - var(--s,.6) * 34%); bottom:5%; height:calc(var(--s,.6) * 12%);}
+#screen-book .mon.pile .mon-gnd{left:calc(50% - var(--s,.6) * 34% - 20%); right:calc(50% - var(--s,.6) * 34% - 20%);}
 </style>
 <style>
 :root{--ui-k:.92; --pk-w:min(calc(420px * var(--ui-k,1)), 92vw);}
